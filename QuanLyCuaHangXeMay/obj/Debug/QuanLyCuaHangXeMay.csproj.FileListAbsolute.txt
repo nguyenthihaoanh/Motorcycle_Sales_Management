@@ -1,0 +1,48 @@
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.exe.config
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.exe
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.pdb
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\bin\Debug\EntityFramework.dll
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\bin\Debug\EntityFramework.xml
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csprojResolveAssemblyReference.cache
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmChiTietHD.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmDangNhap.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmManHinhChinh.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyHoaDon.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyKhachHang.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhaCungCap.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhanVien.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyXe.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThemXe.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongKe.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongTinTaiKhoan.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.Properties.Resources.resources
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csproj.GenerateResource.Cache
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.exe
+C:\Users\Tuandogdie\Desktop\doan1\abc\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.pdb
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csprojAssemblyReference.cache
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmChiTietHD.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmDangNhap.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmManHinhChinh.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyHoaDon.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyKhachHang.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhaCungCap.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhanVien.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyXe.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThemXe.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongKe.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongTinTaiKhoan.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.Properties.Resources.resources
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csproj.GenerateResource.cache
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csproj.CoreCompileInputs.cache
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.exe
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.pdb
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.exe.config
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.exe
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.pdb
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\bin\Debug\EntityFramework.dll
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\bin\Debug\EntityFramework.SqlServer.dll
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\bin\Debug\EntityFramework.xml
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\bin\Debug\EntityFramework.SqlServer.xml
+F:\Phat Trien Ung Dung\QLMuaBanXe_sourcetree\DOAN1\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csproj.CopyComplete
