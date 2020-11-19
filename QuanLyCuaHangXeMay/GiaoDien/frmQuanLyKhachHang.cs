@@ -33,7 +33,7 @@ namespace QuanLyCuaHangXeMay
                 Application.Exit();
         }
 
-        private void btNhapLai_Click(object sender, EventArgs e)
+        private void btNhapLai_Click_1(object sender, EventArgs e)
         {
             tbCMND.Text = "";
             tbDiaChi.Text = "";

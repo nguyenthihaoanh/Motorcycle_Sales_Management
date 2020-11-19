@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyCuaHangXeMay.Controller;
+using QuanLyCuaHangXeMay.GiaoDien;
 
 namespace QuanLyCuaHangXeMay
 {
@@ -16,7 +18,6 @@ namespace QuanLyCuaHangXeMay
         {
             InitializeComponent();
         }
-
         private frmThongTinTaiKhoan frmThongTinTaiKhoan = new frmThongTinTaiKhoan();
         private frmQuanLyXe frmQuanLyXe = new frmQuanLyXe();
         private frmQuanLyKhachHang frmQuanLyKhachHang = new frmQuanLyKhachHang();
@@ -25,6 +26,21 @@ namespace QuanLyCuaHangXeMay
         private frmQuanLyNhaCungCap frmQuanLyNhaCungCap = new frmQuanLyNhaCungCap();
         private frmThongKe frmThongKe = new frmThongKe();
 
+        private void frmManHinhChinh_Load(object sender, EventArgs e)
+        {
+            if (DangNhapController.chucVu == "True")
+            {
+                mnsQuanLyNhanVien.Enabled = true;
+                mnsQuanLyNhaCungCap.Enabled = true;
+                mnsQuanLyNhaSanXuat.Enabled = true;
+            }
+            else
+            { 
+                mnsQuanLyNhanVien.Enabled = false;
+                mnsQuanLyNhaCungCap.Enabled = false;
+                mnsQuanLyNhaSanXuat.Enabled = false;
+            }    
+        }
         private void mnsXemThongTinTaiKhoan_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -34,7 +50,7 @@ namespace QuanLyCuaHangXeMay
 
         private void mnsDangXuat_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
         private void mnsQuanLyXe_Click(object sender, EventArgs e)
@@ -78,10 +94,15 @@ namespace QuanLyCuaHangXeMay
             frmThongKe.ShowDialog();
             this.Show();
         }
+        private void mnsQuanLyNhaSanXuat_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void frmManHinhChinh_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
     }
 }

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLMuaBanXe" Class="dbQLMuaBanXeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-IKMCULL\SQLEXPRESS;Initial Catalog=QLMuaBanXe;Integrated Security=True" SettingsObjectName="QuanLyCuaHangXeMay.Properties.Settings" SettingsPropertyName="QLMuaBanXeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CTHoaDonXe" Member="CTHoaDonXes">
+    <Type Name="CTHoaDonXe">
+      <Column Name="maHoaDon" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maXe" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="donGia" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="thanhTien" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="HoaDonXe_CTHoaDonXe" Member="HoaDonXe" ThisKey="maHoaDon" OtherKey="maHoaDon" Type="HoaDonXe" IsForeignKey="true" />
+      <Association Name="Xe_CTHoaDonXe" Member="Xe" ThisKey="maXe" OtherKey="maXe" Type="Xe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDonXe" Member="HoaDonXes">
+    <Type Name="HoaDonXe">
+      <Column Name="maHoaDon" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ngayLap" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="maNhanVien" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="maKhachHang" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="HoaDonXe_CTHoaDonXe" Member="CTHoaDonXes" ThisKey="maHoaDon" OtherKey="maHoaDon" Type="CTHoaDonXe" />
+      <Association Name="KhachHang_HoaDonXe" Member="KhachHang" ThisKey="maKhachHang" OtherKey="maKhachHang" Type="KhachHang" IsForeignKey="true" />
+      <Association Name="NhanVien_HoaDonXe" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="maKhachHang" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenKhachHang" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="diaChiKhachHang" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="soDienThoai" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="KhachHang_HoaDonXe" Member="HoaDonXes" ThisKey="maKhachHang" OtherKey="maKhachHang" Type="HoaDonXe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MauXe" Member="MauXes">
+    <Type Name="MauXe">
+      <Column Name="maMau" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenMau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="MauXe_Xe" Member="Xes" ThisKey="maMau" OtherKey="maMau" Type="Xe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">
+    <Type Name="NhaCungCap">
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenNCC" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="diaChiNCC" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="NhaCungCap_Xe" Member="Xes" ThisKey="maNCC" OtherKey="maNCC" Type="Xe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="maNhanVien" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenNhanVien" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gioiTinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="diaChiNV" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="soDienThoai" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_HoaDonXe" Member="HoaDonXes" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="HoaDonXe" />
+      <Association Name="NhanVien_TaiKhoan" Member="TaiKhoan" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="TaiKhoan" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhaSanXuat" Member="NhaSanXuats">
+    <Type Name="NhaSanXuat">
+      <Column Name="maNSX" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenNSX" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="diaChiNSX" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="namSX" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="NhaSanXuat_Xe" Member="Xes" ThisKey="maNSX" OtherKey="maNSX" Type="Xe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="maNhanVien" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taiKhoan" Member="taiKhoan1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="matKhau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="chucVu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Xe" Member="Xes">
+    <Type Name="Xe">
+      <Column Name="maXe" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dungTich" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nhanHieu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="maMau" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="maNSX" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayNhap" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="giaNhap" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Xe_CTHoaDonXe" Member="CTHoaDonXes" ThisKey="maXe" OtherKey="maXe" Type="CTHoaDonXe" />
+      <Association Name="MauXe_Xe" Member="MauXe" ThisKey="maMau" OtherKey="maMau" Type="MauXe" IsForeignKey="true" />
+      <Association Name="NhaCungCap_Xe" Member="NhaCungCap" ThisKey="maNCC" OtherKey="maNCC" Type="NhaCungCap" IsForeignKey="true" />
+      <Association Name="NhaSanXuat_Xe" Member="NhaSanXuat" ThisKey="maNSX" OtherKey="maNSX" Type="NhaSanXuat" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

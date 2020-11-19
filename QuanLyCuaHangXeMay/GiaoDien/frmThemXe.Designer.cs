@@ -28,30 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btLuu = new System.Windows.Forms.Button();
             this.lbThemXe = new System.Windows.Forms.Label();
             this.cbNhanHang = new System.Windows.Forms.ComboBox();
             this.lbDonGia = new System.Windows.Forms.Label();
             this.lbSL = new System.Windows.Forms.Label();
             this.lbNhanHang = new System.Windows.Forms.Label();
-            this.nUpDownSL = new System.Windows.Forms.NumericUpDown();
             this.lbXuatDonGia = new System.Windows.Forms.Label();
             this.cbMauXe = new System.Windows.Forms.ComboBox();
             this.lbMauXe = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btThoat = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nUpDownSL)).BeginInit();
+            this.btLuu = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btLuu
-            // 
-            this.btLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btLuu.Location = new System.Drawing.Point(74, 293);
-            this.btLuu.Name = "btLuu";
-            this.btLuu.Size = new System.Drawing.Size(100, 45);
-            this.btLuu.TabIndex = 41;
-            this.btLuu.Text = "Lưu";
-            this.btLuu.UseVisualStyleBackColor = true;
-            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
             // lbThemXe
             // 
@@ -101,18 +90,6 @@
             this.lbNhanHang.TabIndex = 34;
             this.lbNhanHang.Text = "Nhãn Hàng:";
             // 
-            // nUpDownSL
-            // 
-            this.nUpDownSL.Location = new System.Drawing.Point(197, 174);
-            this.nUpDownSL.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nUpDownSL.Name = "nUpDownSL";
-            this.nUpDownSL.Size = new System.Drawing.Size(52, 22);
-            this.nUpDownSL.TabIndex = 43;
-            // 
             // lbXuatDonGia
             // 
             this.lbXuatDonGia.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -140,16 +117,32 @@
             this.lbMauXe.TabIndex = 44;
             this.lbMauXe.Text = "Màu Xe:";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(197, 175);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(47, 22);
+            this.numericUpDown1.TabIndex = 46;
+            // 
             // btThoat
             // 
             this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btThoat.Location = new System.Drawing.Point(331, 293);
+            this.btThoat.Location = new System.Drawing.Point(331, 281);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(100, 45);
-            this.btThoat.TabIndex = 46;
+            this.btThoat.TabIndex = 50;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = true;
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            // 
+            // btLuu
+            // 
+            this.btLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btLuu.Location = new System.Drawing.Point(74, 281);
+            this.btLuu.Name = "btLuu";
+            this.btLuu.Size = new System.Drawing.Size(100, 45);
+            this.btLuu.TabIndex = 49;
+            this.btLuu.Text = "Lưu";
+            this.btLuu.UseVisualStyleBackColor = true;
             // 
             // frmThemXe
             // 
@@ -157,10 +150,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 362);
             this.Controls.Add(this.btThoat);
+            this.Controls.Add(this.btLuu);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.cbMauXe);
             this.Controls.Add(this.lbMauXe);
-            this.Controls.Add(this.nUpDownSL);
-            this.Controls.Add(this.btLuu);
             this.Controls.Add(this.lbThemXe);
             this.Controls.Add(this.lbXuatDonGia);
             this.Controls.Add(this.cbNhanHang);
@@ -170,23 +163,23 @@
             this.Name = "frmThemXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cửa Hàng Bán Xe Máy Anh Tuấn";
-            ((System.ComponentModel.ISupportInitialize)(this.nUpDownSL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btLuu;
         private System.Windows.Forms.Label lbThemXe;
         private System.Windows.Forms.ComboBox cbNhanHang;
         private System.Windows.Forms.Label lbDonGia;
         private System.Windows.Forms.Label lbSL;
         private System.Windows.Forms.Label lbNhanHang;
-        private System.Windows.Forms.NumericUpDown nUpDownSL;
         private System.Windows.Forms.Label lbXuatDonGia;
         private System.Windows.Forms.ComboBox cbMauXe;
         private System.Windows.Forms.Label lbMauXe;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button btThoat;
+        private System.Windows.Forms.Button btLuu;
     }
 }

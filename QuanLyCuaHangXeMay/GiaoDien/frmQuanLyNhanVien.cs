@@ -34,5 +34,6 @@ namespace QuanLyCuaHangXeMay
             tbTaiKhoan.Text = "";
             tbTenNV.Text = "";
         }
+
     }
 }

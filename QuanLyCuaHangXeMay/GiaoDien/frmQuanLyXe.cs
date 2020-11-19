@@ -29,10 +29,11 @@ namespace QuanLyCuaHangXeMay
             tbDungTich.Text = "";
             tbGiaBan.Text = "";
             tbGiaNhap.Text = "";
-            tbMauXe.Text = "";
+            cbMauXe.Text = "";
             tbMaXe.Text = "";
             tbNhanHieu.Text = "";
             tbSoLuong.Text = "";
         }
+
     }
 }

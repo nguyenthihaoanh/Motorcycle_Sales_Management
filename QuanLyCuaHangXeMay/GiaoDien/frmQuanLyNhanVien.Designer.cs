@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btSua = new System.Windows.Forms.Button();
-            this.btThem = new System.Windows.Forms.Button();
-            this.btLuu = new System.Windows.Forms.Button();
             this.dGVDanhSachNV = new System.Windows.Forms.DataGridView();
             this.lbTenNhanVien = new System.Windows.Forms.Label();
             this.tbMatKhau = new System.Windows.Forms.TextBox();
@@ -38,65 +35,38 @@
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.lbTaiKhoan = new System.Windows.Forms.Label();
             this.lbGioiTinh = new System.Windows.Forms.Label();
-            this.rbNam = new System.Windows.Forms.RadioButton();
-            this.rbNu = new System.Windows.Forms.RadioButton();
-            this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.lbDiaChi = new System.Windows.Forms.Label();
-            this.tbCMND = new System.Windows.Forms.TextBox();
             this.lbCMND = new System.Windows.Forms.Label();
-            this.tbSDT = new System.Windows.Forms.TextBox();
-            this.tbTenNV = new System.Windows.Forms.TextBox();
             this.tbMaNV = new System.Windows.Forms.TextBox();
             this.lbSDT = new System.Windows.Forms.Label();
             this.lbTenNV = new System.Windows.Forms.Label();
             this.lbChucVu = new System.Windows.Forms.Label();
             this.lbMaNV = new System.Windows.Forms.Label();
             this.tbTimSDT = new System.Windows.Forms.TextBox();
-            this.cbChucVu = new System.Windows.Forms.ComboBox();
             this.rbTimSĐT = new System.Windows.Forms.RadioButton();
             this.tbTimTen = new System.Windows.Forms.TextBox();
             this.rbTimTen = new System.Windows.Forms.RadioButton();
             this.gbThongTinNV = new System.Windows.Forms.GroupBox();
-            this.btNhapLai = new System.Windows.Forms.Button();
-            this.btThoat = new System.Windows.Forms.Button();
+            this.cbChucVu = new System.Windows.Forms.ComboBox();
+            this.tbDiaChi = new System.Windows.Forms.TextBox();
+            this.tbCMND = new System.Windows.Forms.TextBox();
+            this.rbNu = new System.Windows.Forms.RadioButton();
+            this.rbNam = new System.Windows.Forms.RadioButton();
+            this.tbSDT = new System.Windows.Forms.TextBox();
+            this.tbTenNV = new System.Windows.Forms.TextBox();
             this.gbTimKiem = new System.Windows.Forms.GroupBox();
             this.gbTaiKhoan = new System.Windows.Forms.GroupBox();
             this.lbQLNV = new System.Windows.Forms.Label();
+            this.btNhapLai = new System.Windows.Forms.Button();
+            this.btThem = new System.Windows.Forms.Button();
+            this.btSua = new System.Windows.Forms.Button();
+            this.btThoat = new System.Windows.Forms.Button();
+            this.btLuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).BeginInit();
             this.gbThongTinNV.SuspendLayout();
             this.gbTimKiem.SuspendLayout();
             this.gbTaiKhoan.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btSua
-            // 
-            this.btSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btSua.Location = new System.Drawing.Point(189, 430);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(119, 45);
-            this.btSua.TabIndex = 28;
-            this.btSua.Text = "Sửa";
-            this.btSua.UseVisualStyleBackColor = true;
-            // 
-            // btThem
-            // 
-            this.btThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btThem.Location = new System.Drawing.Point(25, 430);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(119, 45);
-            this.btThem.TabIndex = 27;
-            this.btThem.Text = "Thêm";
-            this.btThem.UseVisualStyleBackColor = true;
-            // 
-            // btLuu
-            // 
-            this.btLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btLuu.Location = new System.Drawing.Point(25, 504);
-            this.btLuu.Name = "btLuu";
-            this.btLuu.Size = new System.Drawing.Size(119, 45);
-            this.btLuu.TabIndex = 26;
-            this.btLuu.Text = "Lưu";
-            this.btLuu.UseVisualStyleBackColor = true;
             // 
             // dGVDanhSachNV
             // 
@@ -163,35 +133,6 @@
             this.lbGioiTinh.TabIndex = 14;
             this.lbGioiTinh.Text = "Giới Tính: ";
             // 
-            // rbNam
-            // 
-            this.rbNam.AutoSize = true;
-            this.rbNam.Location = new System.Drawing.Point(141, 198);
-            this.rbNam.Name = "rbNam";
-            this.rbNam.Size = new System.Drawing.Size(58, 21);
-            this.rbNam.TabIndex = 15;
-            this.rbNam.TabStop = true;
-            this.rbNam.Text = "Nam";
-            this.rbNam.UseVisualStyleBackColor = true;
-            // 
-            // rbNu
-            // 
-            this.rbNu.AutoSize = true;
-            this.rbNu.Location = new System.Drawing.Point(223, 198);
-            this.rbNu.Name = "rbNu";
-            this.rbNu.Size = new System.Drawing.Size(47, 21);
-            this.rbNu.TabIndex = 16;
-            this.rbNu.TabStop = true;
-            this.rbNu.Text = "Nữ";
-            this.rbNu.UseVisualStyleBackColor = true;
-            // 
-            // tbDiaChi
-            // 
-            this.tbDiaChi.Location = new System.Drawing.Point(150, 303);
-            this.tbDiaChi.Name = "tbDiaChi";
-            this.tbDiaChi.Size = new System.Drawing.Size(158, 22);
-            this.tbDiaChi.TabIndex = 11;
-            // 
             // lbDiaChi
             // 
             this.lbDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -203,13 +144,6 @@
             this.lbDiaChi.TabIndex = 10;
             this.lbDiaChi.Text = "Địa Chỉ:";
             // 
-            // tbCMND
-            // 
-            this.tbCMND.Location = new System.Drawing.Point(150, 250);
-            this.tbCMND.Name = "tbCMND";
-            this.tbCMND.Size = new System.Drawing.Size(158, 22);
-            this.tbCMND.TabIndex = 13;
-            // 
             // lbCMND
             // 
             this.lbCMND.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -220,20 +154,6 @@
             this.lbCMND.Size = new System.Drawing.Size(65, 20);
             this.lbCMND.TabIndex = 12;
             this.lbCMND.Text = "CMND:";
-            // 
-            // tbSDT
-            // 
-            this.tbSDT.Location = new System.Drawing.Point(150, 144);
-            this.tbSDT.Name = "tbSDT";
-            this.tbSDT.Size = new System.Drawing.Size(158, 22);
-            this.tbSDT.TabIndex = 6;
-            // 
-            // tbTenNV
-            // 
-            this.tbTenNV.Location = new System.Drawing.Point(150, 91);
-            this.tbTenNV.Name = "tbTenNV";
-            this.tbTenNV.Size = new System.Drawing.Size(158, 22);
-            this.tbTenNV.TabIndex = 9;
             // 
             // tbMaNV
             // 
@@ -293,14 +213,6 @@
             this.tbTimSDT.Size = new System.Drawing.Size(269, 22);
             this.tbTimSDT.TabIndex = 6;
             // 
-            // cbChucVu
-            // 
-            this.cbChucVu.FormattingEnabled = true;
-            this.cbChucVu.Location = new System.Drawing.Point(150, 354);
-            this.cbChucVu.Name = "cbChucVu";
-            this.cbChucVu.Size = new System.Drawing.Size(158, 24);
-            this.cbChucVu.TabIndex = 18;
-            // 
             // rbTimSĐT
             // 
             this.rbTimSĐT.AutoSize = true;
@@ -335,25 +247,25 @@
             // gbThongTinNV
             // 
             this.gbThongTinNV.Controls.Add(this.btNhapLai);
-            this.gbThongTinNV.Controls.Add(this.lbGioiTinh);
-            this.gbThongTinNV.Controls.Add(this.rbNu);
             this.gbThongTinNV.Controls.Add(this.btThem);
-            this.gbThongTinNV.Controls.Add(this.rbNam);
-            this.gbThongTinNV.Controls.Add(this.lbMaNV);
-            this.gbThongTinNV.Controls.Add(this.lbChucVu);
             this.gbThongTinNV.Controls.Add(this.btSua);
             this.gbThongTinNV.Controls.Add(this.btThoat);
-            this.gbThongTinNV.Controls.Add(this.tbSDT);
             this.gbThongTinNV.Controls.Add(this.btLuu);
-            this.gbThongTinNV.Controls.Add(this.lbTenNV);
             this.gbThongTinNV.Controls.Add(this.cbChucVu);
+            this.gbThongTinNV.Controls.Add(this.tbDiaChi);
+            this.gbThongTinNV.Controls.Add(this.tbCMND);
+            this.gbThongTinNV.Controls.Add(this.rbNu);
+            this.gbThongTinNV.Controls.Add(this.rbNam);
+            this.gbThongTinNV.Controls.Add(this.tbSDT);
             this.gbThongTinNV.Controls.Add(this.tbTenNV);
+            this.gbThongTinNV.Controls.Add(this.lbGioiTinh);
+            this.gbThongTinNV.Controls.Add(this.lbMaNV);
+            this.gbThongTinNV.Controls.Add(this.lbChucVu);
+            this.gbThongTinNV.Controls.Add(this.lbTenNV);
             this.gbThongTinNV.Controls.Add(this.lbCMND);
             this.gbThongTinNV.Controls.Add(this.lbDiaChi);
             this.gbThongTinNV.Controls.Add(this.tbMaNV);
             this.gbThongTinNV.Controls.Add(this.lbSDT);
-            this.gbThongTinNV.Controls.Add(this.tbDiaChi);
-            this.gbThongTinNV.Controls.Add(this.tbCMND);
             this.gbThongTinNV.Dock = System.Windows.Forms.DockStyle.Right;
             this.gbThongTinNV.Location = new System.Drawing.Point(836, 0);
             this.gbThongTinNV.Name = "gbThongTinNV";
@@ -362,27 +274,63 @@
             this.gbThongTinNV.TabStop = false;
             this.gbThongTinNV.Text = "Thông Tin Nhân Viên";
             // 
-            // btNhapLai
+            // cbChucVu
             // 
-            this.btNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btNhapLai.Location = new System.Drawing.Point(189, 504);
-            this.btNhapLai.Name = "btNhapLai";
-            this.btNhapLai.Size = new System.Drawing.Size(119, 45);
-            this.btNhapLai.TabIndex = 47;
-            this.btNhapLai.Text = "Nhập Lại";
-            this.btNhapLai.UseVisualStyleBackColor = true;
-            this.btNhapLai.Click += new System.EventHandler(this.btNhapLai_Click);
+            this.cbChucVu.FormattingEnabled = true;
+            this.cbChucVu.Location = new System.Drawing.Point(150, 356);
+            this.cbChucVu.Name = "cbChucVu";
+            this.cbChucVu.Size = new System.Drawing.Size(158, 24);
+            this.cbChucVu.TabIndex = 54;
             // 
-            // btThoat
+            // tbDiaChi
             // 
-            this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btThoat.Location = new System.Drawing.Point(113, 578);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(119, 45);
-            this.btThoat.TabIndex = 29;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.UseVisualStyleBackColor = true;
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            this.tbDiaChi.Location = new System.Drawing.Point(150, 301);
+            this.tbDiaChi.Name = "tbDiaChi";
+            this.tbDiaChi.Size = new System.Drawing.Size(158, 22);
+            this.tbDiaChi.TabIndex = 53;
+            // 
+            // tbCMND
+            // 
+            this.tbCMND.Location = new System.Drawing.Point(150, 250);
+            this.tbCMND.Name = "tbCMND";
+            this.tbCMND.Size = new System.Drawing.Size(158, 22);
+            this.tbCMND.TabIndex = 52;
+            // 
+            // rbNu
+            // 
+            this.rbNu.AutoSize = true;
+            this.rbNu.Location = new System.Drawing.Point(228, 198);
+            this.rbNu.Name = "rbNu";
+            this.rbNu.Size = new System.Drawing.Size(47, 21);
+            this.rbNu.TabIndex = 51;
+            this.rbNu.TabStop = true;
+            this.rbNu.Text = "Nữ";
+            this.rbNu.UseVisualStyleBackColor = true;
+            // 
+            // rbNam
+            // 
+            this.rbNam.AutoSize = true;
+            this.rbNam.Location = new System.Drawing.Point(150, 198);
+            this.rbNam.Name = "rbNam";
+            this.rbNam.Size = new System.Drawing.Size(58, 21);
+            this.rbNam.TabIndex = 50;
+            this.rbNam.TabStop = true;
+            this.rbNam.Text = "Nam";
+            this.rbNam.UseVisualStyleBackColor = true;
+            // 
+            // tbSDT
+            // 
+            this.tbSDT.Location = new System.Drawing.Point(150, 144);
+            this.tbSDT.Name = "tbSDT";
+            this.tbSDT.Size = new System.Drawing.Size(158, 22);
+            this.tbSDT.TabIndex = 49;
+            // 
+            // tbTenNV
+            // 
+            this.tbTenNV.Location = new System.Drawing.Point(150, 91);
+            this.tbTenNV.Name = "tbTenNV";
+            this.tbTenNV.Size = new System.Drawing.Size(158, 22);
+            this.tbTenNV.TabIndex = 48;
             // 
             // gbTimKiem
             // 
@@ -420,6 +368,56 @@
             this.lbQLNV.Text = "Quản Lý Thông Tin Nhân Viên";
             this.lbQLNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btNhapLai
+            // 
+            this.btNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btNhapLai.Location = new System.Drawing.Point(189, 502);
+            this.btNhapLai.Name = "btNhapLai";
+            this.btNhapLai.Size = new System.Drawing.Size(119, 45);
+            this.btNhapLai.TabIndex = 59;
+            this.btNhapLai.Text = "Nhập Lại";
+            this.btNhapLai.UseVisualStyleBackColor = true;
+            // 
+            // btThem
+            // 
+            this.btThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btThem.Location = new System.Drawing.Point(25, 428);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(119, 45);
+            this.btThem.TabIndex = 56;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = true;
+            // 
+            // btSua
+            // 
+            this.btSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btSua.Location = new System.Drawing.Point(189, 428);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(119, 45);
+            this.btSua.TabIndex = 57;
+            this.btSua.Text = "Sửa";
+            this.btSua.UseVisualStyleBackColor = true;
+            // 
+            // btThoat
+            // 
+            this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btThoat.Location = new System.Drawing.Point(113, 576);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(119, 45);
+            this.btThoat.TabIndex = 58;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.UseVisualStyleBackColor = true;
+            // 
+            // btLuu
+            // 
+            this.btLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btLuu.Location = new System.Drawing.Point(25, 502);
+            this.btLuu.Name = "btLuu";
+            this.btLuu.Size = new System.Drawing.Size(119, 45);
+            this.btLuu.TabIndex = 55;
+            this.btLuu.Text = "Lưu";
+            this.btLuu.UseVisualStyleBackColor = true;
+            // 
             // frmQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -447,9 +445,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btSua;
-        private System.Windows.Forms.Button btThem;
-        private System.Windows.Forms.Button btLuu;
         private System.Windows.Forms.DataGridView dGVDanhSachNV;
         private System.Windows.Forms.Label lbTenNhanVien;
         private System.Windows.Forms.TextBox tbMatKhau;
@@ -457,29 +452,32 @@
         private System.Windows.Forms.Label lbMatKhau;
         private System.Windows.Forms.Label lbTaiKhoan;
         private System.Windows.Forms.Label lbGioiTinh;
-        private System.Windows.Forms.RadioButton rbNam;
-        private System.Windows.Forms.RadioButton rbNu;
-        private System.Windows.Forms.TextBox tbDiaChi;
         private System.Windows.Forms.Label lbDiaChi;
-        private System.Windows.Forms.TextBox tbCMND;
         private System.Windows.Forms.Label lbCMND;
-        private System.Windows.Forms.TextBox tbSDT;
-        private System.Windows.Forms.TextBox tbTenNV;
         private System.Windows.Forms.TextBox tbMaNV;
         private System.Windows.Forms.Label lbSDT;
         private System.Windows.Forms.Label lbTenNV;
         private System.Windows.Forms.Label lbChucVu;
         private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.TextBox tbTimSDT;
-        private System.Windows.Forms.ComboBox cbChucVu;
         private System.Windows.Forms.RadioButton rbTimSĐT;
         private System.Windows.Forms.TextBox tbTimTen;
         private System.Windows.Forms.RadioButton rbTimTen;
         private System.Windows.Forms.GroupBox gbThongTinNV;
         private System.Windows.Forms.GroupBox gbTimKiem;
         private System.Windows.Forms.GroupBox gbTaiKhoan;
-        private System.Windows.Forms.Button btThoat;
-        private System.Windows.Forms.Button btNhapLai;
         private System.Windows.Forms.Label lbQLNV;
+        private System.Windows.Forms.ComboBox cbChucVu;
+        private System.Windows.Forms.TextBox tbDiaChi;
+        private System.Windows.Forms.TextBox tbCMND;
+        private System.Windows.Forms.RadioButton rbNu;
+        private System.Windows.Forms.RadioButton rbNam;
+        private System.Windows.Forms.TextBox tbSDT;
+        private System.Windows.Forms.TextBox tbTenNV;
+        private System.Windows.Forms.Button btNhapLai;
+        private System.Windows.Forms.Button btThem;
+        private System.Windows.Forms.Button btSua;
+        private System.Windows.Forms.Button btThoat;
+        private System.Windows.Forms.Button btLuu;
     }
 }

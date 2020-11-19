@@ -38,6 +38,7 @@
             this.mnsQuanLyHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsQuanLyNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsQuanLyNhaCungCap = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsQuanLyNhaSanXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsThongKeDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
             this.ManHinhChinh = new System.Windows.Forms.MenuStrip();
@@ -53,6 +54,7 @@
             this.mnsDangXuat});
             this.mnsTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnsTaiKhoan.Name = "mnsTaiKhoan";
+            this.mnsTaiKhoan.ShowShortcutKeys = false;
             this.mnsTaiKhoan.Size = new System.Drawing.Size(107, 44);
             this.mnsTaiKhoan.Text = "Tài Khoản";
             // 
@@ -77,7 +79,8 @@
             this.mnsQuanLyKhachHang,
             this.mnsQuanLyHoaDon,
             this.mnsQuanLyNhanVien,
-            this.mnsQuanLyNhaCungCap});
+            this.mnsQuanLyNhaCungCap,
+            this.mnsQuanLyNhaSanXuat});
             this.mnsQuanLy.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.mnsQuanLy.Name = "mnsQuanLy";
             this.mnsQuanLy.Size = new System.Drawing.Size(91, 44);
@@ -117,6 +120,13 @@
             this.mnsQuanLyNhaCungCap.Size = new System.Drawing.Size(280, 26);
             this.mnsQuanLyNhaCungCap.Text = "Quản Lý Nhà Cung Cấp";
             this.mnsQuanLyNhaCungCap.Click += new System.EventHandler(this.mnsQuanLyNhaCungCap_Click);
+            // 
+            // mnsQuanLyNhaSanXuat
+            // 
+            this.mnsQuanLyNhaSanXuat.Name = "mnsQuanLyNhaSanXuat";
+            this.mnsQuanLyNhaSanXuat.Size = new System.Drawing.Size(280, 26);
+            this.mnsQuanLyNhaSanXuat.Text = "Quản Lý Nhà Sản Xuất";
+            this.mnsQuanLyNhaSanXuat.Click += new System.EventHandler(this.mnsQuanLyNhaSanXuat_Click);
             // 
             // mnsThongKe
             // 
@@ -171,6 +181,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cửa Hàng Bán Xe Máy Anh Tuấn";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmManHinhChinh_FormClosed);
+            this.Load += new System.EventHandler(this.frmManHinhChinh_Load);
             this.ManHinhChinh.ResumeLayout(false);
             this.ManHinhChinh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhAnh)).EndInit();
@@ -193,5 +204,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnsThongKeDoanhThu;
         private System.Windows.Forms.MenuStrip ManHinhChinh;
         private System.Windows.Forms.PictureBox hinhAnh;
+        private System.Windows.Forms.ToolStripMenuItem mnsQuanLyNhaSanXuat;
     }
 }
