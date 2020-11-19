@@ -56,7 +56,7 @@ namespace QuanLyCuaHangXeMay
             var vartk = from TK in db.TaiKhoans
                      where TK.maNhanVien == ma
                      select TK;
-            foreach( TaiKhoan taiKhoan in vartk)
+            foreach (TaiKhoan taiKhoan in vartk)
             {
                 taiKhoan.matKhau = mk;
             }

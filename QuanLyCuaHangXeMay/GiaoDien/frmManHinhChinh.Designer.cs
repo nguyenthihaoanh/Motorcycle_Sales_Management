@@ -43,6 +43,7 @@
             this.mnsThongKeDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
             this.ManHinhChinh = new System.Windows.Forms.MenuStrip();
             this.hinhAnh = new System.Windows.Forms.PictureBox();
+            this.mnsDoiMK = new System.Windows.Forms.ToolStripMenuItem();
             this.ManHinhChinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhAnh)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // 
             this.mnsTaiKhoan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnsXemThongTinTaiKhoan,
+            this.mnsDoiMK,
             this.mnsDangXuat});
             this.mnsTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnsTaiKhoan.Name = "mnsTaiKhoan";
@@ -169,6 +171,13 @@
             this.hinhAnh.TabIndex = 2;
             this.hinhAnh.TabStop = false;
             // 
+            // mnsDoiMK
+            // 
+            this.mnsDoiMK.Name = "mnsDoiMK";
+            this.mnsDoiMK.Size = new System.Drawing.Size(304, 26);
+            this.mnsDoiMK.Text = "Đổi Mật Khẩu";
+            this.mnsDoiMK.Click += new System.EventHandler(this.mnsDoiMK_Click);
+            // 
             // frmManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,5 +214,6 @@
         private System.Windows.Forms.MenuStrip ManHinhChinh;
         private System.Windows.Forms.PictureBox hinhAnh;
         private System.Windows.Forms.ToolStripMenuItem mnsQuanLyNhaSanXuat;
+        private System.Windows.Forms.ToolStripMenuItem mnsDoiMK;
     }
 }

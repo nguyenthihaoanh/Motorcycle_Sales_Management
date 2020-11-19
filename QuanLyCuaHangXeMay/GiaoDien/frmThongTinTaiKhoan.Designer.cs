@@ -35,20 +35,17 @@
             this.lbTenNV = new System.Windows.Forms.Label();
             this.lbSDT = new System.Windows.Forms.Label();
             this.lbMaNV = new System.Windows.Forms.Label();
-            this.lbMatKhau = new System.Windows.Forms.Label();
             this.lbTaiKhoan = new System.Windows.Forms.Label();
-            this.lbXuatMatKhau = new System.Windows.Forms.Label();
-            this.lbXuatTaiKhoan = new System.Windows.Forms.Label();
-            this.lbXuatChucVu = new System.Windows.Forms.Label();
-            this.lbXuatCMND = new System.Windows.Forms.Label();
-            this.lbXuatDiaChi = new System.Windows.Forms.Label();
-            this.lbXuatTenNV = new System.Windows.Forms.Label();
-            this.lbXuatSDT = new System.Windows.Forms.Label();
-            this.lbXuatMaNV = new System.Windows.Forms.Label();
             this.lbThongTin = new System.Windows.Forms.Label();
             this.btThoat = new System.Windows.Forms.Button();
-            this.lbXuatGioiTinh = new System.Windows.Forms.Label();
-            this.btSuaMK = new System.Windows.Forms.Button();
+            this.tbMaNV = new System.Windows.Forms.TextBox();
+            this.tbTenNV = new System.Windows.Forms.TextBox();
+            this.tbGioiTinh = new System.Windows.Forms.TextBox();
+            this.tbChucVu = new System.Windows.Forms.TextBox();
+            this.tbDiaChi = new System.Windows.Forms.TextBox();
+            this.tbCMND = new System.Windows.Forms.TextBox();
+            this.tbTaiKhoan = new System.Windows.Forms.TextBox();
+            this.tbSDT = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbChucVu
@@ -121,16 +118,6 @@
             this.lbMaNV.TabIndex = 19;
             this.lbMaNV.Text = "Mã Nhân Viên: ";
             // 
-            // lbMatKhau
-            // 
-            this.lbMatKhau.AutoSize = true;
-            this.lbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbMatKhau.Location = new System.Drawing.Point(12, 527);
-            this.lbMatKhau.Name = "lbMatKhau";
-            this.lbMatKhau.Size = new System.Drawing.Size(103, 25);
-            this.lbMatKhau.TabIndex = 37;
-            this.lbMatKhau.Text = "Mật Khẩu:";
-            // 
             // lbTaiKhoan
             // 
             this.lbTaiKhoan.AutoSize = true;
@@ -140,79 +127,6 @@
             this.lbTaiKhoan.Size = new System.Drawing.Size(109, 25);
             this.lbTaiKhoan.TabIndex = 36;
             this.lbTaiKhoan.Text = "Tài Khoản:";
-            // 
-            // lbXuatMatKhau
-            // 
-            this.lbXuatMatKhau.BackColor = System.Drawing.SystemColors.Control;
-            this.lbXuatMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbXuatMatKhau.Location = new System.Drawing.Point(185, 527);
-            this.lbXuatMatKhau.Name = "lbXuatMatKhau";
-            this.lbXuatMatKhau.Size = new System.Drawing.Size(321, 32);
-            this.lbXuatMatKhau.TabIndex = 48;
-            // 
-            // lbXuatTaiKhoan
-            // 
-            this.lbXuatTaiKhoan.BackColor = System.Drawing.SystemColors.Control;
-            this.lbXuatTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbXuatTaiKhoan.Location = new System.Drawing.Point(185, 476);
-            this.lbXuatTaiKhoan.Name = "lbXuatTaiKhoan";
-            this.lbXuatTaiKhoan.Size = new System.Drawing.Size(321, 32);
-            this.lbXuatTaiKhoan.TabIndex = 47;
-            // 
-            // lbXuatChucVu
-            // 
-            this.lbXuatChucVu.BackColor = System.Drawing.SystemColors.Control;
-            this.lbXuatChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbXuatChucVu.Location = new System.Drawing.Point(185, 374);
-            this.lbXuatChucVu.Name = "lbXuatChucVu";
-            this.lbXuatChucVu.Size = new System.Drawing.Size(321, 32);
-            this.lbXuatChucVu.TabIndex = 46;
-            // 
-            // lbXuatCMND
-            // 
-            this.lbXuatCMND.BackColor = System.Drawing.SystemColors.Control;
-            this.lbXuatCMND.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbXuatCMND.Location = new System.Drawing.Point(185, 272);
-            this.lbXuatCMND.Name = "lbXuatCMND";
-            this.lbXuatCMND.Size = new System.Drawing.Size(321, 32);
-            this.lbXuatCMND.TabIndex = 44;
-            // 
-            // lbXuatDiaChi
-            // 
-            this.lbXuatDiaChi.BackColor = System.Drawing.SystemColors.Control;
-            this.lbXuatDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbXuatDiaChi.Location = new System.Drawing.Point(116, 323);
-            this.lbXuatDiaChi.Name = "lbXuatDiaChi";
-            this.lbXuatDiaChi.Size = new System.Drawing.Size(390, 32);
-            this.lbXuatDiaChi.TabIndex = 43;
-            this.lbXuatDiaChi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbXuatTenNV
-            // 
-            this.lbXuatTenNV.BackColor = System.Drawing.SystemColors.Control;
-            this.lbXuatTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbXuatTenNV.Location = new System.Drawing.Point(185, 170);
-            this.lbXuatTenNV.Name = "lbXuatTenNV";
-            this.lbXuatTenNV.Size = new System.Drawing.Size(321, 32);
-            this.lbXuatTenNV.TabIndex = 42;
-            // 
-            // lbXuatSDT
-            // 
-            this.lbXuatSDT.BackColor = System.Drawing.SystemColors.Control;
-            this.lbXuatSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbXuatSDT.Location = new System.Drawing.Point(185, 425);
-            this.lbXuatSDT.Name = "lbXuatSDT";
-            this.lbXuatSDT.Size = new System.Drawing.Size(321, 32);
-            this.lbXuatSDT.TabIndex = 41;
-            // 
-            // lbXuatMaNV
-            // 
-            this.lbXuatMaNV.BackColor = System.Drawing.SystemColors.Control;
-            this.lbXuatMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbXuatMaNV.Location = new System.Drawing.Point(185, 119);
-            this.lbXuatMaNV.Name = "lbXuatMaNV";
-            this.lbXuatMaNV.Size = new System.Drawing.Size(321, 32);
-            this.lbXuatMaNV.TabIndex = 40;
             // 
             // lbThongTin
             // 
@@ -227,7 +141,7 @@
             // btThoat
             // 
             this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btThoat.Location = new System.Drawing.Point(331, 591);
+            this.btThoat.Location = new System.Drawing.Point(208, 530);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(119, 45);
             this.btThoat.TabIndex = 50;
@@ -235,44 +149,101 @@
             this.btThoat.UseVisualStyleBackColor = true;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // lbXuatGioiTinh
+            // tbMaNV
             // 
-            this.lbXuatGioiTinh.BackColor = System.Drawing.SystemColors.Control;
-            this.lbXuatGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbXuatGioiTinh.Location = new System.Drawing.Point(185, 221);
-            this.lbXuatGioiTinh.Name = "lbXuatGioiTinh";
-            this.lbXuatGioiTinh.Size = new System.Drawing.Size(321, 32);
-            this.lbXuatGioiTinh.TabIndex = 51;
+            this.tbMaNV.BackColor = System.Drawing.SystemColors.Control;
+            this.tbMaNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbMaNV.Location = new System.Drawing.Point(189, 123);
+            this.tbMaNV.Name = "tbMaNV";
+            this.tbMaNV.Size = new System.Drawing.Size(320, 23);
+            this.tbMaNV.TabIndex = 51;
             // 
-            // btSuaMK
+            // tbTenNV
             // 
-            this.btSuaMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btSuaMK.Location = new System.Drawing.Point(61, 591);
-            this.btSuaMK.Name = "btSuaMK";
-            this.btSuaMK.Size = new System.Drawing.Size(164, 45);
-            this.btSuaMK.TabIndex = 52;
-            this.btSuaMK.Text = "Sửa Mật Khẩu";
-            this.btSuaMK.UseVisualStyleBackColor = true;
-            this.btSuaMK.Click += new System.EventHandler(this.btSuaMK_Click);
+            this.tbTenNV.BackColor = System.Drawing.SystemColors.Control;
+            this.tbTenNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbTenNV.Location = new System.Drawing.Point(189, 174);
+            this.tbTenNV.Name = "tbTenNV";
+            this.tbTenNV.Size = new System.Drawing.Size(320, 23);
+            this.tbTenNV.TabIndex = 52;
+            // 
+            // tbGioiTinh
+            // 
+            this.tbGioiTinh.BackColor = System.Drawing.SystemColors.Control;
+            this.tbGioiTinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbGioiTinh.Location = new System.Drawing.Point(189, 225);
+            this.tbGioiTinh.Name = "tbGioiTinh";
+            this.tbGioiTinh.Size = new System.Drawing.Size(320, 23);
+            this.tbGioiTinh.TabIndex = 53;
+            // 
+            // tbChucVu
+            // 
+            this.tbChucVu.BackColor = System.Drawing.SystemColors.Control;
+            this.tbChucVu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbChucVu.Location = new System.Drawing.Point(189, 378);
+            this.tbChucVu.Name = "tbChucVu";
+            this.tbChucVu.Size = new System.Drawing.Size(320, 23);
+            this.tbChucVu.TabIndex = 56;
+            // 
+            // tbDiaChi
+            // 
+            this.tbDiaChi.BackColor = System.Drawing.SystemColors.Control;
+            this.tbDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbDiaChi.Location = new System.Drawing.Point(121, 327);
+            this.tbDiaChi.Name = "tbDiaChi";
+            this.tbDiaChi.Size = new System.Drawing.Size(388, 23);
+            this.tbDiaChi.TabIndex = 55;
+            // 
+            // tbCMND
+            // 
+            this.tbCMND.BackColor = System.Drawing.SystemColors.Control;
+            this.tbCMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCMND.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbCMND.Location = new System.Drawing.Point(189, 276);
+            this.tbCMND.Name = "tbCMND";
+            this.tbCMND.Size = new System.Drawing.Size(320, 23);
+            this.tbCMND.TabIndex = 54;
+            // 
+            // tbTaiKhoan
+            // 
+            this.tbTaiKhoan.BackColor = System.Drawing.SystemColors.Control;
+            this.tbTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbTaiKhoan.Location = new System.Drawing.Point(189, 480);
+            this.tbTaiKhoan.Name = "tbTaiKhoan";
+            this.tbTaiKhoan.Size = new System.Drawing.Size(320, 23);
+            this.tbTaiKhoan.TabIndex = 58;
+            // 
+            // tbSDT
+            // 
+            this.tbSDT.BackColor = System.Drawing.SystemColors.Control;
+            this.tbSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbSDT.Location = new System.Drawing.Point(189, 429);
+            this.tbSDT.Name = "tbSDT";
+            this.tbSDT.Size = new System.Drawing.Size(320, 23);
+            this.tbSDT.TabIndex = 57;
             // 
             // frmThongTinTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 671);
-            this.Controls.Add(this.btSuaMK);
-            this.Controls.Add(this.lbXuatGioiTinh);
+            this.ClientSize = new System.Drawing.Size(533, 587);
+            this.Controls.Add(this.tbTaiKhoan);
+            this.Controls.Add(this.tbSDT);
+            this.Controls.Add(this.tbChucVu);
+            this.Controls.Add(this.tbDiaChi);
+            this.Controls.Add(this.tbCMND);
+            this.Controls.Add(this.tbGioiTinh);
+            this.Controls.Add(this.tbTenNV);
+            this.Controls.Add(this.tbMaNV);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.lbThongTin);
-            this.Controls.Add(this.lbXuatMatKhau);
-            this.Controls.Add(this.lbXuatTaiKhoan);
-            this.Controls.Add(this.lbXuatChucVu);
-            this.Controls.Add(this.lbXuatCMND);
-            this.Controls.Add(this.lbXuatDiaChi);
-            this.Controls.Add(this.lbXuatTenNV);
-            this.Controls.Add(this.lbXuatSDT);
-            this.Controls.Add(this.lbXuatMaNV);
-            this.Controls.Add(this.lbMatKhau);
             this.Controls.Add(this.lbTaiKhoan);
             this.Controls.Add(this.lbChucVu);
             this.Controls.Add(this.lbGioiTinh);
@@ -284,7 +255,6 @@
             this.Name = "frmThongTinTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cửa Hàng Bán Xe Máy Anh Tuấn";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmThongTinTaiKhoan_FormClosed);
             this.Load += new System.EventHandler(this.frmThongTinTaiKhoan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -299,19 +269,16 @@
         private System.Windows.Forms.Label lbTenNV;
         private System.Windows.Forms.Label lbSDT;
         private System.Windows.Forms.Label lbMaNV;
-        private System.Windows.Forms.Label lbMatKhau;
         private System.Windows.Forms.Label lbTaiKhoan;
-        private System.Windows.Forms.Label lbXuatMatKhau;
-        private System.Windows.Forms.Label lbXuatTaiKhoan;
-        private System.Windows.Forms.Label lbXuatChucVu;
-        private System.Windows.Forms.Label lbXuatCMND;
-        private System.Windows.Forms.Label lbXuatDiaChi;
-        private System.Windows.Forms.Label lbXuatTenNV;
-        private System.Windows.Forms.Label lbXuatSDT;
-        private System.Windows.Forms.Label lbXuatMaNV;
         private System.Windows.Forms.Label lbThongTin;
         private System.Windows.Forms.Button btThoat;
-        private System.Windows.Forms.Label lbXuatGioiTinh;
-        private System.Windows.Forms.Button btSuaMK;
+        private System.Windows.Forms.TextBox tbMaNV;
+        private System.Windows.Forms.TextBox tbTenNV;
+        private System.Windows.Forms.TextBox tbGioiTinh;
+        private System.Windows.Forms.TextBox tbChucVu;
+        private System.Windows.Forms.TextBox tbDiaChi;
+        private System.Windows.Forms.TextBox tbCMND;
+        private System.Windows.Forms.TextBox tbTaiKhoan;
+        private System.Windows.Forms.TextBox tbSDT;
     }
 }

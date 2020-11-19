@@ -133,6 +133,7 @@
             this.btThoat.TabIndex = 50;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = true;
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click_1);
             // 
             // btLuu
             // 

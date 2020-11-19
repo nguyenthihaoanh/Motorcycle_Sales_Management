@@ -18,32 +18,43 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         {
             InitializeComponent();
         }
-
         private void btLuu_Click(object sender, EventArgs e)
         {
-            /*if (dangNhapController.kiemTraMk(DangNhapController.maNV, tbMkCu.Text.GetHashCode().ToString()))
+            if (dangNhapController.kiemTraMk(DangNhapController.maNV, tbMkCu.Text.ToString()))
             {
                 if (tbNhapLaiMk.Text == tbMkMoi.Text)
                 {
                     if (tbNhapLaiMk.Text.Length > 0)
                     {
-                        dangNhapController.kiemTraMk(DangNhapController.maNV, tbMkCu.Text.GetHashCode().ToString());
-                        MessageBox.Show("Thay đổi mật khẩu thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dangNhapController.thayDoiMk(DangNhapController.maNV, tbMkMoi.Text.ToString());
+                        MessageBox.Show("Thay Đổi Mật Khẩu Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
+                        tbMkCu.Clear();
+                        tbMkMoi.Clear();
+                        tbNhapLaiMk.Clear();
                     }
                     else
-                        MessageBox.Show("Mật khẩu không được để trống");
+                        MessageBox.Show("Mật Khẩu Không Được Để Trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Mật mã nhập lại không trùng khớp");
+                {
+                    MessageBox.Show("Mật Mã Nhập Lại Không Trùng Khớp", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbMkMoi.Clear();
+                    tbNhapLaiMk.Clear();
+                }
             }
             else
-                MessageBox.Show("Sai mật khẩu cũ");*/
+            {
+                MessageBox.Show("Sai Mật Khẩu Cũ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbMkCu.Clear();
+                tbMkMoi.Clear();
+                tbNhapLaiMk.Clear();
+            }
         }
 
-        private void frmDoiMK_FormClosed(object sender, FormClosedEventArgs e)
+        private void btTroVe_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
     }
 }

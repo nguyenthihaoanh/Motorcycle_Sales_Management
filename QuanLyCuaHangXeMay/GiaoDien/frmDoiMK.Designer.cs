@@ -37,6 +37,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             this.tbNhapLaiMk = new System.Windows.Forms.TextBox();
             this.tbMkCu = new System.Windows.Forms.TextBox();
             this.btLuu = new System.Windows.Forms.Button();
+            this.btTroVe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbMatKhau
@@ -104,7 +105,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             this.btLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLuu.Location = new System.Drawing.Point(183, 300);
+            this.btLuu.Location = new System.Drawing.Point(97, 303);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(119, 45);
             this.btLuu.TabIndex = 54;
@@ -112,11 +113,24 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             this.btLuu.UseVisualStyleBackColor = true;
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
+            // btTroVe
+            // 
+            this.btTroVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btTroVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btTroVe.Location = new System.Drawing.Point(292, 303);
+            this.btTroVe.Name = "btTroVe";
+            this.btTroVe.Size = new System.Drawing.Size(119, 45);
+            this.btTroVe.TabIndex = 55;
+            this.btTroVe.Text = "Trở Về";
+            this.btTroVe.UseVisualStyleBackColor = true;
+            this.btTroVe.Click += new System.EventHandler(this.btTroVe_Click);
+            // 
             // frmDoiMK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(487, 374);
+            this.Controls.Add(this.btTroVe);
             this.Controls.Add(this.btLuu);
             this.Controls.Add(this.tbMkMoi);
             this.Controls.Add(this.tbNhapLaiMk);
@@ -128,7 +142,6 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             this.Name = "frmDoiMK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDoiMK";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDoiMK_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +157,6 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         private System.Windows.Forms.TextBox tbNhapLaiMk;
         private System.Windows.Forms.TextBox tbMkCu;
         private System.Windows.Forms.Button btLuu;
+        private System.Windows.Forms.Button btTroVe;
     }
 }

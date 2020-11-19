@@ -46,7 +46,6 @@ namespace QuanLyCuaHangXeMay
                 this.Hide();
                 frmManHinhChinh.ShowDialog();
                 tbMatKhau.Clear();
-                this.Show();
             }
             else
             {

@@ -14,10 +14,7 @@ namespace QuanLyCuaHangXeMay
 {
     public partial class frmManHinhChinh : Form
     {
-        public frmManHinhChinh()
-        {
-            InitializeComponent();
-        }
+        private frmDoiMK frmDoiMK = new frmDoiMK();
         private frmThongTinTaiKhoan frmThongTinTaiKhoan = new frmThongTinTaiKhoan();
         private frmQuanLyXe frmQuanLyXe = new frmQuanLyXe();
         private frmQuanLyKhachHang frmQuanLyKhachHang = new frmQuanLyKhachHang();
@@ -25,6 +22,11 @@ namespace QuanLyCuaHangXeMay
         private frmQuanLyNhanVien frmQuanLyNhanVien = new frmQuanLyNhanVien();
         private frmQuanLyNhaCungCap frmQuanLyNhaCungCap = new frmQuanLyNhaCungCap();
         private frmThongKe frmThongKe = new frmThongKe();
+
+        public frmManHinhChinh()
+        {
+            InitializeComponent();
+        }
 
         private void frmManHinhChinh_Load(object sender, EventArgs e)
         {
@@ -50,7 +52,9 @@ namespace QuanLyCuaHangXeMay
 
         private void mnsDangXuat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            frmDangNhap dangXuat = new frmDangNhap();
+            dangXuat.Show();
         }
 
         private void mnsQuanLyXe_Click(object sender, EventArgs e)
@@ -104,5 +108,11 @@ namespace QuanLyCuaHangXeMay
             Application.Exit();
         }
 
+        private void mnsDoiMK_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDoiMK.ShowDialog();
+            this.Show();
+        }
     }
 }

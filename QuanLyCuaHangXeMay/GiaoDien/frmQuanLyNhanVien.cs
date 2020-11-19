@@ -29,11 +29,14 @@ namespace QuanLyCuaHangXeMay
             tbCMND.Text = "";
             tbDiaChi.Text = "";
             tbMaNV.Text = "";
-            tbMatKhau.Text = "";
             tbSDT.Text = "";
             tbTaiKhoan.Text = "";
             tbTenNV.Text = "";
         }
 
+        private void lvNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
