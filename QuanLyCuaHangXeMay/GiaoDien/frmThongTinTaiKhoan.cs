@@ -21,12 +21,6 @@ namespace QuanLyCuaHangXeMay
             InitializeComponent();
             
         }
-        public static void capNhapTT(Control control)
-        {
-            foreach (Control myControl in control.Controls)
-                if (myControl is TextBox)
-                    (myControl as TextBox).Text = string.Empty;
-        }
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -34,7 +28,6 @@ namespace QuanLyCuaHangXeMay
 
         private void frmThongTinTaiKhoan_Load(object sender, EventArgs e)
         {
-            capNhapTT(this);
             List<ListViewItem> ds = TTNV.NhanTT();
             tbMaNV.Text = ds[0].SubItems[0].Text;
             tbTenNV.Text = ds[0].SubItems[1].Text;

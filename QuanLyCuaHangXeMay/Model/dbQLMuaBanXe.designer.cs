@@ -1118,13 +1118,13 @@ namespace QuanLyCuaHangXeMay.Model
 		
 		private string _tenNhanVien;
 		
+		private string _soDienThoai;
+		
 		private bool _gioiTinh;
 		
 		private string _CMND;
 		
 		private string _diaChiNV;
-		
-		private string _soDienThoai;
 		
 		private bool _tinhTrang;
 		
@@ -1140,14 +1140,14 @@ namespace QuanLyCuaHangXeMay.Model
     partial void OnmaNhanVienChanged();
     partial void OntenNhanVienChanging(string value);
     partial void OntenNhanVienChanged();
+    partial void OnsoDienThoaiChanging(string value);
+    partial void OnsoDienThoaiChanged();
     partial void OngioiTinhChanging(bool value);
     partial void OngioiTinhChanged();
     partial void OnCMNDChanging(string value);
     partial void OnCMNDChanged();
     partial void OndiaChiNVChanging(string value);
     partial void OndiaChiNVChanged();
-    partial void OnsoDienThoaiChanging(string value);
-    partial void OnsoDienThoaiChanged();
     partial void OntinhTrangChanging(bool value);
     partial void OntinhTrangChanged();
     #endregion
@@ -1195,6 +1195,26 @@ namespace QuanLyCuaHangXeMay.Model
 					this._tenNhanVien = value;
 					this.SendPropertyChanged("tenNhanVien");
 					this.OntenNhanVienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soDienThoai", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string soDienThoai
+		{
+			get
+			{
+				return this._soDienThoai;
+			}
+			set
+			{
+				if ((this._soDienThoai != value))
+				{
+					this.OnsoDienThoaiChanging(value);
+					this.SendPropertyChanging();
+					this._soDienThoai = value;
+					this.SendPropertyChanged("soDienThoai");
+					this.OnsoDienThoaiChanged();
 				}
 			}
 		}
@@ -1255,26 +1275,6 @@ namespace QuanLyCuaHangXeMay.Model
 					this._diaChiNV = value;
 					this.SendPropertyChanged("diaChiNV");
 					this.OndiaChiNVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soDienThoai", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string soDienThoai
-		{
-			get
-			{
-				return this._soDienThoai;
-			}
-			set
-			{
-				if ((this._soDienThoai != value))
-				{
-					this.OnsoDienThoaiChanging(value);
-					this.SendPropertyChanging();
-					this._soDienThoai = value;
-					this.SendPropertyChanged("soDienThoai");
-					this.OnsoDienThoaiChanged();
 				}
 			}
 		}

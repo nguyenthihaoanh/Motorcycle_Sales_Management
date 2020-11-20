@@ -13,10 +13,12 @@ namespace QuanLyCuaHangXeMay
     {
         private dbQLMuaBanXeDataContext db = new dbQLMuaBanXeDataContext();
         private List<ListViewItem> dsNV = new List<ListViewItem>();
-        private ListViewItem lvit = new ListViewItem();
-        
-        public List<ListViewItem> Lay_TTNV_Tu_Data(string maNv)//lay thong tin nv từ data theo id
+        private ListViewItem lvit;
+
+        //lay thong tin nv từ data theo id
+        public List<ListViewItem> Lay_TTNV_Tu_Data(string maNv)
         {
+            lvit = new ListViewItem();
             dsNV.Clear();
             var dsNV_Tu_Data = from nv in db.NhanViens
                                join tk in db.TaiKhoans on nv.maNhanVien equals tk.maNhanVien
@@ -45,34 +47,88 @@ namespace QuanLyCuaHangXeMay
                     lvit.SubItems.Add(nv.cv.ToString());
                     lvit.SubItems.Add(nv.sdt);
                     lvit.SubItems.Add(nv.tk);
-                    lvit.SubItems.Add(nv.mk);
                     lvit.SubItems.Add(nv.tinhTrang.ToString());
                     dsNV.Add(lvit);
                 }
             return dsNV;
         }
+        //thay doi mat khau
         public void thayDoiMK(string ma, string mk)
         {
-            var vartk = from TK in db.TaiKhoans
-                     where TK.maNhanVien == ma
-                     select TK;
-            foreach (TaiKhoan taiKhoan in vartk)
+            var tk = from taiKhoan in db.TaiKhoans
+                     where taiKhoan.maNhanVien == ma
+                     select taiKhoan;
+            foreach (TaiKhoan taiKhoan in tk)
             {
                 taiKhoan.matKhau = mk;
             }
             db.SubmitChanges();
         }
+        //kiem tra mat khau
         public bool kiemTraMK(string ma, string mk)
         {
-            var vartk = from TK in db.TaiKhoans
-                        where TK.maNhanVien == ma
-                        select TK;
-            foreach (TaiKhoan taiKhoan in vartk)
+            var tk = from taiKhoan in db.TaiKhoans
+                     where taiKhoan.maNhanVien == ma
+                     select taiKhoan;
+            foreach (TaiKhoan taiKhoan in tk)
             {
                 if (taiKhoan.matKhau == mk)
                     return true;
             }
             return false;
+        }
+
+        // Thêm thông tin 1 nv vào listviewitem
+        public ListViewItem them_nv_lv(NhanVien nhanVien)
+        {
+            lvit = new ListViewItem();
+            var tk = from taiKhoan in db.TaiKhoans
+                              select taiKhoan;
+            foreach (TaiKhoan t in tk) 
+            {
+                if (t.maNhanVien == nhanVien.maNhanVien)
+                {
+                    lvit.Text = nhanVien.maNhanVien.ToString();
+                    lvit.SubItems.Add(nhanVien.tenNhanVien);
+                    lvit.SubItems.Add(nhanVien.soDienThoai);
+                    lvit.SubItems.Add(nhanVien.gioiTinh ? "Nữ" : "Nam");
+                    lvit.SubItems.Add(nhanVien.CMND);
+                    lvit.SubItems.Add(nhanVien.diaChiNV);
+                    lvit.SubItems.Add(t.chucVu ? "Quản Lý" : "Nhân Viên");
+                    lvit.SubItems.Add(nhanVien.tinhTrang ? "Còn Làm" : "Nghỉ Làm");
+                    lvit.SubItems.Add(t.taiKhoan1);
+                }
+            }
+                return lvit;
+        }
+        //Lay danh sach tat ca nhan vien
+        public List<ListViewItem> danhSachNV()
+        {
+            dsNV.Clear();
+            db = new dbQLMuaBanXeDataContext();
+            var nv = from nhanVien in db.NhanViens
+                     select nhanVien;
+            foreach (NhanVien n in nv)
+                dsNV.Add(them_nv_lv(n));
+            return dsNV;
+        }
+        //Update NhanVien trong database
+        public void capNhapNV(ListViewItem lvi_nv)
+        {
+            var nv = from nhanVien in db.NhanViens
+                     where nhanVien.maNhanVien.ToString() == lvi_nv.Text
+                     select nhanVien;
+            foreach (NhanVien n in nv)
+            {
+                n.maNhanVien = lvi_nv.SubItems[1].Text;
+                n.soDienThoai = lvi_nv.SubItems[2].Text;
+                if (lvi_nv.SubItems[3].Text == "Nữ")
+                    n.gioiTinh = true;
+                else
+                    n.gioiTinh = false;
+                n.CMND = lvi_nv.SubItems[4].Text;
+                n.diaChiNV = lvi_nv.SubItems[5].Text;
+            }
         }
     }
 }

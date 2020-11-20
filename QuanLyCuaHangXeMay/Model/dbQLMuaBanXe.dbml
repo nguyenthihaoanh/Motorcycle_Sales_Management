@@ -52,10 +52,10 @@
     <Type Name="NhanVien">
       <Column Name="maNhanVien" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenNhanVien" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="soDienThoai" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="gioiTinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="CMND" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
       <Column Name="diaChiNV" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="soDienThoai" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="NhanVien_HoaDonXe" Member="HoaDonXes" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="HoaDonXe" />
       <Association Name="NhanVien_TaiKhoan" Member="TaiKhoan" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="TaiKhoan" Cardinality="One" />

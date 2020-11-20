@@ -32,7 +32,6 @@ namespace QuanLyCuaHangXeMay.Controller
                         foreach(TaiKhoan taiKhoan in tk)
                             if (taiKhoan.matKhau == matKhau)
                             {
-                                
                                 chucVu = taiKhoan.chucVu.ToString();
                                 maNV = taiKhoan.maNhanVien;
                                 return true;
