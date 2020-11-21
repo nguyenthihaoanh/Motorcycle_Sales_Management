@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace QuanLyCuaHangXeMay.Controller
 {
-    class TTNVController
+    public class TTNhanVienController
     {
         private NhanVienController nhanVienController = new NhanVienController();
         public List<ListViewItem> thongtin { get; private set; } = new List<ListViewItem>();

@@ -14,7 +14,7 @@ namespace QuanLyCuaHangXeMay
 {
     public partial class frmThongTinTaiKhoan : Form
     {
-        private TTNVController TTNV = new TTNVController(); 
+        private TTNhanVienController TTNV = new TTNhanVienController(); 
         private ListViewItem lvi_nv = new ListViewItem();
         public frmThongTinTaiKhoan()
         {

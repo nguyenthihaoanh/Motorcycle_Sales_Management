@@ -7,7 +7,7 @@ using QuanLyCuaHangXeMay.Model;
 
 namespace QuanLyCuaHangXeMay.Controller
 {
-    class DangNhapController
+    public class DangNhapController
     {
         private dbQLMuaBanXeDataContext db = new dbQLMuaBanXeDataContext();
         private NhanVienController nv = new NhanVienController();
@@ -32,7 +32,7 @@ namespace QuanLyCuaHangXeMay.Controller
                         foreach(TaiKhoan taiKhoan in tk)
                             if (taiKhoan.matKhau == matKhau)
                             {
-                                chucVu = taiKhoan.chucVu.ToString();
+                                chucVu = nhanVien.chucVu.ToString();
                                 maNV = taiKhoan.maNhanVien;
                                 return true;
                             }
@@ -45,11 +45,11 @@ namespace QuanLyCuaHangXeMay.Controller
             }
             return false;
         }
-        public void thayDoiMk(string ma, string mk)
+        public void thayDoiMK(string ma, string mk)
         {
             nv.thayDoiMK(ma, mk);
         }
-        public bool kiemTraMk(string ma, string mk)
+        public bool kiemTraMK(string ma, string mk)
         {
             return nv.kiemTraMK(ma, mk);
         }

@@ -15,28 +15,34 @@ namespace QuanLyCuaHangXeMay
         private List<ListViewItem> list_NV = new List<ListViewItem>();
         private NhanVienController NVC = new NhanVienController();
         public static ListViewItem lvi_nv { get; private set; } = new ListViewItem();
+        public static bool flag_nv { get; private set; } = true;
         public frmQuanLyNhanVien()
         {
             InitializeComponent();
         }
+        private void enables_txt_cb(bool active)
+        {
+            tbCMND.Enabled = tbDiaChi.Enabled = tbSDT.Enabled = tbTenNV.Enabled = cbGioiTinh.Enabled = cbTinhTrang.Enabled = cbChucVu.Enabled = active;
+        }
         private void frmQuanLyNhanVien_Load(object sender, EventArgs e)
         {
+            capNhap();
             lvNV.Items.Clear();
-            rbNghiLam.Enabled = false;
-            btLuu.Enabled = false;
-            btSua.Enabled = false;
-            btThemTK.Enabled = false;
-            cbGioiTinh.Items.Add("Nam");
-            cbGioiTinh.Items.Add("Nữ");
-            cbChucVu.Items.Add("Quản Lý");
-            cbChucVu.Items.Add("Nhân Viên");
             list_NV = NVC.danhSachNV();
             foreach (ListViewItem nv in list_NV)
             {
                 lvNV.Items.Add(nv);
-                tbMaNV.Text = MaPhatSinhTuDong();
             }
-                
+            btLuu.Enabled = false;
+            btSua.Enabled = false;
+            btThemTK.Enabled = false;
+            enables_txt_cb(false);
+            cbGioiTinh.Items.Add("Nam");
+            cbGioiTinh.Items.Add("Nữ");
+            cbChucVu.Items.Add("Quản Lý");
+            cbChucVu.Items.Add("Nhân Viên");
+            cbTinhTrang.Items.Add("Còn Làm");
+            cbTinhTrang.Items.Add("Nghỉ Làm");
         }
         private void lvNV_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -49,49 +55,13 @@ namespace QuanLyCuaHangXeMay
                 cbGioiTinh.Text = lvi_nv.SubItems[3].Text;
                 tbCMND.Text = lvi_nv.SubItems[4].Text;
                 tbDiaChi.Text = lvi_nv.SubItems[5].Text;
-                cbChucVu.Text = lvi_nv.SubItems[6].Text;
-                if (lvNV.SelectedItems[0].SubItems[7].Text == "Còn Làm")
-                {
-                    rbConLam.Checked = true;
-                }
-                else
-                    rbNghiLam.Checked = true;
-
+                cbTinhTrang.Text = lvi_nv.SubItems[6].Text;
+                cbChucVu.Text=lvNV.SelectedItems[0].SubItems[7].Text;
                 tbTaiKhoan.Text = lvi_nv.SubItems[8].Text;
+                btThem.Enabled = false;
                 btSua.Enabled = true;
+                btThemTK.Enabled = true;
             }
-        }
-
-
-        private void btNhapLai_Click_1(object sender, EventArgs e)
-        {
-            tbCMND.Text = "";
-            tbDiaChi.Text = "";
-            tbMaNV.Text = MaPhatSinhTuDong();
-            tbSDT.Text = "";
-            tbTenNV.Text = "";
-            cbChucVu.Text = "";
-            cbGioiTinh.Text = "";
-        }
-
-        private void btThem_Click(object sender, EventArgs e)
-        {
-            if (!btThem.Text.Equals("Hủy Thêm"))
-            {
-                btLuu.Enabled = true;
-                btThem.Text = "Hủy Thêm";
-            }
-            else
-            {
-                btLuu.Enabled = false;
-                btThem.Text = "Thêm";
-                btSua.Enabled = false;
-            }
-        }
-
-        private void btThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         public string MaPhatSinhTuDong()
         {
@@ -111,18 +81,108 @@ namespace QuanLyCuaHangXeMay
                 chuoi = "NV" + stt.ToString();
             return chuoi;
         }
+        private void capNhap()
+        {
+            lvNV.Items.Clear();
+            list_NV = NVC.danhSachNV();
+            foreach (ListViewItem nv in list_NV)
+            {
+                lvNV.Items.Add(nv);
+            }
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            flag_nv = true;
+            if (!btThem.Text.Equals("Hủy Thêm"))
+            {
+                btThem.Text = "Hủy Thêm";
+                btLuu.Enabled = true;
+                enables_txt_cb(true);
+                btSua.Enabled = false;
+                btThemTK.Enabled = false;
+            }
+            else
+            {
+                btThem.Text = "Thêm";
+                btLuu.Enabled = false;
+                btSua.Enabled = false;
+                enables_txt_cb(false);
+                btThemTK.Enabled = false;
+            }
+        }
+
+        private void btSua_Click(object sender, EventArgs e)
+        {
+            flag_nv = false;
+            if (!btSua.Text.Equals("Hủy Sửa"))
+            {
+                btSua.Text = "Hủy Sửa";
+                btLuu.Enabled = true;
+                enables_txt_cb(true);
+                btThem.Enabled = false;
+                btThemTK.Enabled = false;
+            }
+            else
+            {
+                btSua.Text = "Sửa";
+                btLuu.Enabled = false;
+                btThem.Enabled = true;
+                enables_txt_cb(false);
+                btThemTK.Enabled = false;
+            }
+        }
+
+        private void btNhapLai_Click(object sender, EventArgs e)
+        {
+            tbCMND.Text = "";
+            tbDiaChi.Text = "";
+            tbMaNV.Text = MaPhatSinhTuDong();
+            tbSDT.Text = "";
+            tbTenNV.Text = "";
+            cbTinhTrang.Text = "";
+            cbGioiTinh.Text = "";
+            cbChucVu.Text = "";
+        }
+
         private void btLuu_Click(object sender, EventArgs e)
         {
             lvi_nv = new ListViewItem();
-            lvi_nv.Text = tbMaNV.Text = MaPhatSinhTuDong();
+            lvi_nv.Text = tbMaNV.Text;
             lvi_nv.SubItems.Add(tbTenNV.Text);
             lvi_nv.SubItems.Add(tbSDT.Text);
             lvi_nv.SubItems.Add(cbGioiTinh.Text);
             lvi_nv.SubItems.Add(tbCMND.Text);
             lvi_nv.SubItems.Add(tbDiaChi.Text);
+            lvi_nv.SubItems.Add(cbTinhTrang.Text);
             lvi_nv.SubItems.Add(cbChucVu.Text);
-            lvi_nv.SubItems.Add(rbConLam.Checked.ToString());
-            MessageBox.Show("Thêm Thành Công!");
+            if (flag_nv == true)
+            {
+                lvi_nv.Text = tbMaNV.Text = MaPhatSinhTuDong();
+                NVC.them(lvi_nv);
+                capNhap();
+                MessageBox.Show("Thêm Thành Công");
+            }
+            else 
+            {
+                NVC.suaTTNV(lvi_nv); 
+                capNhap(); 
+                MessageBox.Show("Sua Thành Công"); 
+            }
+        }
+
+        private void btThemTK_Click(object sender, EventArgs e)
+        {
+            ListViewItem lvi_tk = new ListViewItem();
+            lvi_tk.Text = tbMaNV.Text;
+            lvi_tk.SubItems.Add(tbTaiKhoan.Text);
+            NVC.themTK(lvi_tk, "123".ToString());
+            capNhap();
         }
     }
 }

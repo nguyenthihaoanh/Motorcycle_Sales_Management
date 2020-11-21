@@ -20,13 +20,13 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         }
         private void btLuu_Click(object sender, EventArgs e)
         {
-            if (dangNhapController.kiemTraMk(DangNhapController.maNV, tbMkCu.Text.ToString()))
+            if (dangNhapController.kiemTraMK(DangNhapController.maNV, tbMkCu.Text.ToString()))
             {
                 if (tbNhapLaiMk.Text == tbMkMoi.Text)
                 {
                     if (tbNhapLaiMk.Text.Length > 0)
                     {
-                        dangNhapController.thayDoiMk(DangNhapController.maNV, tbMkMoi.Text.ToString());
+                        dangNhapController.thayDoiMK(DangNhapController.maNV, tbMkMoi.Text.ToString());
                         MessageBox.Show("Thay Đổi Mật Khẩu Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                         tbMkCu.Clear();
