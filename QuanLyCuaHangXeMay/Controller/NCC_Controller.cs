@@ -35,5 +35,33 @@ namespace QuanLyCuaHangXeMay.Controller
                 dsNCC.Add(them_ncc_lv(n));
             return dsNCC;
         }
+        //them ncc vao database
+        public NhaCungCap themTTNCC(ListViewItem lvi_ncc)
+        {
+            NhaCungCap n = new NhaCungCap();
+            n.maNCC = lvi_ncc.Text.ToString();
+            n.tenNCC = lvi_ncc.SubItems[1].Text;
+            n.diaChiNCC = lvi_ncc.SubItems[2].Text;
+            n.email = lvi_ncc.SubItems[3].Text;
+            return n;
+        }
+        public void them(ListViewItem lvi_ncc)
+        {
+            db.NhaCungCaps.InsertOnSubmit(themTTNCC(lvi_ncc));
+            db.SubmitChanges();
+        }
+        public void suaTTNCC(ListViewItem lvi_ncc)
+        {
+            var ncc = from NCC in db.NhaCungCaps
+                      where NCC.maNCC==lvi_ncc.Text
+                      select NCC;
+            foreach(NhaCungCap n in ncc)
+            {
+                n.tenNCC = lvi_ncc.SubItems[1].Text;
+                n.diaChiNCC = lvi_ncc.SubItems[2].Text;
+                n.email = lvi_ncc.SubItems[3].Text;
+            }
+            db.SubmitChanges();
+        }
     }
 }

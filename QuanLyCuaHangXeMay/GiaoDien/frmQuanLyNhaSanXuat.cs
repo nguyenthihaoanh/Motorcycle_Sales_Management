@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangXeMay.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,56 +8,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyCuaHangXeMay.Controller;
 
-namespace QuanLyCuaHangXeMay
+namespace QuanLyCuaHangXeMay.GiaoDien
 {
-    public partial class frmQuanLyNhaCungCap : Form
+    public partial class frmQuanLyNhaSanXuat : Form
     {
-        private List<ListViewItem> list_NCC = new List<ListViewItem>();
-        private NCC_Controller ncc_Controller = new NCC_Controller();
+        private List<ListViewItem> list_NSX = new List<ListViewItem>();
+        private NSX_Controller nsx_Controller = new NSX_Controller();
         private TTNhanVienController TTNV = new TTNhanVienController();
-        public static ListViewItem lvi_ncc { get; private set; } = new ListViewItem();
+        public static ListViewItem lvi_nsx { get; private set; } = new ListViewItem();
         public static bool flag_ncc { get; private set; } = true;
-        public frmQuanLyNhaCungCap()
+        public frmQuanLyNhaSanXuat()
         {
             InitializeComponent();
         }
-
-        private void frmQuanLyNhaCungCap_Load(object sender, EventArgs e)
+        private void frmNhaSanXuat_Load(object sender, EventArgs e)
         {
             List<ListViewItem> ds = TTNV.NhanTT();
             lbTenNhanVien.Text = ds[0].SubItems[1].Text;
             capNhap();
-            lvNCC.Items.Clear();
-            list_NCC = ncc_Controller.danhSachNCC();
-            foreach(ListViewItem ncc in list_NCC)
+            lvNSX.Items.Clear();
+            list_NSX = nsx_Controller.danhSachNSX();
+            foreach (ListViewItem nsx in list_NSX)
             {
-                lvNCC.Items.Add(ncc);
+                lvNSX.Items.Add(nsx);
             }
             btLuu.Enabled = false;
             btSua.Enabled = false;
             enables_txt(false);
         }
 
-        private void lvNCC_SelectedIndexChanged(object sender, EventArgs e)
+        private void lvNSX_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lvi_ncc = lvNCC.SelectedItems[0];
-            tbMaNCC.Text = lvi_ncc.SubItems[0].Text;
-            tbTenNCC.Text = lvi_ncc.SubItems[1].Text;
-            tbDiaChi.Text = lvi_ncc.SubItems[2].Text;
-            tbEmail.Text = lvi_ncc.SubItems[3].Text;
+            lvi_nsx = lvNSX.SelectedItems[0];
+            tbMaNSX.Text = lvi_nsx.SubItems[0].Text;
+            tbTenNSX.Text = lvi_nsx.SubItems[1].Text;
+            tbDiaChi.Text = lvi_nsx.SubItems[2].Text;
+            tbEmail.Text = lvi_nsx.SubItems[3].Text;
+            dpNgaySX.Text = lvi_nsx.SubItems[4].Text;
             btThem.Enabled = false;
             btSua.Enabled = true;
         }
-
         private void enables_txt(bool active)
         {
-            tbTenNCC.Enabled = tbDiaChi.Enabled = tbEmail.Enabled = active;
+            tbTenNSX.Enabled = tbDiaChi.Enabled = tbEmail.Enabled = dpNgaySX.Enabled = active;
         }
         public string MaPhatSinhTuDong()
         {
-            int count = lvNCC.Items.Count;
+            int count = lvNSX.Items.Count;
             string chuoi = "";
             int stt = 0;
             if (count == 0)
@@ -65,21 +64,21 @@ namespace QuanLyCuaHangXeMay
             }
             else stt = count + 1;
             if (stt < 10)
-                chuoi = "NCC00" + stt.ToString();
+                chuoi = "NSX00" + stt.ToString();
             else if (stt < 100)
-                chuoi = "NCC0" + stt.ToString();
+                chuoi = "NSX0" + stt.ToString();
             else if (stt < 1000)
-                chuoi = "NCC" + stt.ToString();
+                chuoi = "NSX" + stt.ToString();
             return chuoi;
         }
 
         private void capNhap()
         {
-            lvNCC.Items.Clear();
-            list_NCC = ncc_Controller.danhSachNCC();
-            foreach (ListViewItem nv in list_NCC)
+            lvNSX.Items.Clear();
+            list_NSX = nsx_Controller.danhSachNSX();
+            foreach (ListViewItem nv in list_NSX)
             {
-                lvNCC.Items.Add(nv);
+                lvNSX.Items.Add(nv);
             }
         }
 
@@ -121,39 +120,39 @@ namespace QuanLyCuaHangXeMay
             }
         }
 
+        private void btLuu_Click(object sender, EventArgs e)
+        {
+            lvi_nsx = new ListViewItem();
+            lvi_nsx.Text = tbMaNSX.Text;
+            lvi_nsx.SubItems.Add(tbTenNSX.Text);
+            lvi_nsx.SubItems.Add(tbDiaChi.Text);
+            lvi_nsx.SubItems.Add(tbEmail.Text);
+            if (flag_ncc == true)
+            {
+                lvi_nsx.Text = tbMaNSX.Text = MaPhatSinhTuDong();
+                nsx_Controller.themTTNSX(lvi_nsx, dpNgaySX);
+                capNhap();
+                MessageBox.Show("Thêm Thành Công", "Thông Báo");
+            }
+            else
+            {
+                nsx_Controller.suaTTNSX(lvi_nsx, dpNgaySX);
+                capNhap();
+                MessageBox.Show("Sửa Thành Công", "Thông Báo");
+            }
+        }
+
         private void btNhapLai_Click(object sender, EventArgs e)
         {
             tbDiaChi.Text = "";
             tbEmail.Text = "";
-            tbTenNCC.Text = "";
-            tbMaNCC.Text = MaPhatSinhTuDong();
+            tbMaNSX.Text = MaPhatSinhTuDong();
+            tbTenNSX.Text = "";
         }
 
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btLuu_Click(object sender, EventArgs e)
-        {
-            lvi_ncc = new ListViewItem();
-            lvi_ncc.Text = tbMaNCC.Text;
-            lvi_ncc.SubItems.Add(tbTenNCC.Text);
-            lvi_ncc.SubItems.Add(tbDiaChi.Text);
-            lvi_ncc.SubItems.Add(tbEmail.Text);
-            if (flag_ncc == true)
-            {
-                lvi_ncc.Text = tbMaNCC.Text = MaPhatSinhTuDong();
-                ncc_Controller.them(lvi_ncc);
-                capNhap();
-                MessageBox.Show("Thêm Thành Công");
-            }
-            else
-            {
-                ncc_Controller.suaTTNCC(lvi_ncc);
-                capNhap();
-                MessageBox.Show("Sửa Thành Công");
-            }
         }
     }
 }

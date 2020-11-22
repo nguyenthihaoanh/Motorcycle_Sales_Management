@@ -21,6 +21,7 @@ namespace QuanLyCuaHangXeMay
         private frmQuanLyHoaDon frmQuanLyHoaDon = new frmQuanLyHoaDon();
         private frmQuanLyNhanVien frmQuanLyNhanVien = new frmQuanLyNhanVien();
         private frmQuanLyNhaCungCap frmQuanLyNhaCungCap = new frmQuanLyNhaCungCap();
+        private frmQuanLyNhaSanXuat frmNhaSanXuat = new frmQuanLyNhaSanXuat();
         private frmThongKe frmThongKe = new frmThongKe();
 
         public frmManHinhChinh()
@@ -100,7 +101,9 @@ namespace QuanLyCuaHangXeMay
         }
         private void mnsQuanLyNhaSanXuat_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmNhaSanXuat.ShowDialog();
+            this.Show();
         }
 
         private void frmManHinhChinh_FormClosed(object sender, FormClosedEventArgs e)

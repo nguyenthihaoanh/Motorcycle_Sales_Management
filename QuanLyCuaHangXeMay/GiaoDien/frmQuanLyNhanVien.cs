@@ -172,7 +172,7 @@ namespace QuanLyCuaHangXeMay
             {
                 NVC.suaTTNV(lvi_nv); 
                 capNhap(); 
-                MessageBox.Show("Sua Thành Công"); 
+                MessageBox.Show("Sửa Thành Công"); 
             }
         }
 

@@ -38,16 +38,20 @@
             this.lbMa = new System.Windows.Forms.Label();
             this.lbTenNhanVien = new System.Windows.Forms.Label();
             this.gbNCC = new System.Windows.Forms.GroupBox();
-            this.gbTimKiem = new System.Windows.Forms.GroupBox();
-            this.lbQLNCC = new System.Windows.Forms.Label();
-            this.lvNCC = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
             this.btNhapLai = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btLuu = new System.Windows.Forms.Button();
             this.btThoat = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.gbTimKiem = new System.Windows.Forms.GroupBox();
+            this.lbQLNCC = new System.Windows.Forms.Label();
+            this.lvNCC = new System.Windows.Forms.ListView();
+            this.MaNCC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TenNCC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.diaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbNCC.SuspendLayout();
             this.gbTimKiem.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +113,7 @@
             // 
             // tbMaNCC
             // 
+            this.tbMaNCC.Enabled = false;
             this.tbMaNCC.Location = new System.Drawing.Point(191, 48);
             this.tbMaNCC.Name = "tbMaNCC";
             this.tbMaNCC.Size = new System.Drawing.Size(153, 22);
@@ -127,11 +132,13 @@
             // 
             // lbTenNhanVien
             // 
-            this.lbTenNhanVien.BackColor = System.Drawing.SystemColors.Info;
+            this.lbTenNhanVien.BackColor = System.Drawing.SystemColors.Control;
+            this.lbTenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbTenNhanVien.Location = new System.Drawing.Point(898, 0);
             this.lbTenNhanVien.Name = "lbTenNhanVien";
             this.lbTenNhanVien.Size = new System.Drawing.Size(203, 23);
             this.lbTenNhanVien.TabIndex = 22;
+            this.lbTenNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gbNCC
             // 
@@ -154,54 +161,6 @@
             this.gbNCC.TabIndex = 47;
             this.gbNCC.TabStop = false;
             this.gbNCC.Text = "Thông Tin Nhà Cung Cấp";
-            // 
-            // gbTimKiem
-            // 
-            this.gbTimKiem.Controls.Add(this.rbTimTen);
-            this.gbTimKiem.Controls.Add(this.tbTimTen);
-            this.gbTimKiem.Location = new System.Drawing.Point(225, 58);
-            this.gbTimKiem.Name = "gbTimKiem";
-            this.gbTimKiem.Size = new System.Drawing.Size(278, 100);
-            this.gbTimKiem.TabIndex = 48;
-            this.gbTimKiem.TabStop = false;
-            this.gbTimKiem.Text = "Tìm Kiếm";
-            // 
-            // lbQLNCC
-            // 
-            this.lbQLNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQLNCC.Location = new System.Drawing.Point(-1, 0);
-            this.lbQLNCC.Name = "lbQLNCC";
-            this.lbQLNCC.Size = new System.Drawing.Size(731, 44);
-            this.lbQLNCC.TabIndex = 50;
-            this.lbQLNCC.Text = "Quản Lý Thông Tin Nhà Cung Cấp";
-            this.lbQLNCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lvNCC
-            // 
-            this.lvNCC.HideSelection = false;
-            this.lvNCC.Location = new System.Drawing.Point(23, 181);
-            this.lvNCC.Name = "lvNCC";
-            this.lvNCC.Size = new System.Drawing.Size(690, 306);
-            this.lvNCC.TabIndex = 82;
-            this.lvNCC.UseCompatibleStateImageBehavior = false;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(24, 180);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "Email:";
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Location = new System.Drawing.Point(191, 180);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(153, 22);
-            this.tbEmail.TabIndex = 49;
             // 
             // btNhapLai
             // 
@@ -258,6 +217,83 @@
             this.btThoat.UseVisualStyleBackColor = true;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(24, 180);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Email:";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(191, 180);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(153, 22);
+            this.tbEmail.TabIndex = 49;
+            // 
+            // gbTimKiem
+            // 
+            this.gbTimKiem.Controls.Add(this.rbTimTen);
+            this.gbTimKiem.Controls.Add(this.tbTimTen);
+            this.gbTimKiem.Location = new System.Drawing.Point(225, 58);
+            this.gbTimKiem.Name = "gbTimKiem";
+            this.gbTimKiem.Size = new System.Drawing.Size(278, 100);
+            this.gbTimKiem.TabIndex = 48;
+            this.gbTimKiem.TabStop = false;
+            this.gbTimKiem.Text = "Tìm Kiếm";
+            // 
+            // lbQLNCC
+            // 
+            this.lbQLNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQLNCC.Location = new System.Drawing.Point(-1, 0);
+            this.lbQLNCC.Name = "lbQLNCC";
+            this.lbQLNCC.Size = new System.Drawing.Size(731, 44);
+            this.lbQLNCC.TabIndex = 50;
+            this.lbQLNCC.Text = "Quản Lý Thông Tin Nhà Cung Cấp";
+            this.lbQLNCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lvNCC
+            // 
+            this.lvNCC.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MaNCC,
+            this.TenNCC,
+            this.diaChi,
+            this.email});
+            this.lvNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lvNCC.FullRowSelect = true;
+            this.lvNCC.HideSelection = false;
+            this.lvNCC.Location = new System.Drawing.Point(23, 181);
+            this.lvNCC.Name = "lvNCC";
+            this.lvNCC.Size = new System.Drawing.Size(690, 306);
+            this.lvNCC.TabIndex = 82;
+            this.lvNCC.UseCompatibleStateImageBehavior = false;
+            this.lvNCC.View = System.Windows.Forms.View.Details;
+            this.lvNCC.SelectedIndexChanged += new System.EventHandler(this.lvNCC_SelectedIndexChanged);
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.Text = "Mã NCC";
+            this.MaNCC.Width = 100;
+            // 
+            // TenNCC
+            // 
+            this.TenNCC.Text = "Tên NCC";
+            this.TenNCC.Width = 130;
+            // 
+            // diaChi
+            // 
+            this.diaChi.Text = "Địa Chỉ";
+            this.diaChi.Width = 200;
+            // 
+            // email
+            // 
+            this.email.Text = "Email";
+            this.email.Width = 200;
+            // 
             // frmQuanLyNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,6 +307,7 @@
             this.Name = "frmQuanLyNhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cửa Hàng Bán Xe Máy Anh Tuấn";
+            this.Load += new System.EventHandler(this.frmQuanLyNhaCungCap_Load);
             this.gbNCC.ResumeLayout(false);
             this.gbNCC.PerformLayout();
             this.gbTimKiem.ResumeLayout(false);
@@ -300,5 +337,9 @@
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btLuu;
         private System.Windows.Forms.Button btThoat;
+        private System.Windows.Forms.ColumnHeader MaNCC;
+        private System.Windows.Forms.ColumnHeader TenNCC;
+        private System.Windows.Forms.ColumnHeader diaChi;
+        private System.Windows.Forms.ColumnHeader email;
     }
 }

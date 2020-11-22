@@ -67,3 +67,4 @@ F:\Phat Trien Ung Dung\source_phu\PTUD\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHan
 F:\Phat Trien Ung Dung\source_phu\PTUD\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.exe
 F:\Phat Trien Ung Dung\source_phu\PTUD\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.pdb
 F:\Phat Trien Ung Dung\source_phu\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmDoiMK.resources
+F:\Phat Trien Ung Dung\source_phu\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmQuanLyNhaSanXuat.resources
