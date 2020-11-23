@@ -18,8 +18,6 @@ namespace QuanLyCuaHangXeMay.Controller
         public ListViewItem them_nv_lv(KhachHang khachHang)
         {
             lvit = new ListViewItem();
-            var kh = from KH in db.KhachHangs
-                     select KH;
             lvit.Text = khachHang.maKhachHang.ToString();
             lvit.SubItems.Add(khachHang.tenKhachHang);
             lvit.SubItems.Add(khachHang.soDienThoai);

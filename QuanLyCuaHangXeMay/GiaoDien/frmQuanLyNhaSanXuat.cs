@@ -40,14 +40,17 @@ namespace QuanLyCuaHangXeMay.GiaoDien
 
         private void lvNSX_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lvi_nsx = lvNSX.SelectedItems[0];
-            tbMaNSX.Text = lvi_nsx.SubItems[0].Text;
-            tbTenNSX.Text = lvi_nsx.SubItems[1].Text;
-            tbDiaChi.Text = lvi_nsx.SubItems[2].Text;
-            tbEmail.Text = lvi_nsx.SubItems[3].Text;
-            dpNgaySX.Text = lvi_nsx.SubItems[4].Text;
-            btThem.Enabled = false;
-            btSua.Enabled = true;
+            if (lvNSX.SelectedItems.Count > 0)
+            {
+                lvi_nsx = lvNSX.SelectedItems[0];
+                tbMaNSX.Text = lvi_nsx.SubItems[0].Text;
+                tbTenNSX.Text = lvi_nsx.SubItems[1].Text;
+                tbDiaChi.Text = lvi_nsx.SubItems[2].Text;
+                tbEmail.Text = lvi_nsx.SubItems[3].Text;
+                dpNgaySX.Text = lvi_nsx.SubItems[4].Text;
+                btThem.Enabled = false;
+                btSua.Enabled = true;
+            }
         }
         private void enables_txt(bool active)
         {

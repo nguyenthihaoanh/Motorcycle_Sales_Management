@@ -17,8 +17,6 @@ namespace QuanLyCuaHangXeMay.Controller
         public ListViewItem them_ncc_lv( NhaCungCap nhaCungCap)
         {
             lvit = new ListViewItem();
-            var ncc = from NCC in db.NhaCungCaps
-                      select NCC;
             lvit.Text = nhaCungCap.maNCC.ToString();
             lvit.SubItems.Add(nhaCungCap.tenNCC);
             lvit.SubItems.Add(nhaCungCap.diaChiNCC);

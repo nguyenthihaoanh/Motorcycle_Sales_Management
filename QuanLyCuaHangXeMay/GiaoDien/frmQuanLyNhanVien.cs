@@ -184,5 +184,6 @@ namespace QuanLyCuaHangXeMay
             NVC.themTK(lvi_tk, "123".ToString());
             capNhap();
         }
+
     }
 }

@@ -43,15 +43,18 @@ namespace QuanLyCuaHangXeMay
 
         private void lvKH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lvi_KH = lvKH.SelectedItems[0];
-            tbMaKH.Text = lvi_KH.SubItems[0].Text;
-            tbTenKH.Text = lvi_KH.SubItems[1].Text;
-            tbSDT.Text = lvi_KH.SubItems[2].Text;
-            tbCMND.Text = lvi_KH.SubItems[3].Text;
-            tbDiaChi.Text = lvi_KH.SubItems[4].Text;
-            btThem.Enabled = false;
-            btSua.Enabled = true;
-            btMuaXe.Enabled = true;
+            if (lvKH.SelectedItems.Count > 0)
+            {
+                lvi_KH = lvKH.SelectedItems[0];
+                tbMaKH.Text = lvi_KH.SubItems[0].Text;
+                tbTenKH.Text = lvi_KH.SubItems[1].Text;
+                tbSDT.Text = lvi_KH.SubItems[2].Text;
+                tbCMND.Text = lvi_KH.SubItems[3].Text;
+                tbDiaChi.Text = lvi_KH.SubItems[4].Text;
+                btThem.Enabled = false;
+                btSua.Enabled = true;
+                btMuaXe.Enabled = true;
+            }
         }
         private void enables_txt(bool active)
         {

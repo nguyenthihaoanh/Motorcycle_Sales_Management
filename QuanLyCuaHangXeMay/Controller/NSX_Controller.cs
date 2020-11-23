@@ -17,8 +17,6 @@ namespace QuanLyCuaHangXeMay.Controller
         public ListViewItem them_nsx_lv(NhaSanXuat nhaSanXuat)
         {
             lvit = new ListViewItem();
-            var nsx = from NSX in db.NhaSanXuats
-                      select NSX;
             lvit.Text = nhaSanXuat.maNSX.ToString();
             lvit.SubItems.Add(nhaSanXuat.tenNSX);
             lvit.SubItems.Add(nhaSanXuat.diaChiNSX);

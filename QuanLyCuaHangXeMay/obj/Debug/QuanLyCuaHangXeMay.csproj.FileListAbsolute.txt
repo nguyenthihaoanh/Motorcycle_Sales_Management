@@ -68,3 +68,47 @@ F:\Phat Trien Ung Dung\source_phu\PTUD\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHan
 F:\Phat Trien Ung Dung\source_phu\PTUD\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.pdb
 F:\Phat Trien Ung Dung\source_phu\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmDoiMK.resources
 F:\Phat Trien Ung Dung\source_phu\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmQuanLyNhaSanXuat.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.exe.config
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.exe
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.pdb
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csprojAssemblyReference.cache
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmChiTietHD.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmDangNhap.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmDoiMK.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmManHinhChinh.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmQuanLyNhaSanXuat.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyHoaDon.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyKhachHang.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhaCungCap.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhanVien.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyXe.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThemXe.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongKe.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongTinTaiKhoan.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.Properties.Resources.resources
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csproj.GenerateResource.cache
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csproj.CoreCompileInputs.cache
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.exe
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.pdb
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.exe.config
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.exe
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\bin\Debug\QuanLyCuaHangXeMay.pdb
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csprojAssemblyReference.cache
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmChiTietHD.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmDangNhap.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmDoiMK.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmManHinhChinh.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmQuanLyNhaSanXuat.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyHoaDon.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyKhachHang.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhaCungCap.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhanVien.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyXe.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThemXe.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongKe.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongTinTaiKhoan.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.Properties.Resources.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csproj.GenerateResource.cache
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csproj.CoreCompileInputs.cache
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.exe
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.pdb
