@@ -40,52 +40,54 @@
             // lbTaiKhoan
             // 
             this.lbTaiKhoan.AutoSize = true;
-            this.lbTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbTaiKhoan.Location = new System.Drawing.Point(96, 146);
+            this.lbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.lbTaiKhoan.Location = new System.Drawing.Point(48, 150);
             this.lbTaiKhoan.Name = "lbTaiKhoan";
-            this.lbTaiKhoan.Size = new System.Drawing.Size(112, 25);
+            this.lbTaiKhoan.Size = new System.Drawing.Size(114, 25);
             this.lbTaiKhoan.TabIndex = 0;
             this.lbTaiKhoan.Text = "Tài Khoản";
             // 
             // lbDangNhap
             // 
-            this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold);
+            this.lbDangNhap.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold);
             this.lbDangNhap.Location = new System.Drawing.Point(0, 38);
             this.lbDangNhap.Name = "lbDangNhap";
-            this.lbDangNhap.Size = new System.Drawing.Size(743, 54);
+            this.lbDangNhap.Size = new System.Drawing.Size(544, 54);
             this.lbDangNhap.TabIndex = 9;
             this.lbDangNhap.Text = "Đăng Nhập";
             this.lbDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbMatKhau
             // 
-            this.tbMatKhau.Location = new System.Drawing.Point(244, 192);
+            this.tbMatKhau.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.tbMatKhau.Location = new System.Drawing.Point(196, 196);
             this.tbMatKhau.Name = "tbMatKhau";
-            this.tbMatKhau.Size = new System.Drawing.Size(395, 22);
+            this.tbMatKhau.Size = new System.Drawing.Size(301, 32);
             this.tbMatKhau.TabIndex = 2;
             this.tbMatKhau.UseSystemPasswordChar = true;
             // 
             // tbTaiKhoan
             // 
-            this.tbTaiKhoan.Location = new System.Drawing.Point(244, 143);
+            this.tbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.tbTaiKhoan.Location = new System.Drawing.Point(196, 147);
             this.tbTaiKhoan.Name = "tbTaiKhoan";
-            this.tbTaiKhoan.Size = new System.Drawing.Size(395, 22);
+            this.tbTaiKhoan.Size = new System.Drawing.Size(301, 32);
             this.tbTaiKhoan.TabIndex = 1;
             // 
             // lbMatKhau
             // 
             this.lbMatKhau.AutoSize = true;
-            this.lbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbMatKhau.Location = new System.Drawing.Point(96, 188);
+            this.lbMatKhau.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.lbMatKhau.Location = new System.Drawing.Point(48, 199);
             this.lbMatKhau.Name = "lbMatKhau";
-            this.lbMatKhau.Size = new System.Drawing.Size(105, 25);
+            this.lbMatKhau.Size = new System.Drawing.Size(109, 25);
             this.lbMatKhau.TabIndex = 13;
             this.lbMatKhau.Text = "Mật Khẩu";
             // 
             // btDangNhap
             // 
-            this.btDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.btDangNhap.Location = new System.Drawing.Point(192, 258);
+            this.btDangNhap.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.btDangNhap.Location = new System.Drawing.Point(71, 263);
             this.btDangNhap.Name = "btDangNhap";
             this.btDangNhap.Size = new System.Drawing.Size(140, 52);
             this.btDangNhap.TabIndex = 3;
@@ -95,10 +97,10 @@
             // 
             // btNhapLai
             // 
-            this.btNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.btNhapLai.Location = new System.Drawing.Point(448, 258);
+            this.btNhapLai.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.btNhapLai.Location = new System.Drawing.Point(327, 263);
             this.btNhapLai.Name = "btNhapLai";
-            this.btNhapLai.Size = new System.Drawing.Size(129, 52);
+            this.btNhapLai.Size = new System.Drawing.Size(140, 52);
             this.btNhapLai.TabIndex = 4;
             this.btNhapLai.Text = "Nhập Lại";
             this.btNhapLai.UseVisualStyleBackColor = true;
@@ -108,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 362);
+            this.ClientSize = new System.Drawing.Size(548, 349);
             this.Controls.Add(this.btNhapLai);
             this.Controls.Add(this.btDangNhap);
             this.Controls.Add(this.lbMatKhau);

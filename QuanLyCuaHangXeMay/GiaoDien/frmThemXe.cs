@@ -24,9 +24,12 @@ namespace QuanLyCuaHangXeMay
 
         private void btThoat_Click_1(object sender, EventArgs e)
         {
-            DialogResult dlrThoat = MessageBox.Show("Bạn Có Chắc Muốn Thoát Khỏi Chương Trình?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-            if (dlrThoat == DialogResult.Yes)
-                Application.Exit();
+            this.Close();
+        }
+
+        private void frmThemXe_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

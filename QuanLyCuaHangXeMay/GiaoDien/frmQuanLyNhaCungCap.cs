@@ -41,13 +41,16 @@ namespace QuanLyCuaHangXeMay
 
         private void lvNCC_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lvi_ncc = lvNCC.SelectedItems[0];
-            tbMaNCC.Text = lvi_ncc.SubItems[0].Text;
-            tbTenNCC.Text = lvi_ncc.SubItems[1].Text;
-            tbDiaChi.Text = lvi_ncc.SubItems[2].Text;
-            tbEmail.Text = lvi_ncc.SubItems[3].Text;
-            btThem.Enabled = false;
-            btSua.Enabled = true;
+            if (lvNCC.SelectedItems.Count > 0)
+            {
+                lvi_ncc = lvNCC.SelectedItems[0];
+                tbMaNCC.Text = lvi_ncc.SubItems[0].Text;
+                tbTenNCC.Text = lvi_ncc.SubItems[1].Text;
+                tbDiaChi.Text = lvi_ncc.SubItems[2].Text;
+                tbEmail.Text = lvi_ncc.SubItems[3].Text;
+                btThem.Enabled = false;
+                btSua.Enabled = true;
+            }
         }
 
         private void enables_txt(bool active)

@@ -112,3 +112,4 @@ F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMa
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.csproj.CoreCompileInputs.cache
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.exe
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.pdb
+F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmThemMauXe.resources

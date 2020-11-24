@@ -51,8 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CTHDController.cs" />
     <Compile Include="Controller\DangNhapController.cs" />
     <Compile Include="Controller\KhachHangController.cs" />
+    <Compile Include="Controller\MauXeConntroller.cs" />
     <Compile Include="Controller\NCC_Controller.cs" />
     <Compile Include="Controller\NSX_Controller.cs" />
     <Compile Include="Controller\TTNhanVienController.cs" />
@@ -68,6 +70,12 @@
     </Compile>
     <Compile Include="GiaoDien\frmQuanLyNhaSanXuat.Designer.cs">
       <DependentUpon>frmQuanLyNhaSanXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDien\frmThemMauXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\frmThemMauXe.Designer.cs">
+      <DependentUpon>frmThemMauXe.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaoDien\frmThemXe.cs">
       <SubType>Form</SubType>
@@ -172,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\frmQuanLyXe.resx">
       <DependentUpon>frmQuanLyXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\frmThemMauXe.resx">
+      <DependentUpon>frmThemMauXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\frmThemXe.resx">
       <DependentUpon>frmThemXe.cs</DependentUpon>

@@ -43,6 +43,7 @@ namespace QuanLyCuaHangXeMay
 
         private void lvKH_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ListViewItem lviTemp = new ListViewItem();
             if (lvKH.SelectedItems.Count > 0)
             {
                 lvi_KH = lvKH.SelectedItems[0];
@@ -56,6 +57,9 @@ namespace QuanLyCuaHangXeMay
                 btMuaXe.Enabled = true;
             }
         }
+
+
+        
         private void enables_txt(bool active)
         {
             tbCMND.Enabled = tbDiaChi.Enabled = tbSDT.Enabled = tbTenKH.Enabled = active;
@@ -157,9 +161,9 @@ namespace QuanLyCuaHangXeMay
             lvi_KH = new ListViewItem();
             lvi_KH.Text = tbMaKH.Text;
             lvi_KH.SubItems.Add(tbTenKH.Text);
-            lvi_KH.SubItems.Add(tbDiaChi.Text);
             lvi_KH.SubItems.Add(tbSDT.Text);
             lvi_KH.SubItems.Add(tbCMND.Text);
+            lvi_KH.SubItems.Add(tbDiaChi.Text);
             if (flag_ncc == true)
             {
                 lvi_KH.Text = tbMaKH.Text = MaPhatSinhTuDong();

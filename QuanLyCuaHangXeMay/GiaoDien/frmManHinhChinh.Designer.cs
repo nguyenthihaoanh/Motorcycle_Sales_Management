@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManHinhChinh));
             this.mnsTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsXemThongTinTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsDoiMK = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsQuanLy = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsQuanLyXe = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,6 @@
             this.mnsThongKeDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
             this.ManHinhChinh = new System.Windows.Forms.MenuStrip();
             this.hinhAnh = new System.Windows.Forms.PictureBox();
-            this.mnsDoiMK = new System.Windows.Forms.ToolStripMenuItem();
             this.ManHinhChinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhAnh)).BeginInit();
             this.SuspendLayout();
@@ -54,23 +54,30 @@
             this.mnsXemThongTinTaiKhoan,
             this.mnsDoiMK,
             this.mnsDangXuat});
-            this.mnsTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnsTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.mnsTaiKhoan.Name = "mnsTaiKhoan";
             this.mnsTaiKhoan.ShowShortcutKeys = false;
-            this.mnsTaiKhoan.Size = new System.Drawing.Size(107, 44);
+            this.mnsTaiKhoan.Size = new System.Drawing.Size(118, 44);
             this.mnsTaiKhoan.Text = "Tài Khoản";
             // 
             // mnsXemThongTinTaiKhoan
             // 
             this.mnsXemThongTinTaiKhoan.Name = "mnsXemThongTinTaiKhoan";
-            this.mnsXemThongTinTaiKhoan.Size = new System.Drawing.Size(304, 26);
+            this.mnsXemThongTinTaiKhoan.Size = new System.Drawing.Size(333, 30);
             this.mnsXemThongTinTaiKhoan.Text = "Xem Thông Tin Tài Khoản";
             this.mnsXemThongTinTaiKhoan.Click += new System.EventHandler(this.mnsXemThongTinTaiKhoan_Click);
+            // 
+            // mnsDoiMK
+            // 
+            this.mnsDoiMK.Name = "mnsDoiMK";
+            this.mnsDoiMK.Size = new System.Drawing.Size(333, 30);
+            this.mnsDoiMK.Text = "Đổi Mật Khẩu";
+            this.mnsDoiMK.Click += new System.EventHandler(this.mnsDoiMK_Click);
             // 
             // mnsDangXuat
             // 
             this.mnsDangXuat.Name = "mnsDangXuat";
-            this.mnsDangXuat.Size = new System.Drawing.Size(304, 26);
+            this.mnsDangXuat.Size = new System.Drawing.Size(333, 30);
             this.mnsDangXuat.Text = "Đăng Xuất";
             this.mnsDangXuat.Click += new System.EventHandler(this.mnsDangXuat_Click);
             // 
@@ -83,50 +90,50 @@
             this.mnsQuanLyNhanVien,
             this.mnsQuanLyNhaCungCap,
             this.mnsQuanLyNhaSanXuat});
-            this.mnsQuanLy.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.mnsQuanLy.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.mnsQuanLy.Name = "mnsQuanLy";
-            this.mnsQuanLy.Size = new System.Drawing.Size(91, 44);
+            this.mnsQuanLy.Size = new System.Drawing.Size(102, 44);
             this.mnsQuanLy.Text = "Quản Lý";
             // 
             // mnsQuanLyXe
             // 
             this.mnsQuanLyXe.Name = "mnsQuanLyXe";
-            this.mnsQuanLyXe.Size = new System.Drawing.Size(280, 26);
+            this.mnsQuanLyXe.Size = new System.Drawing.Size(310, 30);
             this.mnsQuanLyXe.Text = "Quản Lý Xe";
             this.mnsQuanLyXe.Click += new System.EventHandler(this.mnsQuanLyXe_Click);
             // 
             // mnsQuanLyKhachHang
             // 
             this.mnsQuanLyKhachHang.Name = "mnsQuanLyKhachHang";
-            this.mnsQuanLyKhachHang.Size = new System.Drawing.Size(280, 26);
+            this.mnsQuanLyKhachHang.Size = new System.Drawing.Size(310, 30);
             this.mnsQuanLyKhachHang.Text = "Quản Lý Khách Hàng";
             this.mnsQuanLyKhachHang.Click += new System.EventHandler(this.mnsQuanLyKhachHang_Click);
             // 
             // mnsQuanLyHoaDon
             // 
             this.mnsQuanLyHoaDon.Name = "mnsQuanLyHoaDon";
-            this.mnsQuanLyHoaDon.Size = new System.Drawing.Size(280, 26);
+            this.mnsQuanLyHoaDon.Size = new System.Drawing.Size(310, 30);
             this.mnsQuanLyHoaDon.Text = "Quản Lý Hóa Đơn";
             this.mnsQuanLyHoaDon.Click += new System.EventHandler(this.mnsQuanLyHoaDon_Click);
             // 
             // mnsQuanLyNhanVien
             // 
             this.mnsQuanLyNhanVien.Name = "mnsQuanLyNhanVien";
-            this.mnsQuanLyNhanVien.Size = new System.Drawing.Size(280, 26);
+            this.mnsQuanLyNhanVien.Size = new System.Drawing.Size(310, 30);
             this.mnsQuanLyNhanVien.Text = "Quản Lý Nhân Viên";
             this.mnsQuanLyNhanVien.Click += new System.EventHandler(this.mnsQuanLyNhanVien_Click);
             // 
             // mnsQuanLyNhaCungCap
             // 
             this.mnsQuanLyNhaCungCap.Name = "mnsQuanLyNhaCungCap";
-            this.mnsQuanLyNhaCungCap.Size = new System.Drawing.Size(280, 26);
+            this.mnsQuanLyNhaCungCap.Size = new System.Drawing.Size(310, 30);
             this.mnsQuanLyNhaCungCap.Text = "Quản Lý Nhà Cung Cấp";
             this.mnsQuanLyNhaCungCap.Click += new System.EventHandler(this.mnsQuanLyNhaCungCap_Click);
             // 
             // mnsQuanLyNhaSanXuat
             // 
             this.mnsQuanLyNhaSanXuat.Name = "mnsQuanLyNhaSanXuat";
-            this.mnsQuanLyNhaSanXuat.Size = new System.Drawing.Size(280, 26);
+            this.mnsQuanLyNhaSanXuat.Size = new System.Drawing.Size(310, 30);
             this.mnsQuanLyNhaSanXuat.Text = "Quản Lý Nhà Sản Xuất";
             this.mnsQuanLyNhaSanXuat.Click += new System.EventHandler(this.mnsQuanLyNhaSanXuat_Click);
             // 
@@ -134,21 +141,22 @@
             // 
             this.mnsThongKe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnsThongKeDoanhThu});
+            this.mnsThongKe.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.mnsThongKe.Name = "mnsThongKe";
-            this.mnsThongKe.Size = new System.Drawing.Size(101, 44);
+            this.mnsThongKe.Size = new System.Drawing.Size(112, 44);
             this.mnsThongKe.Text = "Thống Kê";
             // 
             // mnsThongKeDoanhThu
             // 
             this.mnsThongKeDoanhThu.Name = "mnsThongKeDoanhThu";
-            this.mnsThongKeDoanhThu.Size = new System.Drawing.Size(262, 26);
+            this.mnsThongKeDoanhThu.Size = new System.Drawing.Size(288, 30);
             this.mnsThongKeDoanhThu.Text = "Thống Kê Doanh Thu";
             this.mnsThongKeDoanhThu.Click += new System.EventHandler(this.mnsThongKeDoanhThu_Click);
             // 
             // ManHinhChinh
             // 
             this.ManHinhChinh.AutoSize = false;
-            this.ManHinhChinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManHinhChinh.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.ManHinhChinh.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.ManHinhChinh.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnsTaiKhoan,
@@ -170,13 +178,6 @@
             this.hinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.hinhAnh.TabIndex = 2;
             this.hinhAnh.TabStop = false;
-            // 
-            // mnsDoiMK
-            // 
-            this.mnsDoiMK.Name = "mnsDoiMK";
-            this.mnsDoiMK.Size = new System.Drawing.Size(304, 26);
-            this.mnsDoiMK.Text = "Đổi Mật Khẩu";
-            this.mnsDoiMK.Click += new System.EventHandler(this.mnsDoiMK_Click);
             // 
             // frmManHinhChinh
             // 

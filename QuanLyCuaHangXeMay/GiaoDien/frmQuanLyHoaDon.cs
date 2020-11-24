@@ -23,5 +23,6 @@ namespace QuanLyCuaHangXeMay
             if (dlrThoat == DialogResult.Yes)
                 Application.Exit();
         }
+
     }
 }

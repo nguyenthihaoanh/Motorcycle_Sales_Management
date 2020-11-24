@@ -29,12 +29,172 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lbMa = new System.Windows.Forms.Label();
+            this.tbTenMau = new System.Windows.Forms.TextBox();
+            this.tbMaMau = new System.Windows.Forms.TextBox();
+            this.lbTen = new System.Windows.Forms.Label();
+            this.lbQLNCC = new System.Windows.Forms.Label();
+            this.lvMauXe = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btTroVe = new System.Windows.Forms.Button();
+            this.btThem = new System.Windows.Forms.Button();
+            this.btNhapLai = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lbMa
+            // 
+            this.lbMa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMa.AutoSize = true;
+            this.lbMa.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.lbMa.Location = new System.Drawing.Point(13, 150);
+            this.lbMa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbMa.Name = "lbMa";
+            this.lbMa.Size = new System.Drawing.Size(93, 25);
+            this.lbMa.TabIndex = 14;
+            this.lbMa.Text = "Mã Màu:";
+            // 
+            // tbTenMau
+            // 
+            this.tbTenMau.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.tbTenMau.Location = new System.Drawing.Point(148, 211);
+            this.tbTenMau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbTenMau.Name = "tbTenMau";
+            this.tbTenMau.Size = new System.Drawing.Size(283, 32);
+            this.tbTenMau.TabIndex = 17;
+            // 
+            // tbMaMau
+            // 
+            this.tbMaMau.Enabled = false;
+            this.tbMaMau.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.tbMaMau.Location = new System.Drawing.Point(148, 147);
+            this.tbMaMau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbMaMau.Name = "tbMaMau";
+            this.tbMaMau.Size = new System.Drawing.Size(283, 32);
+            this.tbMaMau.TabIndex = 15;
+            // 
+            // lbTen
+            // 
+            this.lbTen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTen.AutoSize = true;
+            this.lbTen.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.lbTen.Location = new System.Drawing.Point(13, 214);
+            this.lbTen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(104, 25);
+            this.lbTen.TabIndex = 16;
+            this.lbTen.Text = "Tên Màu: ";
+            // 
+            // lbQLNCC
+            // 
+            this.lbQLNCC.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold);
+            this.lbQLNCC.Location = new System.Drawing.Point(-3, 14);
+            this.lbQLNCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbQLNCC.Name = "lbQLNCC";
+            this.lbQLNCC.Size = new System.Drawing.Size(746, 69);
+            this.lbQLNCC.TabIndex = 87;
+            this.lbQLNCC.Text = "Thêm Màu Xe";
+            this.lbQLNCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lvMauXe
+            // 
+            this.lvMauXe.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.lvMauXe.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.lvMauXe.HideSelection = false;
+            this.lvMauXe.Location = new System.Drawing.Point(492, 122);
+            this.lvMauXe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lvMauXe.Name = "lvMauXe";
+            this.lvMauXe.Size = new System.Drawing.Size(229, 149);
+            this.lvMauXe.TabIndex = 90;
+            this.lvMauXe.UseCompatibleStateImageBehavior = false;
+            this.lvMauXe.View = System.Windows.Forms.View.Details;
+            this.lvMauXe.SelectedIndexChanged += new System.EventHandler(this.lvMauXe_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã Màu";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Màu";
+            this.columnHeader2.Width = 100;
+            // 
+            // btTroVe
+            // 
+            this.btTroVe.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.btTroVe.Location = new System.Drawing.Point(521, 315);
+            this.btTroVe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btTroVe.Name = "btTroVe";
+            this.btTroVe.Size = new System.Drawing.Size(119, 45);
+            this.btTroVe.TabIndex = 89;
+            this.btTroVe.Text = "Trở Về";
+            this.btTroVe.UseVisualStyleBackColor = true;
+            this.btTroVe.Click += new System.EventHandler(this.btTroVe_Click);
+            // 
+            // btThem
+            // 
+            this.btThem.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.btThem.Location = new System.Drawing.Point(63, 315);
+            this.btThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(119, 45);
+            this.btThem.TabIndex = 88;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            // 
+            // btNhapLai
+            // 
+            this.btNhapLai.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.btNhapLai.Location = new System.Drawing.Point(292, 315);
+            this.btNhapLai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btNhapLai.Name = "btNhapLai";
+            this.btNhapLai.Size = new System.Drawing.Size(119, 45);
+            this.btNhapLai.TabIndex = 91;
+            this.btNhapLai.Text = "Nhập Lại";
+            this.btNhapLai.UseVisualStyleBackColor = true;
+            this.btNhapLai.Click += new System.EventHandler(this.btNhapLai_Click);
+            // 
+            // frmThemMauXe
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(741, 386);
+            this.Controls.Add(this.btNhapLai);
+            this.Controls.Add(this.lvMauXe);
+            this.Controls.Add(this.btThem);
+            this.Controls.Add(this.btTroVe);
+            this.Controls.Add(this.lbQLNCC);
+            this.Controls.Add(this.lbMa);
+            this.Controls.Add(this.tbTenMau);
+            this.Controls.Add(this.tbMaMau);
+            this.Controls.Add(this.lbTen);
+            this.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "frmThemMauXe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmThemMauXe";
+            this.Load += new System.EventHandler(this.frmThemMauXe_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lbMa;
+        private System.Windows.Forms.TextBox tbTenMau;
+        private System.Windows.Forms.TextBox tbMaMau;
+        private System.Windows.Forms.Label lbTen;
+        private System.Windows.Forms.Label lbQLNCC;
+        private System.Windows.Forms.ListView lvMauXe;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button btTroVe;
+        private System.Windows.Forms.Button btThem;
+        private System.Windows.Forms.Button btNhapLai;
     }
 }

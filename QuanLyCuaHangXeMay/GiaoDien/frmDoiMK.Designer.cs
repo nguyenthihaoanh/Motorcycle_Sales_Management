@@ -43,36 +43,36 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // lbMatKhau
             // 
             this.lbMatKhau.AutoSize = true;
-            this.lbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbMatKhau.Location = new System.Drawing.Point(30, 214);
+            this.lbMatKhau.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.lbMatKhau.Location = new System.Drawing.Point(12, 214);
             this.lbMatKhau.Name = "lbMatKhau";
-            this.lbMatKhau.Size = new System.Drawing.Size(186, 25);
+            this.lbMatKhau.Size = new System.Drawing.Size(192, 25);
             this.lbMatKhau.TabIndex = 40;
             this.lbMatKhau.Text = "Nhập Lại Mật Khẩu:";
             // 
             // lbTaiKhoan
             // 
             this.lbTaiKhoan.AutoSize = true;
-            this.lbTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbTaiKhoan.Location = new System.Drawing.Point(30, 163);
+            this.lbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.lbTaiKhoan.Location = new System.Drawing.Point(12, 163);
             this.lbTaiKhoan.Name = "lbTaiKhoan";
-            this.lbTaiKhoan.Size = new System.Drawing.Size(140, 25);
+            this.lbTaiKhoan.Size = new System.Drawing.Size(148, 25);
             this.lbTaiKhoan.TabIndex = 39;
             this.lbTaiKhoan.Text = "Mật Khẩu Mới:";
             // 
             // lbSDT
             // 
             this.lbSDT.AutoSize = true;
-            this.lbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbSDT.Location = new System.Drawing.Point(30, 112);
+            this.lbSDT.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.lbSDT.Location = new System.Drawing.Point(12, 112);
             this.lbSDT.Name = "lbSDT";
-            this.lbSDT.Size = new System.Drawing.Size(134, 25);
+            this.lbSDT.Size = new System.Drawing.Size(137, 25);
             this.lbSDT.TabIndex = 38;
             this.lbSDT.Text = "Mật Khẩu Cũ:";
             // 
             // lbThongTin
             // 
-            this.lbThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThongTin.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbThongTin.Location = new System.Drawing.Point(0, 9);
             this.lbThongTin.Name = "lbThongTin";
             this.lbThongTin.Size = new System.Drawing.Size(484, 71);
@@ -82,28 +82,31 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // tbMkMoi
             // 
-            this.tbMkMoi.Location = new System.Drawing.Point(231, 167);
+            this.tbMkMoi.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.tbMkMoi.Location = new System.Drawing.Point(232, 160);
             this.tbMkMoi.Name = "tbMkMoi";
-            this.tbMkMoi.Size = new System.Drawing.Size(226, 22);
+            this.tbMkMoi.Size = new System.Drawing.Size(226, 32);
             this.tbMkMoi.TabIndex = 52;
             // 
             // tbNhapLaiMk
             // 
-            this.tbNhapLaiMk.Location = new System.Drawing.Point(231, 218);
+            this.tbNhapLaiMk.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.tbNhapLaiMk.Location = new System.Drawing.Point(232, 211);
             this.tbNhapLaiMk.Name = "tbNhapLaiMk";
-            this.tbNhapLaiMk.Size = new System.Drawing.Size(226, 22);
+            this.tbNhapLaiMk.Size = new System.Drawing.Size(226, 32);
             this.tbNhapLaiMk.TabIndex = 53;
             // 
             // tbMkCu
             // 
-            this.tbMkCu.Location = new System.Drawing.Point(231, 116);
+            this.tbMkCu.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.tbMkCu.Location = new System.Drawing.Point(232, 109);
             this.tbMkCu.Name = "tbMkCu";
-            this.tbMkCu.Size = new System.Drawing.Size(226, 22);
+            this.tbMkCu.Size = new System.Drawing.Size(226, 32);
             this.tbMkCu.TabIndex = 51;
             // 
             // btLuu
             // 
-            this.btLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btLuu.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.btLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btLuu.Location = new System.Drawing.Point(97, 303);
             this.btLuu.Name = "btLuu";
@@ -115,7 +118,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // btTroVe
             // 
-            this.btTroVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btTroVe.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.btTroVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btTroVe.Location = new System.Drawing.Point(292, 303);
             this.btTroVe.Name = "btTroVe";

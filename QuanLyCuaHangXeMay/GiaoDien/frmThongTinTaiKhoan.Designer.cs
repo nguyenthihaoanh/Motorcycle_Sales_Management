@@ -91,7 +91,7 @@
             // lbTenNV
             // 
             this.lbTenNV.AutoSize = true;
-            this.lbTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbTenNV.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.lbTenNV.Location = new System.Drawing.Point(12, 170);
             this.lbTenNV.Name = "lbTenNV";
             this.lbTenNV.Size = new System.Drawing.Size(150, 25);
@@ -101,47 +101,47 @@
             // lbSDT
             // 
             this.lbSDT.AutoSize = true;
-            this.lbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbSDT.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.lbSDT.Location = new System.Drawing.Point(12, 425);
             this.lbSDT.Name = "lbSDT";
-            this.lbSDT.Size = new System.Drawing.Size(148, 25);
+            this.lbSDT.Size = new System.Drawing.Size(152, 25);
             this.lbSDT.TabIndex = 20;
             this.lbSDT.Text = "Số Điện Thoại: ";
             // 
             // lbMaNV
             // 
             this.lbMaNV.AutoSize = true;
-            this.lbMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbMaNV.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.lbMaNV.Location = new System.Drawing.Point(12, 119);
             this.lbMaNV.Name = "lbMaNV";
-            this.lbMaNV.Size = new System.Drawing.Size(148, 25);
+            this.lbMaNV.Size = new System.Drawing.Size(151, 25);
             this.lbMaNV.TabIndex = 19;
             this.lbMaNV.Text = "Mã Nhân Viên: ";
             // 
             // lbTaiKhoan
             // 
             this.lbTaiKhoan.AutoSize = true;
-            this.lbTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.lbTaiKhoan.Location = new System.Drawing.Point(12, 476);
             this.lbTaiKhoan.Name = "lbTaiKhoan";
-            this.lbTaiKhoan.Size = new System.Drawing.Size(109, 25);
+            this.lbTaiKhoan.Size = new System.Drawing.Size(110, 25);
             this.lbTaiKhoan.TabIndex = 36;
             this.lbTaiKhoan.Text = "Tài Khoản:";
             // 
             // lbThongTin
             // 
-            this.lbThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThongTin.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold);
             this.lbThongTin.Location = new System.Drawing.Point(1, 20);
             this.lbThongTin.Name = "lbThongTin";
-            this.lbThongTin.Size = new System.Drawing.Size(515, 71);
+            this.lbThongTin.Size = new System.Drawing.Size(521, 71);
             this.lbThongTin.TabIndex = 49;
             this.lbThongTin.Text = "Thông Tin Tài Khoản";
             this.lbThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btThoat
             // 
-            this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btThoat.Location = new System.Drawing.Point(199, 530);
+            this.btThoat.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.btThoat.Location = new System.Drawing.Point(202, 530);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(119, 45);
             this.btThoat.TabIndex = 50;
@@ -154,10 +154,10 @@
             this.tbMaNV.BackColor = System.Drawing.SystemColors.Control;
             this.tbMaNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbMaNV.Enabled = false;
-            this.tbMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbMaNV.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.tbMaNV.Location = new System.Drawing.Point(189, 119);
             this.tbMaNV.Name = "tbMaNV";
-            this.tbMaNV.Size = new System.Drawing.Size(320, 23);
+            this.tbMaNV.Size = new System.Drawing.Size(320, 25);
             this.tbMaNV.TabIndex = 51;
             // 
             // tbTenNV
@@ -165,11 +165,11 @@
             this.tbTenNV.BackColor = System.Drawing.SystemColors.Control;
             this.tbTenNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbTenNV.Enabled = false;
-            this.tbTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbTenNV.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.tbTenNV.ForeColor = System.Drawing.Color.Black;
             this.tbTenNV.Location = new System.Drawing.Point(189, 170);
             this.tbTenNV.Name = "tbTenNV";
-            this.tbTenNV.Size = new System.Drawing.Size(320, 23);
+            this.tbTenNV.Size = new System.Drawing.Size(320, 25);
             this.tbTenNV.TabIndex = 52;
             // 
             // tbGioiTinh
@@ -177,11 +177,11 @@
             this.tbGioiTinh.BackColor = System.Drawing.SystemColors.Control;
             this.tbGioiTinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbGioiTinh.Enabled = false;
-            this.tbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbGioiTinh.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.tbGioiTinh.ForeColor = System.Drawing.Color.Black;
             this.tbGioiTinh.Location = new System.Drawing.Point(189, 221);
             this.tbGioiTinh.Name = "tbGioiTinh";
-            this.tbGioiTinh.Size = new System.Drawing.Size(320, 23);
+            this.tbGioiTinh.Size = new System.Drawing.Size(320, 25);
             this.tbGioiTinh.TabIndex = 53;
             // 
             // tbChucVu
@@ -189,11 +189,11 @@
             this.tbChucVu.BackColor = System.Drawing.SystemColors.Control;
             this.tbChucVu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbChucVu.Enabled = false;
-            this.tbChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbChucVu.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.tbChucVu.ForeColor = System.Drawing.Color.Black;
             this.tbChucVu.Location = new System.Drawing.Point(189, 374);
             this.tbChucVu.Name = "tbChucVu";
-            this.tbChucVu.Size = new System.Drawing.Size(320, 23);
+            this.tbChucVu.Size = new System.Drawing.Size(320, 25);
             this.tbChucVu.TabIndex = 56;
             // 
             // tbDiaChi
@@ -201,11 +201,11 @@
             this.tbDiaChi.BackColor = System.Drawing.SystemColors.Control;
             this.tbDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDiaChi.Enabled = false;
-            this.tbDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbDiaChi.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.tbDiaChi.ForeColor = System.Drawing.Color.Black;
             this.tbDiaChi.Location = new System.Drawing.Point(100, 323);
             this.tbDiaChi.Name = "tbDiaChi";
-            this.tbDiaChi.Size = new System.Drawing.Size(409, 23);
+            this.tbDiaChi.Size = new System.Drawing.Size(409, 25);
             this.tbDiaChi.TabIndex = 55;
             this.tbDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -214,11 +214,11 @@
             this.tbCMND.BackColor = System.Drawing.SystemColors.Control;
             this.tbCMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbCMND.Enabled = false;
-            this.tbCMND.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbCMND.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.tbCMND.ForeColor = System.Drawing.Color.Black;
             this.tbCMND.Location = new System.Drawing.Point(189, 272);
             this.tbCMND.Name = "tbCMND";
-            this.tbCMND.Size = new System.Drawing.Size(320, 23);
+            this.tbCMND.Size = new System.Drawing.Size(320, 25);
             this.tbCMND.TabIndex = 54;
             // 
             // tbTaiKhoan
@@ -226,11 +226,11 @@
             this.tbTaiKhoan.BackColor = System.Drawing.SystemColors.Control;
             this.tbTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbTaiKhoan.Enabled = false;
-            this.tbTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.tbTaiKhoan.ForeColor = System.Drawing.Color.Black;
             this.tbTaiKhoan.Location = new System.Drawing.Point(189, 476);
             this.tbTaiKhoan.Name = "tbTaiKhoan";
-            this.tbTaiKhoan.Size = new System.Drawing.Size(320, 23);
+            this.tbTaiKhoan.Size = new System.Drawing.Size(320, 25);
             this.tbTaiKhoan.TabIndex = 58;
             // 
             // tbSDT
@@ -238,18 +238,18 @@
             this.tbSDT.BackColor = System.Drawing.SystemColors.Control;
             this.tbSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbSDT.Enabled = false;
-            this.tbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbSDT.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.tbSDT.ForeColor = System.Drawing.Color.Black;
             this.tbSDT.Location = new System.Drawing.Point(189, 425);
             this.tbSDT.Name = "tbSDT";
-            this.tbSDT.Size = new System.Drawing.Size(320, 23);
+            this.tbSDT.Size = new System.Drawing.Size(320, 25);
             this.tbSDT.TabIndex = 57;
             // 
             // frmThongTinTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 587);
+            this.ClientSize = new System.Drawing.Size(522, 587);
             this.Controls.Add(this.tbTaiKhoan);
             this.Controls.Add(this.tbSDT);
             this.Controls.Add(this.tbChucVu);

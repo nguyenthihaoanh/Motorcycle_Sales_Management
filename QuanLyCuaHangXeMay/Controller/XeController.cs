@@ -12,24 +12,24 @@ namespace QuanLyCuaHangXeMay.Controller
     {
         private dbQLMuaBanXeDataContext db = new dbQLMuaBanXeDataContext();
         private List<ListViewItem> dsXe = new List<ListViewItem>();
-        private List<string> dsNCC = new List<string>();
-        private List<string> dsNSX = new List<string>();
-        private List<string> dsMau = new List<string>();
+        
         /*private ListViewItem lvit = new ListViewItem();*/
 
         // Thêm thông tin 1 xe vào listviewitem
         public List<string> ds_ncc()
         {
+            List<string> dsNCC = new List<string>();
             var ds = from ncc in db.NhaCungCaps
-                     select ncc;
-            foreach (var ncc in ds)
-            {
-                dsNCC.Add(ncc.tenNCC);
-            }
-            return dsNCC;
+                         select ncc;
+                foreach (var ncc in ds)
+                {
+                    dsNCC.Add(ncc.tenNCC);
+                }
+                return dsNCC;
         }
         public List<string> ds_nsx()
         {
+            List<string> dsNSX = new List<string>();
             var ds = from nsx in db.NhaSanXuats
                      select nsx;
             foreach (var nsx in ds)
@@ -40,6 +40,7 @@ namespace QuanLyCuaHangXeMay.Controller
         }
         public List<string> ds_mau()
         {
+            List<string> dsMau = new List<string>();
             var ds = from mau in db.MauXes
                      select mau;
             foreach (var mau in ds)
@@ -85,34 +86,39 @@ namespace QuanLyCuaHangXeMay.Controller
             return dsXe;
         }
         //them xe trong database
-        public void themTTXe(ListViewItem lvi_Xe, DateTimePicker ngayNhap)
+        public void themTTXe(ListViewItem lvi_Xe, string sl, string dungTich, string gN, DateTimePicker ngayNhap, string mau, string ncc, string nsx)
         {
             Xe k = new Xe();
             k.maXe = lvi_Xe.Text.ToString();
             k.nhanHieu = lvi_Xe.SubItems[1].Text;
-            k.maMau = lvi_Xe.SubItems[2].Text;
-            k.dungTich = Convert.ToInt32(lvi_Xe.SubItems[3].Text.ToString());
-            k.maNCC = lvi_Xe.SubItems[4].Text; /*db.NhaCungCaps.FirstOrDefault(n => n.tenNCC == lvi_Xe.SubItems[4].Text).maNCC;*/
-            k.maNSX = lvi_Xe.SubItems[5].Text;/*db.NhaSanXuats.FirstOrDefault(n => n.tenNSX == lvi_Xe.SubItems[5].Text).maNSX;*/
-            k.soLuong = Convert.ToInt32(lvi_Xe.SubItems[6].Text.ToString());
-            k.giaNhap = Convert.ToDecimal(lvi_Xe.SubItems[7].Text);
-            k.ngayNhap = Convert.ToDateTime(ngayNhap.Value.ToShortDateString());
+            k.maMau = db.MauXes.First(x => x.tenMau == mau).maMau;
+            k.dungTich = Convert.ToInt32(dungTich);
+            k.maNCC = db.NhaCungCaps.First(x => x.tenNCC == ncc).maNCC;
+            k.maNSX = db.NhaSanXuats.First(x => x.tenNSX == nsx).maNSX;
+            k.soLuong = Convert.ToInt32(sl);
+            k.giaNhap = Convert.ToDecimal(gN);
+            k.ngayNhap = Convert.ToDateTime(ngayNhap.Value.ToString());
             db.Xes.InsertOnSubmit(k);
             db.SubmitChanges();
         }
-        public void suaTTNV(ListViewItem lvi_nv)
+        public void suaTTXe(ListViewItem lvi_Xe, string sl, string dungTich, string gN, DateTimePicker ngayNhap, string mau, string ncc, string nsx)
         {
-            /*var kh = from KH in db.KhachHangs
-                     where KH.maKhachHang == lvi_nv.Text
-                     select KH;
-            foreach (KhachHang k in kh)
+            var xe = from XE in db.Xes
+                     where XE.maXe == lvi_Xe.Text
+                     select XE;
+            foreach (Xe k in xe)
             {
-                k.tenKhachHang = lvi_nv.SubItems[1].Text;
-                k.soDienThoai = lvi_nv.SubItems[2].Text;
-                k.CMND = lvi_nv.SubItems[3].Text;
-                k.diaChiKhachHang = lvi_nv.SubItems[4].Text;
+                k.maXe = lvi_Xe.Text.ToString();
+                k.nhanHieu = lvi_Xe.SubItems[1].Text;
+                k.maMau = db.MauXes.First(x => x.tenMau == mau).maMau;
+                k.dungTich = Convert.ToInt32(dungTich);
+                k.maNCC = db.NhaCungCaps.First(x => x.tenNCC == ncc).maNCC;
+                k.maNSX = db.NhaSanXuats.First(x => x.tenNSX == nsx).maNSX;
+                k.soLuong = Convert.ToInt32(sl);
+                k.giaNhap = Convert.ToDecimal(gN);
+                k.ngayNhap = Convert.ToDateTime(ngayNhap.Value.ToString());
             }
-            db.SubmitChanges();*/
+            db.SubmitChanges();
         }
     }
 }
