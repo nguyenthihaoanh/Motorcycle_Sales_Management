@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangXeMay.Controller;
@@ -181,6 +182,30 @@ namespace QuanLyCuaHangXeMay
                     n.chucVu = false;
             }
             db.SubmitChanges();
+        }
+        public List<ListViewItem> TimKiem(string ten)
+        {
+            dsNV.Clear();
+            var nv = from nhanVien in db.NhanViens
+                     select nhanVien;
+            foreach (NhanVien nhanVien in nv)
+            {
+                string t = nhanVien.tenNhanVien.ToLower();
+                if (t.Contains(ten.ToLower()))
+                {
+                    lvit = new ListViewItem();
+                    lvit.Text = nhanVien.maNhanVien;
+                    lvit.SubItems.Add(nhanVien.tenNhanVien);
+                    lvit.SubItems.Add(nhanVien.soDienThoai);
+                    lvit.SubItems.Add(nhanVien.gioiTinh ? "Nữ" : "Nam");
+                    lvit.SubItems.Add(nhanVien.CMND);
+                    lvit.SubItems.Add(nhanVien.diaChiNV);
+                    lvit.SubItems.Add(nhanVien.tinhTrang ? "Còn Làm" : "Nghỉ Làm");
+                    lvit.SubItems.Add(nhanVien.chucVu ? "Quản Lý" : "Nhân Viên");
+                    dsNV.Add(lvit);
+                }
+            }
+                return dsNV;
         }
     }
 }

@@ -28,43 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbTenNhanVien = new System.Windows.Forms.Label();
-            this.tbTenNhanVien = new System.Windows.Forms.TextBox();
+            this.tbTim = new System.Windows.Forms.TextBox();
             this.gbTimKiemHD = new System.Windows.Forms.GroupBox();
             this.btThoat = new System.Windows.Forms.Button();
             this.lbQLHD = new System.Windows.Forms.Label();
+            this.lvHD = new System.Windows.Forms.ListView();
             this.maHD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tenNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tenKH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ngayLap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.thanhTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.sdt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ngay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.xe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mauXe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbTimKiemHD.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbTenNhanVien
+            // tbTim
             // 
-            this.lbTenNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbTenNhanVien.BackColor = System.Drawing.SystemColors.Control;
-            this.lbTenNhanVien.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.lbTenNhanVien.Location = new System.Drawing.Point(592, 0);
-            this.lbTenNhanVien.Name = "lbTenNhanVien";
-            this.lbTenNhanVien.Size = new System.Drawing.Size(228, 23);
-            this.lbTenNhanVien.TabIndex = 9;
-            // 
-            // tbTenNhanVien
-            // 
-            this.tbTenNhanVien.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.tbTenNhanVien.Location = new System.Drawing.Point(34, 49);
-            this.tbTenNhanVien.Name = "tbTenNhanVien";
-            this.tbTenNhanVien.Size = new System.Drawing.Size(263, 32);
-            this.tbTenNhanVien.TabIndex = 4;
+            this.tbTim.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.tbTim.Location = new System.Drawing.Point(34, 49);
+            this.tbTim.Name = "tbTim";
+            this.tbTim.Size = new System.Drawing.Size(263, 32);
+            this.tbTim.TabIndex = 4;
+            this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
             // 
             // gbTimKiemHD
             // 
-            this.gbTimKiemHD.Controls.Add(this.tbTenNhanVien);
+            this.gbTimKiemHD.Controls.Add(this.tbTim);
             this.gbTimKiemHD.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.gbTimKiemHD.Location = new System.Drawing.Point(246, 88);
+            this.gbTimKiemHD.Location = new System.Drawing.Point(786, 88);
             this.gbTimKiemHD.Name = "gbTimKiemHD";
             this.gbTimKiemHD.Size = new System.Drawing.Size(326, 117);
             this.gbTimKiemHD.TabIndex = 12;
@@ -73,13 +67,14 @@
             // 
             // btThoat
             // 
+            this.btThoat.BackColor = System.Drawing.Color.White;
             this.btThoat.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.btThoat.Location = new System.Drawing.Point(350, 628);
+            this.btThoat.Location = new System.Drawing.Point(951, 874);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(119, 45);
+            this.btThoat.Size = new System.Drawing.Size(135, 45);
             this.btThoat.TabIndex = 24;
             this.btThoat.Text = "Trở Về";
-            this.btThoat.UseVisualStyleBackColor = true;
+            this.btThoat.UseVisualStyleBackColor = false;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // lbQLHD
@@ -87,66 +82,94 @@
             this.lbQLHD.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold);
             this.lbQLHD.Location = new System.Drawing.Point(-1, 29);
             this.lbQLHD.Name = "lbQLHD";
-            this.lbQLHD.Size = new System.Drawing.Size(821, 44);
+            this.lbQLHD.Size = new System.Drawing.Size(1901, 44);
             this.lbQLHD.TabIndex = 26;
             this.lbQLHD.Text = "Quản Lý Thông Tin Hóa Đơn";
             this.lbQLHD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lvHD
+            // 
+            this.lvHD.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.maHD,
+            this.tenNV,
+            this.tenKH,
+            this.sdt,
+            this.ngay,
+            this.xe,
+            this.mauXe,
+            this.sl,
+            this.tt});
+            this.lvHD.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.lvHD.FullRowSelect = true;
+            this.lvHD.GridLines = true;
+            this.lvHD.HideSelection = false;
+            this.lvHD.Location = new System.Drawing.Point(147, 220);
+            this.lvHD.Name = "lvHD";
+            this.lvHD.Size = new System.Drawing.Size(1743, 614);
+            this.lvHD.TabIndex = 27;
+            this.lvHD.UseCompatibleStateImageBehavior = false;
+            this.lvHD.View = System.Windows.Forms.View.Details;
+            // 
             // maHD
             // 
-            this.maHD.Text = "Mã HD";
-            this.maHD.Width = 150;
+            this.maHD.Text = "Mã Hóa Đơn";
+            this.maHD.Width = 180;
             // 
             // tenNV
             // 
             this.tenNV.Text = "Tên Nhân Viên";
-            this.tenNV.Width = 200;
+            this.tenNV.Width = 300;
             // 
             // tenKH
             // 
             this.tenKH.Text = "Tên Khách Hàng";
-            this.tenKH.Width = 200;
+            this.tenKH.Width = 300;
             // 
-            // ngayLap
+            // sdt
             // 
-            this.ngayLap.Text = "Ngày Lập HD";
-            this.ngayLap.Width = 150;
+            this.sdt.Text = "Số Điện Thoại";
+            this.sdt.Width = 300;
             // 
-            // thanhTien
+            // ngay
             // 
-            this.thanhTien.Text = "Thành Tiền";
-            this.thanhTien.Width = 150;
+            this.ngay.Text = "Ngày Lập Hóa Đơn";
+            this.ngay.Width = 300;
             // 
-            // listView1
+            // xe
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.maHD,
-            this.tenNV,
-            this.tenKH,
-            this.ngayLap,
-            this.thanhTien});
-            this.listView1.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(25, 211);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(768, 390);
-            this.listView1.TabIndex = 27;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.xe.Text = "Nhãn Hiệu";
+            this.xe.Width = 300;
+            // 
+            // mauXe
+            // 
+            this.mauXe.Text = "Màu Xe";
+            this.mauXe.Width = 300;
+            // 
+            // sl
+            // 
+            this.sl.Text = "Số Lượng";
+            this.sl.Width = 300;
+            // 
+            // tt
+            // 
+            this.tt.Text = "Thành Tiền";
+            this.tt.Width = 300;
             // 
             // frmQuanLyHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 685);
-            this.Controls.Add(this.listView1);
+            this.BackColor = System.Drawing.Color.MintCream;
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.lvHD);
             this.Controls.Add(this.lbQLHD);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gbTimKiemHD);
-            this.Controls.Add(this.lbTenNhanVien);
             this.Name = "frmQuanLyHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cửa Hàng Bán Xe Máy Anh Tuấn";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmQuanLyHoaDon_Load);
             this.gbTimKiemHD.ResumeLayout(false);
             this.gbTimKiemHD.PerformLayout();
             this.ResumeLayout(false);
@@ -154,16 +177,19 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lbTenNhanVien;
-        private System.Windows.Forms.TextBox tbTenNhanVien;
+        private System.Windows.Forms.TextBox tbTim;
         private System.Windows.Forms.GroupBox gbTimKiemHD;
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.Label lbQLHD;
+        private System.Windows.Forms.ListView lvHD;
         private System.Windows.Forms.ColumnHeader maHD;
         private System.Windows.Forms.ColumnHeader tenNV;
         private System.Windows.Forms.ColumnHeader tenKH;
-        private System.Windows.Forms.ColumnHeader ngayLap;
-        private System.Windows.Forms.ColumnHeader thanhTien;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader sdt;
+        private System.Windows.Forms.ColumnHeader ngay;
+        private System.Windows.Forms.ColumnHeader xe;
+        private System.Windows.Forms.ColumnHeader mauXe;
+        private System.Windows.Forms.ColumnHeader sl;
+        private System.Windows.Forms.ColumnHeader tt;
     }
 }

@@ -33,64 +33,20 @@ namespace QuanLyCuaHangXeMay
         {
             if (DangNhapController.chucVu == "True")
             {
-                mnsQuanLyNhanVien.Enabled = true;
-                mnsQuanLyNhaCungCap.Enabled = true;
-                mnsQuanLyNhaSanXuat.Enabled = true;
+                mnuThemNV.Enabled = true;
+                mnuSuaNV.Enabled = true;
+                mnuTimNV.Enabled = true;
+                mnuNCC.Enabled = true;
+                mnuNSX.Enabled = true;
             }
             else
-            { 
-                mnsQuanLyNhanVien.Enabled = false;
-                mnsQuanLyNhaCungCap.Enabled = false;
-                mnsQuanLyNhaSanXuat.Enabled = false;
+            {
+                mnuThemNV.Enabled = false;
+                mnuSuaNV.Enabled = false;
+                mnuTimNV.Enabled = false;
+                mnuNCC.Enabled = false;
+                mnuNSX.Enabled = false;
             }    
-        }
-        private void mnsXemThongTinTaiKhoan_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmThongTinTaiKhoan.ShowDialog();
-            this.Show();
-        }
-
-        private void mnsDangXuat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmDangNhap dangXuat = new frmDangNhap();
-            dangXuat.Show();
-        }
-
-        private void mnsQuanLyXe_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmQuanLyXe.ShowDialog();
-            this.Show();
-        }
-
-        private void mnsQuanLyKhachHang_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmQuanLyKhachHang.ShowDialog();
-            this.Show();
-        }
-
-        private void mnsQuanLyHoaDon_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmQuanLyHoaDon.ShowDialog();
-            this.Show();
-        }
-
-        private void mnsQuanLyNhanVien_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmQuanLyNhanVien.ShowDialog();
-            this.Show();
-        }
-
-        private void mnsQuanLyNhaCungCap_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmQuanLyNhaCungCap.ShowDialog();
-            this.Show();
         }
 
         private void mnsThongKeDoanhThu_Click(object sender, EventArgs e)
@@ -99,23 +55,152 @@ namespace QuanLyCuaHangXeMay
             frmThongKe.ShowDialog();
             this.Show();
         }
-        private void mnsQuanLyNhaSanXuat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmNhaSanXuat.ShowDialog();
-            this.Show();
-        }
 
         private void frmManHinhChinh_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void mnsDoiMK_Click(object sender, EventArgs e)
+        private void tìmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
+            frmQuanLyHoaDon.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuXemTTNV_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmThongTinTaiKhoan.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuThemNV_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyNhanVien.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuSuaNV_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyNhanVien.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuTimNV_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyNhanVien.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuDoiMatKhau_Click(object sender, EventArgs e)
+        {
             frmDoiMK.ShowDialog();
             this.Show();
+        }
+
+        private void mnuThemNCC_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyNhaCungCap.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuSuaNCC_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyNhaCungCap.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuTimNCC_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyNhaCungCap.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuThemNSX_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmNhaSanXuat.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuSuaNSX_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmNhaSanXuat.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuTimNSX_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmNhaSanXuat.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuThemXe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyXe.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuSuaTTXe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyXe.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuTimXe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyXe.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuThemKH_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyKhachHang.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuSuaKH_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyKhachHang.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuTimKH_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyKhachHang.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuTimHD_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuanLyHoaDon.ShowDialog();
+            this.Show();
+        }
+
+        private void mnuDangXuat_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

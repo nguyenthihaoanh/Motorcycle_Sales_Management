@@ -40,6 +40,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Controller\CTHDController.cs" />
     <Compile Include="Controller\DangNhapController.cs" />
+    <Compile Include="Controller\HDController.cs" />
     <Compile Include="Controller\KhachHangController.cs" />
     <Compile Include="Controller\MauXeConntroller.cs" />
     <Compile Include="Controller\NCC_Controller.cs" />
@@ -64,6 +66,12 @@
     </Compile>
     <Compile Include="GiaoDien\frmDoiMK.Designer.cs">
       <DependentUpon>frmDoiMK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDien\frmQuanLyHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\frmQuanLyHoaDon.Designer.cs">
+      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaoDien\frmQuanLyNhaSanXuat.cs">
       <SubType>Form</SubType>
@@ -77,17 +85,11 @@
     <Compile Include="GiaoDien\frmThemMauXe.Designer.cs">
       <DependentUpon>frmThemMauXe.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien\frmThemXe.cs">
+    <Compile Include="GiaoDien\frmQuanLyCTHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\frmThemXe.Designer.cs">
-      <DependentUpon>frmThemXe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GiaoDien\frmChiTietHD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GiaoDien\frmChiTietHD.Designer.cs">
-      <DependentUpon>frmChiTietHD.cs</DependentUpon>
+    <Compile Include="GiaoDien\frmQuanLyCTHoaDon.Designer.cs">
+      <DependentUpon>frmQuanLyCTHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaoDien\frmManHinhChinh.cs">
       <SubType>Form</SubType>
@@ -100,12 +102,6 @@
     </Compile>
     <Compile Include="GiaoDien\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GiaoDien\frmQuanLyHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GiaoDien\frmQuanLyHoaDon.Designer.cs">
-      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaoDien\frmQuanLyKhachHang.cs">
       <SubType>Form</SubType>
@@ -151,8 +147,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GiaoDien\frmChiTietHD.resx">
-      <DependentUpon>frmChiTietHD.cs</DependentUpon>
+    <Compile Include="QLMuaBanXeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLMuaBanXeDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GiaoDien\frmQuanLyCTHoaDon.resx">
+      <DependentUpon>frmQuanLyCTHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -163,11 +164,11 @@
     <EmbeddedResource Include="GiaoDien\frmManHinhChinh.resx">
       <DependentUpon>frmManHinhChinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\frmQuanLyNhaSanXuat.resx">
-      <DependentUpon>frmQuanLyNhaSanXuat.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\frmQuanLyHoaDon.resx">
       <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\frmQuanLyNhaSanXuat.resx">
+      <DependentUpon>frmQuanLyNhaSanXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\frmQuanLyKhachHang.resx">
       <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
@@ -183,9 +184,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\frmThemMauXe.resx">
       <DependentUpon>frmThemMauXe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\frmThemXe.resx">
-      <DependentUpon>frmThemXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
@@ -221,6 +219,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLMuaBanXeDataSet.xsc">
+      <DependentUpon>QLMuaBanXeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLMuaBanXeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLMuaBanXeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLMuaBanXeDataSet.xss">
+      <DependentUpon>QLMuaBanXeDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

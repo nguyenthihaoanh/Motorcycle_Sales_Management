@@ -15,7 +15,6 @@ namespace QuanLyCuaHangXeMay
     {
         private List<ListViewItem> list_KH = new List<ListViewItem>();
         private KhachHangController kh_Controller = new KhachHangController();
-        private TTNhanVienController TTNV = new TTNhanVienController();
         public static ListViewItem lvi_KH { get; private set; } = new ListViewItem();
         public static bool flag_ncc { get; private set; } = true;
         private frmChiTietHD frmChiTietHD = new frmChiTietHD();
@@ -26,8 +25,6 @@ namespace QuanLyCuaHangXeMay
 
         private void frmQuanLyKhachHang_Load(object sender, EventArgs e)
         {
-            List<ListViewItem> ds = TTNV.NhanTT();
-            lbTenNhanVien.Text = ds[0].SubItems[1].Text;
             capNhap();
             lvKH.Items.Clear();
             list_KH = kh_Controller.danhSachNV();
@@ -43,7 +40,6 @@ namespace QuanLyCuaHangXeMay
 
         private void lvKH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListViewItem lviTemp = new ListViewItem();
             if (lvKH.SelectedItems.Count > 0)
             {
                 lvi_KH = lvKH.SelectedItems[0];
@@ -109,7 +105,7 @@ namespace QuanLyCuaHangXeMay
         {
             tbCMND.Text = "";
             tbDiaChi.Text = "";
-            tbMaKH.Text = "";
+            tbMaKH.Text = MaPhatSinhTuDong();
             tbSDT.Text = "";
             tbTenKH.Text = "";
         }
@@ -176,6 +172,16 @@ namespace QuanLyCuaHangXeMay
                 kh_Controller.suaTTNV(lvi_KH);
                 capNhap();
                 MessageBox.Show("Sửa Thành Công", "Thông Báo");
+            }
+        }
+
+        private void tbTimTen_TextChanged(object sender, EventArgs e)
+        {
+            lvKH.Items.Clear();
+            list_KH = kh_Controller.TimKiem(tbTimTen.Text);
+            foreach (ListViewItem nv in list_KH)
+            {
+                lvKH.Items.Add(nv);
             }
         }
     }

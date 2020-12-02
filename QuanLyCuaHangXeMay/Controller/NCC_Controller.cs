@@ -61,5 +61,25 @@ namespace QuanLyCuaHangXeMay.Controller
             }
             db.SubmitChanges();
         }
+        public List<ListViewItem> TimKiem(string ten)
+        {
+            dsNCC.Clear();
+            var ncc = from NCC in db.NhaCungCaps
+                      select NCC;
+            foreach (NhaCungCap nhaCungCap in ncc)
+            {
+                string t = nhaCungCap.tenNCC.ToLower();
+                if (t.Contains(ten.ToLower()))
+                {
+                    lvit = new ListViewItem();
+                    lvit.Text = nhaCungCap.maNCC.ToString();
+                    lvit.SubItems.Add(nhaCungCap.tenNCC);
+                    lvit.SubItems.Add(nhaCungCap.diaChiNCC);
+                    lvit.SubItems.Add(nhaCungCap.email);
+                    dsNCC.Add(lvit);
+                }
+            }
+            return dsNCC;
+        }
     }
 }

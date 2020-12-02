@@ -47,7 +47,13 @@ namespace QuanLyCuaHangXeMay
                 frmManHinhChinh.ShowDialog();
                 tbMatKhau.Clear();
             }
-            else
+            else if (!dn.kiemTraTaiKhoan(taiKhoan, matKhau))
+            {
+                MessageBox.Show("Tài Khoản Không Còn Hoạt Động!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbMatKhau.Clear();
+                tbTaiKhoan.Clear();
+            }
+            else 
             {
                 MessageBox.Show("Tài Khoản Hoặc Mật Khẩu Không Chính Xác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbMatKhau.Clear();

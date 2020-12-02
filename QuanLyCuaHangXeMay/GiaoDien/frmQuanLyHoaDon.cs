@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangXeMay.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace QuanLyCuaHangXeMay
 {
     public partial class frmQuanLyHoaDon : Form
     {
+        private HDController HDC = new HDController();
+        private List<ListViewItem> dshd = new List<ListViewItem>();
         public frmQuanLyHoaDon()
         {
             InitializeComponent();
@@ -19,10 +22,29 @@ namespace QuanLyCuaHangXeMay
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            DialogResult dlrThoat = MessageBox.Show("Bạn Có Chắc Muốn Thoát Khỏi Chương Trình?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-            if (dlrThoat == DialogResult.Yes)
-                Application.Exit();
+            this.Close();
         }
 
+        private void frmQuanLyHoaDon_Load(object sender, EventArgs e)
+        {
+            dshd.Clear();
+            lvHD.Items.Clear();
+            dshd = HDC.danhSachHD();
+            foreach (ListViewItem hd in dshd)
+            {
+                lvHD.Items.Add(hd);
+            }
+        }
+
+        private void tbTim_TextChanged(object sender, EventArgs e)
+        {
+            dshd.Clear();
+            lvHD.Items.Clear();
+            dshd = HDC.TimKiem(tbTim.Text);
+            foreach (ListViewItem hd in dshd)
+            {
+                lvHD.Items.Add(hd);
+            }
+        }
     }
 }

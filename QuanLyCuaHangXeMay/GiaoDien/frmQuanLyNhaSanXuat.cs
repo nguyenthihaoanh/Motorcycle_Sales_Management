@@ -15,7 +15,6 @@ namespace QuanLyCuaHangXeMay.GiaoDien
     {
         private List<ListViewItem> list_NSX = new List<ListViewItem>();
         private NSX_Controller nsx_Controller = new NSX_Controller();
-        private TTNhanVienController TTNV = new TTNhanVienController();
         public static ListViewItem lvi_nsx { get; private set; } = new ListViewItem();
         public static bool flag_ncc { get; private set; } = true;
         public frmQuanLyNhaSanXuat()
@@ -24,8 +23,6 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         }
         private void frmNhaSanXuat_Load(object sender, EventArgs e)
         {
-            List<ListViewItem> ds = TTNV.NhanTT();
-            lbTenNhanVien.Text = ds[0].SubItems[1].Text;
             capNhap();
             lvNSX.Items.Clear();
             list_NSX = nsx_Controller.danhSachNSX();
@@ -156,6 +153,16 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tbTimTen_TextChanged(object sender, EventArgs e)
+        {
+            lvNSX.Items.Clear();
+            list_NSX = nsx_Controller.TimKiem(tbTimTen.Text);
+            foreach (ListViewItem nv in list_NSX)
+            {
+                lvNSX.Items.Add(nv);
+            }
         }
     }
 }

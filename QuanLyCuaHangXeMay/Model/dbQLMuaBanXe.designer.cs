@@ -180,17 +180,9 @@ namespace QuanLyCuaHangXeMay.Model
 		
 		private System.DateTime _ngayLap;
 		
-		private string _maNCC;
-		
-		private string _maNSX;
-		
 		private EntityRef<Xe> _Xe;
 		
 		private EntityRef<HoaDonXe> _HoaDonXe;
-		
-		private EntityRef<NhaCungCap> _NhaCungCap;
-		
-		private EntityRef<NhaSanXuat> _NhaSanXuat;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -208,18 +200,12 @@ namespace QuanLyCuaHangXeMay.Model
     partial void OnthanhTienChanged();
     partial void OnngayLapChanging(System.DateTime value);
     partial void OnngayLapChanged();
-    partial void OnmaNCCChanging(string value);
-    partial void OnmaNCCChanged();
-    partial void OnmaNSXChanging(string value);
-    partial void OnmaNSXChanged();
     #endregion
 		
 		public CTHoaDonXe()
 		{
 			this._Xe = default(EntityRef<Xe>);
 			this._HoaDonXe = default(EntityRef<HoaDonXe>);
-			this._NhaCungCap = default(EntityRef<NhaCungCap>);
-			this._NhaSanXuat = default(EntityRef<NhaSanXuat>);
 			OnCreated();
 		}
 		
@@ -247,7 +233,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maXe", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maXe", DbType="NVarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maXe
 		{
 			get
@@ -351,54 +337,6 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNCC", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
-		public string maNCC
-		{
-			get
-			{
-				return this._maNCC;
-			}
-			set
-			{
-				if ((this._maNCC != value))
-				{
-					if (this._NhaCungCap.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnmaNCCChanging(value);
-					this.SendPropertyChanging();
-					this._maNCC = value;
-					this.SendPropertyChanged("maNCC");
-					this.OnmaNCCChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNSX", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
-		public string maNSX
-		{
-			get
-			{
-				return this._maNSX;
-			}
-			set
-			{
-				if ((this._maNSX != value))
-				{
-					if (this._NhaSanXuat.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnmaNSXChanging(value);
-					this.SendPropertyChanging();
-					this._maNSX = value;
-					this.SendPropertyChanged("maNSX");
-					this.OnmaNSXChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Xe_CTHoaDonXe", Storage="_Xe", ThisKey="maXe", OtherKey="maXe", IsForeignKey=true)]
 		public Xe Xe
 		{
@@ -450,12 +388,12 @@ namespace QuanLyCuaHangXeMay.Model
 					if ((previousValue != null))
 					{
 						this._HoaDonXe.Entity = null;
-						previousValue.CTHoaDonXe = null;
+						previousValue.CTHoaDonXes.Remove(this);
 					}
 					this._HoaDonXe.Entity = value;
 					if ((value != null))
 					{
-						value.CTHoaDonXe = this;
+						value.CTHoaDonXes.Add(this);
 						this._maHoaDon = value.maHoaDon;
 					}
 					else
@@ -463,74 +401,6 @@ namespace QuanLyCuaHangXeMay.Model
 						this._maHoaDon = default(string);
 					}
 					this.SendPropertyChanged("HoaDonXe");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhaCungCap_CTHoaDonXe", Storage="_NhaCungCap", ThisKey="maNCC", OtherKey="maNCC", IsForeignKey=true)]
-		public NhaCungCap NhaCungCap
-		{
-			get
-			{
-				return this._NhaCungCap.Entity;
-			}
-			set
-			{
-				NhaCungCap previousValue = this._NhaCungCap.Entity;
-				if (((previousValue != value) 
-							|| (this._NhaCungCap.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NhaCungCap.Entity = null;
-						previousValue.CTHoaDonXes.Remove(this);
-					}
-					this._NhaCungCap.Entity = value;
-					if ((value != null))
-					{
-						value.CTHoaDonXes.Add(this);
-						this._maNCC = value.maNCC;
-					}
-					else
-					{
-						this._maNCC = default(string);
-					}
-					this.SendPropertyChanged("NhaCungCap");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhaSanXuat_CTHoaDonXe", Storage="_NhaSanXuat", ThisKey="maNSX", OtherKey="maNSX", IsForeignKey=true)]
-		public NhaSanXuat NhaSanXuat
-		{
-			get
-			{
-				return this._NhaSanXuat.Entity;
-			}
-			set
-			{
-				NhaSanXuat previousValue = this._NhaSanXuat.Entity;
-				if (((previousValue != value) 
-							|| (this._NhaSanXuat.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NhaSanXuat.Entity = null;
-						previousValue.CTHoaDonXes.Remove(this);
-					}
-					this._NhaSanXuat.Entity = value;
-					if ((value != null))
-					{
-						value.CTHoaDonXes.Add(this);
-						this._maNSX = value.maNSX;
-					}
-					else
-					{
-						this._maNSX = default(string);
-					}
-					this.SendPropertyChanged("NhaSanXuat");
 				}
 			}
 		}
@@ -973,7 +843,7 @@ namespace QuanLyCuaHangXeMay.Model
 		
 		private string _maKhachHang;
 		
-		private EntityRef<CTHoaDonXe> _CTHoaDonXe;
+		private EntitySet<CTHoaDonXe> _CTHoaDonXes;
 		
 		private EntityRef<KhachHang> _KhachHang;
 		
@@ -993,7 +863,7 @@ namespace QuanLyCuaHangXeMay.Model
 		
 		public HoaDonXe()
 		{
-			this._CTHoaDonXe = default(EntityRef<CTHoaDonXe>);
+			this._CTHoaDonXes = new EntitySet<CTHoaDonXe>(new Action<CTHoaDonXe>(this.attach_CTHoaDonXes), new Action<CTHoaDonXe>(this.detach_CTHoaDonXes));
 			this._KhachHang = default(EntityRef<KhachHang>);
 			this._NhanVien = default(EntityRef<NhanVien>);
 			OnCreated();
@@ -1067,32 +937,16 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HoaDonXe_CTHoaDonXe", Storage="_CTHoaDonXe", ThisKey="maHoaDon", OtherKey="maHoaDon", IsUnique=true, IsForeignKey=false)]
-		public CTHoaDonXe CTHoaDonXe
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HoaDonXe_CTHoaDonXe", Storage="_CTHoaDonXes", ThisKey="maHoaDon", OtherKey="maHoaDon")]
+		public EntitySet<CTHoaDonXe> CTHoaDonXes
 		{
 			get
 			{
-				return this._CTHoaDonXe.Entity;
+				return this._CTHoaDonXes;
 			}
 			set
 			{
-				CTHoaDonXe previousValue = this._CTHoaDonXe.Entity;
-				if (((previousValue != value) 
-							|| (this._CTHoaDonXe.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CTHoaDonXe.Entity = null;
-						previousValue.HoaDonXe = null;
-					}
-					this._CTHoaDonXe.Entity = value;
-					if ((value != null))
-					{
-						value.HoaDonXe = this;
-					}
-					this.SendPropertyChanged("CTHoaDonXe");
-				}
+				this._CTHoaDonXes.Assign(value);
 			}
 		}
 		
@@ -1183,6 +1037,18 @@ namespace QuanLyCuaHangXeMay.Model
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_CTHoaDonXes(CTHoaDonXe entity)
+		{
+			this.SendPropertyChanging();
+			entity.HoaDonXe = this;
+		}
+		
+		private void detach_CTHoaDonXes(CTHoaDonXe entity)
+		{
+			this.SendPropertyChanging();
+			entity.HoaDonXe = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KhachHang")]
@@ -1245,7 +1111,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenKhachHang", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenKhachHang", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string tenKhachHang
 		{
 			get
@@ -1305,7 +1171,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diaChiKhachHang", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diaChiKhachHang", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string diaChiKhachHang
 		{
 			get
@@ -1499,8 +1365,6 @@ namespace QuanLyCuaHangXeMay.Model
 		
 		private string _diaChiNCC;
 		
-		private EntitySet<CTHoaDonXe> _CTHoaDonXes;
-		
 		private EntitySet<Xe> _Xes;
 		
     #region Extensibility Method Definitions
@@ -1519,7 +1383,6 @@ namespace QuanLyCuaHangXeMay.Model
 		
 		public NhaCungCap()
 		{
-			this._CTHoaDonXes = new EntitySet<CTHoaDonXe>(new Action<CTHoaDonXe>(this.attach_CTHoaDonXes), new Action<CTHoaDonXe>(this.detach_CTHoaDonXes));
 			this._Xes = new EntitySet<Xe>(new Action<Xe>(this.attach_Xes), new Action<Xe>(this.detach_Xes));
 			OnCreated();
 		}
@@ -1544,7 +1407,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenNCC", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenNCC", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string tenNCC
 		{
 			get
@@ -1564,7 +1427,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string email
 		{
 			get
@@ -1584,7 +1447,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diaChiNCC", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diaChiNCC", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string diaChiNCC
 		{
 			get
@@ -1601,19 +1464,6 @@ namespace QuanLyCuaHangXeMay.Model
 					this.SendPropertyChanged("diaChiNCC");
 					this.OndiaChiNCCChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhaCungCap_CTHoaDonXe", Storage="_CTHoaDonXes", ThisKey="maNCC", OtherKey="maNCC")]
-		public EntitySet<CTHoaDonXe> CTHoaDonXes
-		{
-			get
-			{
-				return this._CTHoaDonXes;
-			}
-			set
-			{
-				this._CTHoaDonXes.Assign(value);
 			}
 		}
 		
@@ -1648,18 +1498,6 @@ namespace QuanLyCuaHangXeMay.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_CTHoaDonXes(CTHoaDonXe entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhaCungCap = this;
-		}
-		
-		private void detach_CTHoaDonXes(CTHoaDonXe entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhaCungCap = null;
 		}
 		
 		private void attach_Xes(Xe entity)
@@ -1750,7 +1588,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenNhanVien", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenNhanVien", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string tenNhanVien
 		{
 			get
@@ -1830,7 +1668,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diaChiNV", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diaChiNV", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string diaChiNV
 		{
 			get
@@ -1977,11 +1815,9 @@ namespace QuanLyCuaHangXeMay.Model
 		
 		private string _email;
 		
-		private string _diaChiNSX;
+		private string _nuocSX;
 		
 		private System.DateTime _namSX;
-		
-		private EntitySet<CTHoaDonXe> _CTHoaDonXes;
 		
 		private EntitySet<Xe> _Xes;
 		
@@ -1995,15 +1831,14 @@ namespace QuanLyCuaHangXeMay.Model
     partial void OntenNSXChanged();
     partial void OnemailChanging(string value);
     partial void OnemailChanged();
-    partial void OndiaChiNSXChanging(string value);
-    partial void OndiaChiNSXChanged();
+    partial void OnnuocSXChanging(string value);
+    partial void OnnuocSXChanged();
     partial void OnnamSXChanging(System.DateTime value);
     partial void OnnamSXChanged();
     #endregion
 		
 		public NhaSanXuat()
 		{
-			this._CTHoaDonXes = new EntitySet<CTHoaDonXe>(new Action<CTHoaDonXe>(this.attach_CTHoaDonXes), new Action<CTHoaDonXe>(this.detach_CTHoaDonXes));
 			this._Xes = new EntitySet<Xe>(new Action<Xe>(this.attach_Xes), new Action<Xe>(this.detach_Xes));
 			OnCreated();
 		}
@@ -2028,7 +1863,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenNSX", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenNSX", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string tenNSX
 		{
 			get
@@ -2048,7 +1883,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string email
 		{
 			get
@@ -2068,22 +1903,22 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diaChiNSX", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string diaChiNSX
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nuocSX", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string nuocSX
 		{
 			get
 			{
-				return this._diaChiNSX;
+				return this._nuocSX;
 			}
 			set
 			{
-				if ((this._diaChiNSX != value))
+				if ((this._nuocSX != value))
 				{
-					this.OndiaChiNSXChanging(value);
+					this.OnnuocSXChanging(value);
 					this.SendPropertyChanging();
-					this._diaChiNSX = value;
-					this.SendPropertyChanged("diaChiNSX");
-					this.OndiaChiNSXChanged();
+					this._nuocSX = value;
+					this.SendPropertyChanged("nuocSX");
+					this.OnnuocSXChanged();
 				}
 			}
 		}
@@ -2105,19 +1940,6 @@ namespace QuanLyCuaHangXeMay.Model
 					this.SendPropertyChanged("namSX");
 					this.OnnamSXChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhaSanXuat_CTHoaDonXe", Storage="_CTHoaDonXes", ThisKey="maNSX", OtherKey="maNSX")]
-		public EntitySet<CTHoaDonXe> CTHoaDonXes
-		{
-			get
-			{
-				return this._CTHoaDonXes;
-			}
-			set
-			{
-				this._CTHoaDonXes.Assign(value);
 			}
 		}
 		
@@ -2152,18 +1974,6 @@ namespace QuanLyCuaHangXeMay.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_CTHoaDonXes(CTHoaDonXe entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhaSanXuat = this;
-		}
-		
-		private void detach_CTHoaDonXes(CTHoaDonXe entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhaSanXuat = null;
 		}
 		
 		private void attach_Xes(Xe entity)

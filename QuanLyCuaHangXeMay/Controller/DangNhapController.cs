@@ -16,24 +16,26 @@ namespace QuanLyCuaHangXeMay.Controller
 
         public bool kiemTraTaiKhoan(string tkhoan, string matKhau)
         {
-            maNV = "";
-            chucVu = null;
             db = new dbQLMuaBanXeDataContext();
-            var tk = from VarTK in db.TaiKhoans
-                     where VarTK.taiKhoan1 == tkhoan
-                     select VarTK;
-            var nv = from VarNV in db.NhanViens
-                     select VarNV;
+            var nv = (from NV in db.NhanViens
+                      join TK in db.TaiKhoans on NV.maNhanVien equals TK.maNhanVien
+                      select new
+                      {
+                          maNV = NV.maNhanVien,
+                          chucVu = NV.chucVu,
+                          taiKhoan = TK.taiKhoan1,
+                          matKhau = TK.matKhau,
+                          tinhTrang = NV.tinhTrang
+                      }).Where(x => x.taiKhoan == tkhoan);
             if (tkhoan != null)
             {
-                foreach(NhanVien nhanVien in nv)
-                    if (nhanVien.tinhTrang == true)
+                foreach (var nhanVien in nv)
+                    if (nhanVien.tinhTrang == true) 
                     {
-                        foreach(TaiKhoan taiKhoan in tk)
-                            if (taiKhoan.matKhau == matKhau)
+                            if (nhanVien.matKhau == matKhau)
                             {
                                 chucVu = nhanVien.chucVu.ToString();
-                                maNV = taiKhoan.maNhanVien;
+                                maNV = nhanVien.maNV;
                                 return true;
                             }
                             else

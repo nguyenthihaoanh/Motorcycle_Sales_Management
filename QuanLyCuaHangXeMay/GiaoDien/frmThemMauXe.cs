@@ -22,7 +22,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         }
         public string MaPhatSinhTuDong()
         {
-            int count = lvMauXe.Items.Count;
+            int count = mauXeConntroller.danhSachMX().Count;
             string chuoi = "";
             int stt = 0;
             if (count == 0)
@@ -38,17 +38,6 @@ namespace QuanLyCuaHangXeMay.GiaoDien
                 chuoi = "M" + stt.ToString();
             return chuoi;
         }
-
-        private void capNhap()
-        {
-            
-            lvMauXe.Items.Clear();
-            list_mx = mauXeConntroller.danhSachMX();
-            foreach (ListViewItem nv in list_mx)
-            {
-                lvMauXe.Items.Add(nv);
-            }
-        }
         private void btThem_Click(object sender, EventArgs e)
         {
             ListViewItem lvi_mx = new ListViewItem();
@@ -56,34 +45,17 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             lvi_mx.SubItems.Add(tbTenMau.Text);
             mauXeConntroller.them(lvi_mx);
             MessageBox.Show("Thêm Thành Công");
-            capNhap();
-            /*this.Close();*/
+            this.Close();
         }
 
         private void frmThemMauXe_Load(object sender, EventArgs e)
         {
-            capNhap(); 
-            lvMauXe.Items.Clear();
-            list_mx = mauXeConntroller.danhSachMX();
-            foreach (ListViewItem nv in list_mx)
-            {
-                lvMauXe.Items.Add(nv);
-            }
-        }
-
-        private void lvMauXe_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvMauXe.SelectedItems.Count > 0)
-            {
-                lvi_mx = lvMauXe.SelectedItems[0];
-                tbMaMau.Text = lvi_mx.SubItems[0].Text;
-                tbTenMau.Text = lvi_mx.SubItems[1].Text;
-            }
+            tbMaMau.Text = MaPhatSinhTuDong();
         }
 
         private void btNhapLai_Click(object sender, EventArgs e)
         {
-            tbTenMau.Text = "";
+            tbTenMau.Text = MaPhatSinhTuDong();
             tbMaMau.Text = "";
         }
 

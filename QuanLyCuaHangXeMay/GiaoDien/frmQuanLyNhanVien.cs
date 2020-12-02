@@ -179,11 +179,28 @@ namespace QuanLyCuaHangXeMay
         private void btThemTK_Click(object sender, EventArgs e)
         {
             ListViewItem lvi_tk = new ListViewItem();
-            lvi_tk.Text = tbMaNV.Text;
-            lvi_tk.SubItems.Add(tbTaiKhoan.Text);
-            NVC.themTK(lvi_tk, "123".ToString());
-            capNhap();
+            if (tbTaiKhoan.Text != "") 
+            {
+                MessageBox.Show("Tài Khoản Đã Tồn Tại");                
+            }
+            else
+            {
+                lvi_tk.Text = tbMaNV.Text;
+                lvi_tk.SubItems.Add(tbTaiKhoan.Text);
+                NVC.themTK(lvi_tk, "123".ToString());
+                MessageBox.Show("Thêm Thành Công");
+                capNhap();
+            }
         }
 
+        private void tbTimTen_TextChanged(object sender, EventArgs e)
+        {
+            lvNV.Items.Clear();
+            list_NV = NVC.TimKiem(tbTimTen.Text);
+            foreach (ListViewItem nv in list_NV)
+            {
+                lvNV.Items.Add(nv);
+            }
+        }
     }
 }

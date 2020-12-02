@@ -19,7 +19,7 @@ namespace QuanLyCuaHangXeMay.Controller
             lvit = new ListViewItem();
             lvit.Text = nhaSanXuat.maNSX.ToString();
             lvit.SubItems.Add(nhaSanXuat.tenNSX);
-            lvit.SubItems.Add(nhaSanXuat.diaChiNSX);
+            lvit.SubItems.Add(nhaSanXuat.nuocSX);
             lvit.SubItems.Add(nhaSanXuat.email);
             lvit.SubItems.Add(nhaSanXuat.namSX.ToString());
             return lvit;
@@ -40,7 +40,7 @@ namespace QuanLyCuaHangXeMay.Controller
             NhaSanXuat n = new NhaSanXuat();
             n.maNSX = lvi_nsx.Text.ToString();
             n.tenNSX = lvi_nsx.SubItems[1].Text;
-            n.diaChiNSX = lvi_nsx.SubItems[2].Text;
+            n.nuocSX = lvi_nsx.SubItems[2].Text;
             n.email = lvi_nsx.SubItems[3].Text;
             n.namSX = Convert.ToDateTime(ngaySX.Value.ToShortDateString());
             db.NhaSanXuats.InsertOnSubmit(n);
@@ -54,11 +54,32 @@ namespace QuanLyCuaHangXeMay.Controller
             foreach (NhaSanXuat n in nsx)
             {
                 n.tenNSX = lvi_nsx.SubItems[1].Text;
-                n.diaChiNSX = lvi_nsx.SubItems[2].Text;
+                n.nuocSX = lvi_nsx.SubItems[2].Text;
                 n.email = lvi_nsx.SubItems[3].Text;
                 n.namSX = Convert.ToDateTime(ngaySX.Value.ToShortDateString());
             }
             db.SubmitChanges();
+        }
+        public List<ListViewItem> TimKiem(string ten)
+        {
+            dsNSX.Clear();
+            var nsx = from NSX in db.NhaSanXuats
+                      select NSX;
+            foreach (NhaSanXuat nhaSanXuat in nsx)
+            {
+                string t = nhaSanXuat.tenNSX.ToLower();
+                if (t.Contains(ten.ToLower()))
+                {
+                    lvit = new ListViewItem();
+                    lvit.Text = nhaSanXuat.maNSX.ToString();
+                    lvit.SubItems.Add(nhaSanXuat.tenNSX);
+                    lvit.SubItems.Add(nhaSanXuat.nuocSX);
+                    lvit.SubItems.Add(nhaSanXuat.email);
+                    lvit.SubItems.Add(nhaSanXuat.namSX.ToString());
+                    dsNSX.Add(lvit);
+                }
+            }
+            return dsNSX;
         }
     }
 }

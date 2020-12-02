@@ -82,7 +82,6 @@ F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeM
 F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhaCungCap.resources
 F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhanVien.resources
 F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyXe.resources
-F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThemXe.resources
 F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongKe.resources
 F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongTinTaiKhoan.resources
 F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.Properties.Resources.resources
@@ -104,7 +103,6 @@ F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMa
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhaCungCap.resources
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyNhanVien.resources
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmQuanLyXe.resources
-F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThemXe.resources
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongKe.resources
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.frmThongTinTaiKhoan.resources
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.Properties.Resources.resources
@@ -113,3 +111,4 @@ F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMa
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.exe
 F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.pdb
 F:\Phat Trien Ung Dung\source\PTUD\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmThemMauXe.resources
+F:\Phat Trien Ung Dung\New folder\QuanLyCuaHangXeMay\obj\Debug\QuanLyCuaHangXeMay.GiaoDien.frmThemMauXe.resources

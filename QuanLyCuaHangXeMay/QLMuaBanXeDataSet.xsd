@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QLMuaBanXeDataSet" targetNamespace="http://tempuri.org/QLMuaBanXeDataSet.xsd" xmlns:mstns="http://tempuri.org/QLMuaBanXeDataSet.xsd" xmlns="http://tempuri.org/QLMuaBanXeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLMuaBanXeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLMuaBanXeConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QuanLyCuaHangXeMay.Properties.Settings.GlobalReference.Default.QLMuaBanXeConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CTHoaDonXeTableAdapter" GeneratorDataComponentClassName="CTHoaDonXeTableAdapter" Name="CTHoaDonXe" UserDataComponentName="CTHoaDonXeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLMuaBanXeConnectionString (Settings)" DbObjectName="QLMuaBanXe.dbo.CTHoaDonXe" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT soLuong FROM dbo.CTHoaDonXe</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="soLuong" DataSetColumn="soLuong" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HoaDonXeTableAdapter" GeneratorDataComponentClassName="HoaDonXeTableAdapter" Name="HoaDonXe" UserDataComponentName="HoaDonXeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLMuaBanXeConnectionString (Settings)" DbObjectName="QLMuaBanXe.dbo.HoaDonXe" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT maNhanVien FROM dbo.HoaDonXe</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="maNhanVien" DataSetColumn="maNhanVien" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QLMuaBanXeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLMuaBanXeDataSet" msprop:Generator_UserDSName="QLMuaBanXeDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CTHoaDonXe" msprop:Generator_TableClassName="CTHoaDonXeDataTable" msprop:Generator_TableVarName="tableCTHoaDonXe" msprop:Generator_TablePropName="CTHoaDonXe" msprop:Generator_RowDeletingName="CTHoaDonXeRowDeleting" msprop:Generator_RowChangingName="CTHoaDonXeRowChanging" msprop:Generator_RowEvHandlerName="CTHoaDonXeRowChangeEventHandler" msprop:Generator_RowDeletedName="CTHoaDonXeRowDeleted" msprop:Generator_UserTableName="CTHoaDonXe" msprop:Generator_RowChangedName="CTHoaDonXeRowChanged" msprop:Generator_RowEvArgName="CTHoaDonXeRowChangeEvent" msprop:Generator_RowClassName="CTHoaDonXeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="soLuong" msprop:Generator_ColumnVarNameInTable="columnsoLuong" msprop:Generator_ColumnPropNameInRow="soLuong" msprop:Generator_ColumnPropNameInTable="soLuongColumn" msprop:Generator_UserColumnName="soLuong" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HoaDonXe" msprop:Generator_TableClassName="HoaDonXeDataTable" msprop:Generator_TableVarName="tableHoaDonXe" msprop:Generator_TablePropName="HoaDonXe" msprop:Generator_RowDeletingName="HoaDonXeRowDeleting" msprop:Generator_RowChangingName="HoaDonXeRowChanging" msprop:Generator_RowEvHandlerName="HoaDonXeRowChangeEventHandler" msprop:Generator_RowDeletedName="HoaDonXeRowDeleted" msprop:Generator_UserTableName="HoaDonXe" msprop:Generator_RowChangedName="HoaDonXeRowChanged" msprop:Generator_RowEvArgName="HoaDonXeRowChangeEvent" msprop:Generator_RowClassName="HoaDonXeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="maNhanVien" msprop:Generator_ColumnVarNameInTable="columnmaNhanVien" msprop:Generator_ColumnPropNameInRow="maNhanVien" msprop:Generator_ColumnPropNameInTable="maNhanVienColumn" msprop:Generator_UserColumnName="maNhanVien">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

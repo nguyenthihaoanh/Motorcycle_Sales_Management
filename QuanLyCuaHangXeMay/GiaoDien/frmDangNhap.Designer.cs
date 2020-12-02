@@ -86,30 +86,33 @@
             // 
             // btDangNhap
             // 
+            this.btDangNhap.BackColor = System.Drawing.Color.White;
             this.btDangNhap.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
             this.btDangNhap.Location = new System.Drawing.Point(71, 263);
             this.btDangNhap.Name = "btDangNhap";
             this.btDangNhap.Size = new System.Drawing.Size(140, 52);
             this.btDangNhap.TabIndex = 3;
             this.btDangNhap.Text = "Đăng Nhập";
-            this.btDangNhap.UseVisualStyleBackColor = true;
+            this.btDangNhap.UseVisualStyleBackColor = false;
             this.btDangNhap.Click += new System.EventHandler(this.btDangNhap_Click);
             // 
             // btNhapLai
             // 
+            this.btNhapLai.BackColor = System.Drawing.Color.White;
             this.btNhapLai.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
             this.btNhapLai.Location = new System.Drawing.Point(327, 263);
             this.btNhapLai.Name = "btNhapLai";
             this.btNhapLai.Size = new System.Drawing.Size(140, 52);
             this.btNhapLai.TabIndex = 4;
             this.btNhapLai.Text = "Nhập Lại";
-            this.btNhapLai.UseVisualStyleBackColor = true;
+            this.btNhapLai.UseVisualStyleBackColor = false;
             this.btNhapLai.Click += new System.EventHandler(this.btNhapLai_Click);
             // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(548, 349);
             this.Controls.Add(this.btNhapLai);
             this.Controls.Add(this.btDangNhap);

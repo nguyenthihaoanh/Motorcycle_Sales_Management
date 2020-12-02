@@ -21,10 +21,8 @@ namespace QuanLyCuaHangXeMay
         private List<string> dsnsx = new List<string>();
         private List<string> dsmau = new List<string>();
         private XeController xe_Controller = new XeController();
-        private TTNhanVienController TTNV = new TTNhanVienController();
         public static ListViewItem lvi_Xe { get; private set; } = new ListViewItem();
         public static bool flag_xe { get; private set; } = true;
-        private frmChiTietHD frmChiTietHD = new frmChiTietHD();
         public frmQuanLyXe()
         {
             InitializeComponent();
@@ -33,8 +31,6 @@ namespace QuanLyCuaHangXeMay
         private dbQLMuaBanXeDataContext db = new dbQLMuaBanXeDataContext();
         private void frmQuanLyXe_Load(object sender, EventArgs e)
         {
-            List<ListViewItem> tenNV = TTNV.NhanTT();
-            lbTenNhanVien.Text = tenNV[0].SubItems[1].Text;
             capNhapXe();
             capNhapNCC();
             capNhapNSX();
@@ -55,13 +51,10 @@ namespace QuanLyCuaHangXeMay
         }
         private void capNhapNSX()
         {
-            dsnsx.Clear();
-            cbNSX.Items.Clear();
-            dsnsx = xe_Controller.ds_nsx();
-            foreach (var nsx in dsnsx)
-            {
-                cbNSX.Items.Add(nsx);
-            }
+            var xe = db.NhaSanXuats.GroupBy(x => x.tenNSX).Where(x => x.Count() > 0).Select(x => x.Key).ToList();
+            cbNSX.DisplayMember = "tenNSX";
+            cbNSX.ValueMember = "maNSX";
+            cbNSX.DataSource = xe;
         }
         private void capNhapNCC()
         {
@@ -104,7 +97,7 @@ namespace QuanLyCuaHangXeMay
         }
         private void enables_txt(bool active)
         {
-            txtNhanHieu.Enabled = cbMauXe.Enabled = tbDungTich.Enabled = cbNSX.Enabled = cbNCC.Enabled = tbSoLuong.Enabled = tbGiaNhap.Enabled = active;
+            txtNhanHieu.Enabled = cbMauXe.Enabled = tbDungTich.Enabled = cbNuocSX.Enabled = dateNgayNhap.Enabled = cbNSX.Enabled = cbNCC.Enabled = tbSoLuong.Enabled = tbGiaNhap.Enabled = active;
         }
         public string MaPhatSinhTuDong()
         {
@@ -146,6 +139,7 @@ namespace QuanLyCuaHangXeMay
         private void btThem_Click(object sender, EventArgs e)
         {
             capNhapMauXe();
+            capNhapNSX();
             flag_xe = true;
             if (!btThem.Text.Equals("Hủy Thêm"))
             {
@@ -193,14 +187,14 @@ namespace QuanLyCuaHangXeMay
                 lvi_Xe.SubItems.Add(Convert.ToInt32(tbSoLuong.Text).ToString());
                 lvi_Xe.SubItems.Add(Convert.ToDecimal(tbGiaNhap.Text).ToString());
                 lvi_Xe.SubItems.Add(Convert.ToInt32(tbDungTich.Text).ToString());
-                lvi_Xe.SubItems.Add(cbMauXe.SelectedItem.ToString());
+                lvi_Xe.SubItems.Add(lblMaNSX.Text);
                 lvi_Xe.SubItems.Add(cbNCC.SelectedItem.ToString());
-                lvi_Xe.SubItems.Add(cbNSX.SelectedItem.ToString());
+                lvi_Xe.SubItems.Add(cbMauXe.SelectedItem.ToString());
                 lvi_Xe.SubItems.Add(dateNgayNhap.Text);
                 if (flag_xe == true)
                 {
                     lvi_Xe.Text = txtMaXe.Text = MaPhatSinhTuDong();
-                    xe_Controller.themTTXe(lvi_Xe, tbSoLuong.Text, tbDungTich.Text, tbGiaNhap.Text, dateNgayNhap, cbMauXe.SelectedItem.ToString(), cbNCC.SelectedItem.ToString(), cbNSX.SelectedItem.ToString());
+                    xe_Controller.themTTXe(lvi_Xe, tbSoLuong.Text, tbDungTich.Text, tbGiaNhap.Text, dateNgayNhap, cbMauXe.SelectedItem.ToString(), cbNCC.SelectedItem.ToString(), lblMaNSX.Text);
                     capNhapXe();
                     MessageBox.Show("Thêm Thành Công"); 
                     btThem.Text = "Thêm";
@@ -209,7 +203,7 @@ namespace QuanLyCuaHangXeMay
                 }
                 else
                 {
-                    xe_Controller.suaTTXe(lvi_Xe, tbSoLuong.Text, tbDungTich.Text, tbGiaNhap.Text, dateNgayNhap, cbMauXe.SelectedItem.ToString(), cbNCC.SelectedItem.ToString(), cbNSX.SelectedItem.ToString());
+                    xe_Controller.suaTTXe(lvi_Xe, tbSoLuong.Text, tbDungTich.Text, tbGiaNhap.Text, dateNgayNhap, cbMauXe.SelectedItem.ToString(), cbNCC.SelectedItem.ToString(), lblMaNSX.Text);
                     capNhapXe();
                     MessageBox.Show("Sửa Thành Công");
                     btSua.Text = "Sửa";
@@ -227,9 +221,39 @@ namespace QuanLyCuaHangXeMay
             this.Show();
         }
 
-        private void cbMauXe_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbNSX_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var nsx = (from  x in db.NhaSanXuats 
+                       select new
+                       {
+                           x.maNSX,
+                           x.tenNSX,
+                           x.nuocSX
+                       }).Where(x => x.tenNSX.Equals(cbNSX.SelectedValue.ToString())).ToList();
 
+            cbNuocSX.DisplayMember = "nuocSX";
+            cbNuocSX.ValueMember = "maNSX";
+            cbNuocSX.DataSource = nsx;
+        }
+
+        private void cbNuocSX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NhaSanXuat obj = db.NhaSanXuats.First(x=> x.tenNSX.Equals(cbNSX.SelectedValue.ToString())&&x.maNSX.Equals(cbNuocSX.SelectedValue.ToString()));
+            if (obj != null)
+            {
+                lblMaNSX.Text = obj.maNSX;
+            }
+        }
+
+        private void tbTim_TextChanged(object sender, EventArgs e)
+        {
+            lvXe.Items.Clear();
+            List<ListViewItem> dsXe = new List<ListViewItem>();
+            dsXe = xe_Controller.TimKiem(tbTim.Text);
+            foreach (ListViewItem xe in dsXe)
+            {
+                lvXe.Items.Add(xe);
+            }
         }
     }
 }

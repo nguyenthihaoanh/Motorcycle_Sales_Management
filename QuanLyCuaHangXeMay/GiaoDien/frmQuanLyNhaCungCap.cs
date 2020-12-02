@@ -15,7 +15,6 @@ namespace QuanLyCuaHangXeMay
     {
         private List<ListViewItem> list_NCC = new List<ListViewItem>();
         private NCC_Controller ncc_Controller = new NCC_Controller();
-        private TTNhanVienController TTNV = new TTNhanVienController();
         public static ListViewItem lvi_ncc { get; private set; } = new ListViewItem();
         public static bool flag_ncc { get; private set; } = true;
         public frmQuanLyNhaCungCap()
@@ -25,8 +24,6 @@ namespace QuanLyCuaHangXeMay
 
         private void frmQuanLyNhaCungCap_Load(object sender, EventArgs e)
         {
-            List<ListViewItem> ds = TTNV.NhanTT();
-            lbTenNhanVien.Text = ds[0].SubItems[1].Text;
             capNhap();
             lvNCC.Items.Clear();
             list_NCC = ncc_Controller.danhSachNCC();
@@ -156,6 +153,16 @@ namespace QuanLyCuaHangXeMay
                 ncc_Controller.suaTTNCC(lvi_ncc);
                 capNhap();
                 MessageBox.Show("Sửa Thành Công");
+            }
+        }
+
+        private void tbTimTen_TextChanged(object sender, EventArgs e)
+        {
+            lvNCC.Items.Clear();
+            list_NCC = ncc_Controller.TimKiem(tbTimTen.Text);
+            foreach (ListViewItem nv in list_NCC)
+            {
+                lvNCC.Items.Add(nv);
             }
         }
     }

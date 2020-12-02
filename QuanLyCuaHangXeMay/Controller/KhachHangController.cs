@@ -61,5 +61,26 @@ namespace QuanLyCuaHangXeMay.Controller
             }
             db.SubmitChanges();
         }
+        public List<ListViewItem> TimKiem(string ten)
+        {
+            dsKH.Clear();
+            var kh = from KH in db.KhachHangs
+                     select KH;
+            foreach (KhachHang khachHang in kh)
+            {
+                string t = khachHang.tenKhachHang.ToLower();
+                if (t.Contains(ten.ToLower()))
+                {
+                    lvit = new ListViewItem();
+                    lvit.Text = khachHang.maKhachHang.ToString();
+                    lvit.SubItems.Add(khachHang.tenKhachHang);
+                    lvit.SubItems.Add(khachHang.soDienThoai);
+                    lvit.SubItems.Add(khachHang.CMND);
+                    lvit.SubItems.Add(khachHang.diaChiKhachHang);
+                    dsKH.Add(lvit);
+                }
+            }
+            return dsKH;
+        }
     }
 }

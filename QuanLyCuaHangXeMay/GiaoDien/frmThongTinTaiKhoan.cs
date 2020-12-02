@@ -29,20 +29,21 @@ namespace QuanLyCuaHangXeMay
         private void frmThongTinTaiKhoan_Load(object sender, EventArgs e)
         {
             List<ListViewItem> ds = TTNV.NhanTT();
-            tbMaNV.Text = ds[0].SubItems[0].Text;
-            tbTenNV.Text = ds[0].SubItems[1].Text;
+            lbMaNV.Text = ds[0].SubItems[0].Text;
+            lbTenNV.Text = ds[0].SubItems[1].Text;
             if (ds[0].SubItems[2].Text == "True")
-                tbGioiTinh.Text = "Nữ";
+                lbGioiTinh.Text = "Nữ";
             else
-                tbGioiTinh.Text = "Nam";
-            tbCMND.Text = ds[0].SubItems[3].Text;
-            tbDiaChi.Text = ds[0].SubItems[4].Text;
+                lbGioiTinh.Text = "Nam";
+            lbCMND.Text = ds[0].SubItems[3].Text;
+            lbDiaChi.Text = ds[0].SubItems[4].Text;
             if (ds[0].SubItems[5].Text == "True")
-                tbChucVu.Text = "Quản Lý";
+                lbChucVu.Text = "Quản Lý";
             else
-                tbChucVu.Text = "Nhân Viên";
-            tbSDT.Text = ds[0].SubItems[6].Text;
-            tbTaiKhoan.Text = ds[0].SubItems[7].Text;
+                lbChucVu.Text = "Nhân Viên";
+            lbSDT.Text = ds[0].SubItems[6].Text;
+            lbTaiKhoan.Text = ds[0].SubItems[7].Text;
         }
+
     }
 }
