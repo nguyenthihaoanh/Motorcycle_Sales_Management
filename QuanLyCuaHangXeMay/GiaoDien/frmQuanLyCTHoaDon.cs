@@ -32,6 +32,8 @@ namespace QuanLyCuaHangXeMay
         }
         private void frmChiTietHD_Load(object sender, EventArgs e)
         {
+            nudSoLuong.Enabled = false;
+
             load_data_vao_cb();
             List<ListViewItem> ds = TTNV.NhanTT();
             lbXuatTenNV.Text = ds[0].SubItems[1].Text;
@@ -55,11 +57,11 @@ namespace QuanLyCuaHangXeMay
             tong = 0;
             load_data_vao_cb();
             dshd.Clear();
-            lvCTHD.Items.Clear();
+            lvDSXe.Items.Clear();
             dshd = xe.them_ds_xe();
             foreach (ListViewItem ncc in dshd)
             {
-                lvCTHD.Items.Add(ncc);
+                lvDSXe.Items.Add(ncc);
             }
         }
         private void thongTinKH()
@@ -72,10 +74,10 @@ namespace QuanLyCuaHangXeMay
 
         private void load_data_vao_cb()
         {
-            var xe = db.Xes.Where(x => x.soLuong != 0);
+            /*var xe = db.Xes.Where(x => x.soLuong != 0);
             cbTenXe.DisplayMember = "nhanHieu";
             cbTenXe.ValueMember = "maXe";
-            cbTenXe.DataSource = xe.GroupBy(x => x.nhanHieu).Where(x => x.Count() > 0).Select(x => x.Key).ToList();/*;*/
+            cbTenXe.DataSource = xe.GroupBy(x => x.nhanHieu).Where(x => x.Count() > 0).Select(x => x.Key).ToList();*/
         }
         public string MaPhatSinhTuDong()
         {
@@ -97,12 +99,12 @@ namespace QuanLyCuaHangXeMay
         }
         private void nudSoLuong_ValueChanged(object sender, EventArgs e)
         {
-            decimal gia= Convert.ToDecimal(lblDonGia.Text);
+            /*decimal gia= Convert.ToDecimal(lblDonGia.Text);
             int sl = Convert.ToInt32(nudSoLuong.Value);
             decimal thanhTien = gia * sl;
-            lblThanhTien.Text = thanhTien.ToString();
+            lblThanhTien.Text = thanhTien.ToString();*/
         }
-
+/*
         private void cbTenXe_SelectedIndexChanged(object sender, EventArgs e)
         {
             var nsx = (from x in db.Xes
@@ -152,13 +154,13 @@ namespace QuanLyCuaHangXeMay
                 lblDonGia.Text = Convert.ToString(obj.giaNhap * 15 / 100);
             }
              nudSoLuong.Maximum=obj.soLuong;
-        }
+        }*/
 
         private void btThanhToan_Click(object sender, EventArgs e)
         {
             Xe x = new Xe();
 
-            x = db.Xes.Where(s => s.maXe == lblMaXe.Text).Single();
+            //x = db.Xes.Where(s => s.maXe == lblMaXe.Text).Single();
             if (x.soLuong >= nudSoLuong.Value)
             {
                 List<ListViewItem> ds = TTNV.NhanTT();
@@ -176,12 +178,12 @@ namespace QuanLyCuaHangXeMay
 
                 CTHoaDonXe cthd = new CTHoaDonXe()
                 {
-                    maHoaDon = lbXuatMaHoaDon.Text,
+                    /*maHoaDon = lbXuatMaHoaDon.Text,
                     maXe = lblMaXe.Text,
                     soLuong = Convert.ToInt32(nudSoLuong.Value.ToString()),
                     donGia = Convert.ToDecimal(lblDonGia.Text),
                     thanhTien = Convert.ToDecimal(lblThanhTien.Text),
-                    ngayLap = Convert.ToDateTime(dateNgayNhap.Value.ToString())
+                    ngayLap = Convert.ToDateTime(dateNgayNhap.Value.ToString())*/
                 };
                 db.CTHoaDonXes.InsertOnSubmit(cthd);
             
@@ -210,6 +212,11 @@ namespace QuanLyCuaHangXeMay
         private void btThoat_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lvDSXe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudSoLuong.Enabled = true;
         }
     }
 }
