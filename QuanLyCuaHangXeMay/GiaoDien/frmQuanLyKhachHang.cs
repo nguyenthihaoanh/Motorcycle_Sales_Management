@@ -1,4 +1,5 @@
 ﻿using QuanLyCuaHangXeMay.Controller;
+using QuanLyCuaHangXeMay.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,6 +89,7 @@ namespace QuanLyCuaHangXeMay
                 lvKH.Items.Add(nv);
             }
         }
+        
 
         private void btMuaXe_Click(object sender, EventArgs e)
         {

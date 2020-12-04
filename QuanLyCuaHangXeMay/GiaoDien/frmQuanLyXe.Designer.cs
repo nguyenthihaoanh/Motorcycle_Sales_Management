@@ -460,10 +460,10 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
+            this.columnHeader8,
+            this.columnHeader7,
             this.columnHeader4,
             this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
             this.lvXe.Font = new System.Drawing.Font("Times New Roman", 13F);

@@ -109,6 +109,7 @@
             this.lvHD.TabIndex = 27;
             this.lvHD.UseCompatibleStateImageBehavior = false;
             this.lvHD.View = System.Windows.Forms.View.Details;
+            this.lvHD.SelectedIndexChanged += new System.EventHandler(this.lvHD_SelectedIndexChanged);
             // 
             // maHD
             // 

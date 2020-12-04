@@ -168,6 +168,8 @@ namespace QuanLyCuaHangXeMay.Model
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+		private string _maCTHoaDon;
+		
 		private string _maHoaDon;
 		
 		private string _maXe;
@@ -188,6 +190,8 @@ namespace QuanLyCuaHangXeMay.Model
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnmaCTHoaDonChanging(string value);
+    partial void OnmaCTHoaDonChanged();
     partial void OnmaHoaDonChanging(string value);
     partial void OnmaHoaDonChanged();
     partial void OnmaXeChanging(string value);
@@ -209,7 +213,27 @@ namespace QuanLyCuaHangXeMay.Model
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHoaDon", DbType="NVarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTHoaDon", DbType="NVarChar(7) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string maCTHoaDon
+		{
+			get
+			{
+				return this._maCTHoaDon;
+			}
+			set
+			{
+				if ((this._maCTHoaDon != value))
+				{
+					this.OnmaCTHoaDonChanging(value);
+					this.SendPropertyChanging();
+					this._maCTHoaDon = value;
+					this.SendPropertyChanged("maCTHoaDon");
+					this.OnmaCTHoaDonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHoaDon", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
 		public string maHoaDon
 		{
 			get
@@ -233,7 +257,7 @@ namespace QuanLyCuaHangXeMay.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maXe", DbType="NVarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maXe", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
 		public string maXe
 		{
 			get

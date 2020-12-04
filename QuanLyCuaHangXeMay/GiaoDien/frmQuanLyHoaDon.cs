@@ -15,6 +15,7 @@ namespace QuanLyCuaHangXeMay
     {
         private HDController HDC = new HDController();
         private List<ListViewItem> dshd = new List<ListViewItem>();
+        public static ListViewItem lvi { get; private set; } = new ListViewItem();
         public frmQuanLyHoaDon()
         {
             InitializeComponent();
@@ -44,6 +45,14 @@ namespace QuanLyCuaHangXeMay
             foreach (ListViewItem hd in dshd)
             {
                 lvHD.Items.Add(hd);
+            }
+        }
+
+        private void lvHD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvHD.SelectedItems.Count > 0)
+            {
+                lvi = lvHD.SelectedItems[0];
             }
         }
     }

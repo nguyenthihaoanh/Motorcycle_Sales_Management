@@ -17,8 +17,8 @@ namespace QuanLyCuaHangXeMay.Controller
         public List<ListViewItem> danhSachHD()
         {
             dsHD.Clear();
-            var hd = from HD in db.HoaDonXes
-                     join cthd in db.CTHoaDonXes on HD.maHoaDon equals cthd.maHoaDon
+            var hd = from HD in db.HoaDonXes select HD;
+                     /*join cthd in db.CTHoaDonXes on HD.maHoaDon equals cthd.maHoaDon
                      join kh in db.KhachHangs on HD.maKhachHang equals kh.maKhachHang
                      join nv in db.NhanViens on HD.maNhanVien equals nv.maNhanVien
                      select new
@@ -32,19 +32,19 @@ namespace QuanLyCuaHangXeMay.Controller
                          mauXe = cthd.Xe.MauXe.tenMau,
                          soLuong = cthd.soLuong,
                          thanhTien = cthd.thanhTien
-                     };
+                     };*/
             foreach (var n in hd)
             {
                 lvit = new ListViewItem();
-                lvit.Text = n.maHD;
-                lvit.SubItems.Add(n.nv);
-                lvit.SubItems.Add(n.kh);
-                lvit.SubItems.Add(n.sdtKH);
+                lvit.Text = n.maHoaDon;
+                lvit.SubItems.Add(n.maNhanVien);
+                lvit.SubItems.Add(n.maKhachHang);
+                /*lvit.SubItems.Add(n.sdtKH);
                 lvit.SubItems.Add(n.ngay.ToString());
                 lvit.SubItems.Add(n.xe);
                 lvit.SubItems.Add(n.mauXe);
                 lvit.SubItems.Add(n.soLuong.ToString());
-                lvit.SubItems.Add(n.thanhTien.ToString());
+                lvit.SubItems.Add(n.thanhTien.ToString());*/
                 dsHD.Add(lvit);
             }
             return dsHD;

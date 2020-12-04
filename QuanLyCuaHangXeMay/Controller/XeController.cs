@@ -49,10 +49,10 @@ namespace QuanLyCuaHangXeMay.Controller
                          maXe = xe.maXe,
                          nhanHieu = xe.nhanHieu,
                          mau = mau.tenMau,
+                         soLuong = xe.soLuong,
+                         tenNSX = nsx.nuocSX,
                          dungTich = xe.dungTich,
                          tenNCC = ncc.tenNCC,
-                         tenNSX = nsx.tenNSX,
-                         soLuong = xe.soLuong,
                          giaNhap = xe.giaNhap,
                          ngayNhap = xe.ngayNhap
                      };
@@ -62,16 +62,17 @@ namespace QuanLyCuaHangXeMay.Controller
                 lvit.Text = xe.maXe;
                 lvit.SubItems.Add(xe.nhanHieu);
                 lvit.SubItems.Add(xe.mau);
+                lvit.SubItems.Add(xe.soLuong.ToString());
+                lvit.SubItems.Add(xe.tenNSX);
                 lvit.SubItems.Add(xe.dungTich.ToString());
                 lvit.SubItems.Add(xe.tenNCC);
-                lvit.SubItems.Add(xe.tenNSX);
-                lvit.SubItems.Add(xe.soLuong.ToString());
                 lvit.SubItems.Add(xe.giaNhap.ToString());
                 lvit.SubItems.Add(xe.ngayNhap.ToString());
                 dsXe.Add(lvit);
             }
             return dsXe;
         }
+        
         //them xe trong database
         public void themTTXe(ListViewItem lvi_Xe, string sl, string dungTich, string gN, DateTimePicker ngayNhap, string mau, string ncc, string nsx)
         {
