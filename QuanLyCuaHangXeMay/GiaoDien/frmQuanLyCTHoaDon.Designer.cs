@@ -71,8 +71,6 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblDonGia = new System.Windows.Forms.Label();
             this.lblMax = new System.Windows.Forms.Label();
             this.btTroVe = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
@@ -374,6 +372,7 @@
             this.tbTim.Name = "tbTim";
             this.tbTim.Size = new System.Drawing.Size(265, 34);
             this.tbTim.TabIndex = 90;
+            this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
             // 
             // label1
             // 
@@ -475,24 +474,6 @@
             this.columnHeader8.Text = "Ngày Nhập";
             this.columnHeader8.Width = 200;
             // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.label3.Location = new System.Drawing.Point(512, 911);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 25);
-            this.label3.TabIndex = 96;
-            this.label3.Text = "Tổng Tiền:";
-            // 
-            // lblDonGia
-            // 
-            this.lblDonGia.BackColor = System.Drawing.Color.MintCream;
-            this.lblDonGia.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.lblDonGia.Location = new System.Drawing.Point(640, 911);
-            this.lblDonGia.Name = "lblDonGia";
-            this.lblDonGia.Size = new System.Drawing.Size(270, 25);
-            this.lblDonGia.TabIndex = 95;
-            // 
             // lblMax
             // 
             this.lblMax.BackColor = System.Drawing.Color.MintCream;
@@ -524,8 +505,6 @@
             this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.btTroVe);
             this.Controls.Add(this.lblMax);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblDonGia);
             this.Controls.Add(this.lvXeDaChon);
             this.Controls.Add(this.btHuy);
             this.Controls.Add(this.btThem);
@@ -598,8 +577,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblDonGia;
         private System.Windows.Forms.Label lblMax;
         private System.Windows.Forms.Button btTroVe;
     }

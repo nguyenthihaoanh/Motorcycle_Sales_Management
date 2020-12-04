@@ -18,7 +18,6 @@ namespace QuanLyCuaHangXeMay
         private frmThemMauXe frmMau = new frmThemMauXe();
         private List<ListViewItem> ds = new List<ListViewItem>();
         private List<string> dsncc = new List<string>();
-        private List<string> dsnsx = new List<string>();
         private List<string> dsmau = new List<string>();
         private XeController xe_Controller = new XeController();
         public static ListViewItem lvi_Xe { get; private set; } = new ListViewItem();

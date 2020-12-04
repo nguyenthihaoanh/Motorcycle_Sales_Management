@@ -213,7 +213,7 @@ namespace QuanLyCuaHangXeMay.Model
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTHoaDon", DbType="NVarChar(7) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTHoaDon", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maCTHoaDon
 		{
 			get

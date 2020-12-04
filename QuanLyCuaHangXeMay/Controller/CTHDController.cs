@@ -13,26 +13,8 @@ namespace QuanLyCuaHangXeMay.Controller
         private dbQLMuaBanXeDataContext db = new dbQLMuaBanXeDataContext();
         private List<ListViewItem> dsCTHD = new List<ListViewItem>();
         public static ListViewItem cthd_moi = new ListViewItem();
+        private TTNhanVienController TTNV = new TTNhanVienController();
         private ListViewItem lvit;
-        // Thêm thông tin 1 ncc vào listviewitem
-        public ListViewItem them_hd_lv(HoaDonXe hoaDon)
-        {
-            lvit = new ListViewItem();
-            lvit.Text = hoaDon.maHoaDon.ToString();
-            lvit.SubItems.Add(hoaDon.maNhanVien);
-            lvit.SubItems.Add(hoaDon.maKhachHang);
-            return lvit;
-        }
-        //Lay danh sach tat ca nhan vien
-        public List<ListViewItem> danhSachHD()
-        {
-            dsCTHD.Clear();
-            var hd = from HD in db.HoaDonXes
-                      select HD;
-            foreach (HoaDonXe n in hd)
-                dsCTHD.Add(them_hd_lv(n));
-            return dsCTHD;
-        }
         public List<ListViewItem> lay_hd_theo_maKH()
         {
             dsCTHD.Clear();
@@ -50,7 +32,7 @@ namespace QuanLyCuaHangXeMay.Controller
                            ngayLapHD = c.ngayLap,
                            maxe = xe.maXe
                        };
-            foreach(var hd in cthd)
+            foreach (var hd in cthd)
             {
                 lvit = new ListViewItem();
                 lvit.Text = hd.macthd.ToString();
@@ -69,41 +51,52 @@ namespace QuanLyCuaHangXeMay.Controller
         public ListViewItem themCTHD(ListViewItem lvi_cthd)
         {
             lvit = new ListViewItem();
-            int count = lay_hd_theo_maKH().Count;
-//            string chuoi = "";
-            int stt = 0;
-            if (count == 0)
-            {
-                stt = 1;
-            }
-            else stt = count + 1;
-            if (stt < 10)
-                lvit.Text = "CTHD00" + stt.ToString();
-            else if (stt < 100)
-                lvit.Text = "CTHD0" + stt.ToString();
-            else if (stt < 1000)
-                lvit.Text = "CTHD" + stt.ToString();
+            lvit.Text = lvi_cthd.Text;
             lvit.SubItems.Add(lvi_cthd.SubItems[1]);
             lvit.SubItems.Add(lvi_cthd.SubItems[2]);
             lvit.SubItems.Add(lvi_cthd.SubItems[3]);
             lvit.SubItems.Add(lvi_cthd.SubItems[4]);
             lvit.SubItems.Add(lvi_cthd.SubItems[5]);
             lvit.SubItems.Add(lvi_cthd.SubItems[6]);
+            lvit.SubItems.Add(lvi_cthd.SubItems[7]);
             return lvit;
-
         }
-        /*public void themXeVaoCTHD(ListViewItem lvi_themXe, string tenXe, int soLuong, string donGia, string thanhTien, DateTimePicker ngayLap)
+        public void Luu_HD(ListView.ListViewItemCollection list_cthd, string mahd, DateTimePicker ngay_dat_hang)
         {
-            CTHoaDonXe cthd = new CTHoaDonXe();
-            cthd.maHoaDon = lvi_themXe.ToString();
-            cthd.maXe = Convert.ToString(tenXe);
-            //cthd.maXe = lvi_themXe.SubItems[1].Text;
-            cthd.soLuong = Convert.ToInt32(soLuong.ToString());
-            cthd.donGia = Convert.ToDecimal(donGia);
-            cthd.thanhTien = Convert.ToDecimal(thanhTien);
-            cthd.ngayLap = Convert.ToDateTime(ngayLap.Value.ToString());
-            db.CTHoaDonXes.InsertOnSubmit(cthd);
+            List<ListViewItem> ds = TTNV.NhanTT();
+            HoaDonXe hd = new HoaDonXe();
+            hd.maHoaDon = Convert.ToString(mahd);
+            hd.maNhanVien = ds[0].SubItems[0].Text;
+            hd.maKhachHang = frmQuanLyKhachHang.lvi_KH.SubItems[0].Text;
+            db.HoaDonXes.InsertOnSubmit(hd);
             db.SubmitChanges();
-        }*/
+            foreach (ListViewItem lvi in list_cthd)
+            {
+                CTHoaDonXe cthd = new CTHoaDonXe();
+                cthd.maCTHoaDon = Convert.ToString(lvi.SubItems[0].Text);
+                cthd.maHoaDon = hd.maHoaDon;
+                cthd.maXe = lvi.SubItems[7].Text;
+                cthd.soLuong = Convert.ToInt32(lvi.SubItems[3].Text);
+                cthd.donGia = Convert.ToDecimal(lvi.SubItems[4].Text);
+                cthd.thanhTien = Convert.ToDecimal(lvi.SubItems[5].Text);
+                cthd.ngayLap = Convert.ToDateTime(ngay_dat_hang.Value.ToString());
+                db.CTHoaDonXes.InsertOnSubmit(cthd);
+                db.SubmitChanges();
+
+            }
+            /*public void themXeVaoCTHD(ListViewItem lvi_themXe, string tenXe, int soLuong, string donGia, string thanhTien, DateTimePicker ngayLap)
+            {
+                CTHoaDonXe cthd = new CTHoaDonXe();
+                cthd.maHoaDon = lvi_themXe.ToString();
+                cthd.maXe = Convert.ToString(tenXe);
+                //cthd.maXe = lvi_themXe.SubItems[1].Text;
+                cthd.soLuong = Convert.ToInt32(soLuong.ToString());
+                cthd.donGia = Convert.ToDecimal(donGia);
+                cthd.thanhTien = Convert.ToDecimal(thanhTien);
+                cthd.ngayLap = Convert.ToDateTime(ngayLap.Value.ToString());
+                db.CTHoaDonXes.InsertOnSubmit(cthd);
+                db.SubmitChanges();
+            }*/
+        }
     }
 }
