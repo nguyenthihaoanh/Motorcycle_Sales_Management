@@ -48,7 +48,7 @@ namespace QuanLyCuaHangXeMay
                 tbTenKH.Text = lvi_KH.SubItems[1].Text;
                 tbSDT.Text = lvi_KH.SubItems[2].Text;
                 tbCMND.Text = lvi_KH.SubItems[3].Text;
-                tbDiaChi.Text = lvi_KH.SubItems[4].Text;
+                tbDiaChi.Text = lvi_KH.SubItems[3].Text;
                 btThem.Enabled = false;
                 btSua.Enabled = true;
                 btMuaXe.Enabled = true;

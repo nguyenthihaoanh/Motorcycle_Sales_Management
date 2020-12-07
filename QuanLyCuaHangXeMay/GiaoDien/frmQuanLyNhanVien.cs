@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyCuaHangXeMay.Controller;
+using System.Security.Cryptography;
 
 namespace QuanLyCuaHangXeMay
 {
@@ -14,6 +16,7 @@ namespace QuanLyCuaHangXeMay
     {
         private List<ListViewItem> list_NV = new List<ListViewItem>();
         private NhanVienController NVC = new NhanVienController();
+        private DangNhapController DNC = new DangNhapController();
         public static ListViewItem lvi_nv { get; private set; } = new ListViewItem();
         public static bool flag_nv { get; private set; } = true;
         public frmQuanLyNhanVien()
@@ -187,7 +190,7 @@ namespace QuanLyCuaHangXeMay
             {
                 lvi_tk.Text = tbMaNV.Text;
                 lvi_tk.SubItems.Add(tbTaiKhoan.Text);
-                NVC.themTK(lvi_tk, "123".ToString());
+                NVC.themTK(lvi_tk, "123".GetHashCode().ToString());
                 MessageBox.Show("Thêm Thành Công");
                 capNhap();
             }

@@ -33,8 +33,6 @@
             this.mnuThemXe = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSuaTTXe = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimXe = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuThongKe = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuThongKeDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
             this.ManHinhChinh = new System.Windows.Forms.MenuStrip();
             this.mnuNV = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuXemTTNV = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +56,7 @@
             this.mnuHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimHD = new System.Windows.Forms.ToolStripMenuItem();
             this.hinhAnh = new System.Windows.Forms.PictureBox();
+            this.mnuThongKeDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
             this.ManHinhChinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhAnh)).BeginInit();
             this.SuspendLayout();
@@ -94,22 +93,6 @@
             this.mnuTimXe.Text = "Tìm Kiếm Xe";
             this.mnuTimXe.Click += new System.EventHandler(this.mnuTimXe_Click);
             // 
-            // mnuThongKe
-            // 
-            this.mnuThongKe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuThongKeDoanhThu});
-            this.mnuThongKe.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.mnuThongKe.Name = "mnuThongKe";
-            this.mnuThongKe.Size = new System.Drawing.Size(112, 44);
-            this.mnuThongKe.Text = "Thống Kê";
-            // 
-            // mnuThongKeDoanhThu
-            // 
-            this.mnuThongKeDoanhThu.Name = "mnuThongKeDoanhThu";
-            this.mnuThongKeDoanhThu.Size = new System.Drawing.Size(288, 30);
-            this.mnuThongKeDoanhThu.Text = "Thống Kê Doanh Thu";
-            this.mnuThongKeDoanhThu.Click += new System.EventHandler(this.mnsThongKeDoanhThu_Click);
-            // 
             // ManHinhChinh
             // 
             this.ManHinhChinh.AutoSize = false;
@@ -122,8 +105,7 @@
             this.mnuNSX,
             this.mnuXe,
             this.mnuKH,
-            this.mnuHoaDon,
-            this.mnuThongKe});
+            this.mnuHoaDon});
             this.ManHinhChinh.Location = new System.Drawing.Point(0, 0);
             this.ManHinhChinh.Name = "ManHinhChinh";
             this.ManHinhChinh.Size = new System.Drawing.Size(1902, 48);
@@ -281,7 +263,8 @@
             // mnuHoaDon
             // 
             this.mnuHoaDon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuTimHD});
+            this.mnuTimHD,
+            this.mnuThongKeDoanhThu});
             this.mnuHoaDon.Name = "mnuHoaDon";
             this.mnuHoaDon.Size = new System.Drawing.Size(106, 44);
             this.mnuHoaDon.Text = "Hóa Đơn";
@@ -289,7 +272,7 @@
             // mnuTimHD
             // 
             this.mnuTimHD.Name = "mnuTimHD";
-            this.mnuTimHD.Size = new System.Drawing.Size(273, 30);
+            this.mnuTimHD.Size = new System.Drawing.Size(288, 30);
             this.mnuTimHD.Text = "Tìm Kiếm Hóa Đơn";
             this.mnuTimHD.Click += new System.EventHandler(this.mnuTimHD_Click);
             // 
@@ -304,6 +287,13 @@
             this.hinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.hinhAnh.TabIndex = 2;
             this.hinhAnh.TabStop = false;
+            // 
+            // mnuThongKeDoanhThu
+            // 
+            this.mnuThongKeDoanhThu.Name = "mnuThongKeDoanhThu";
+            this.mnuThongKeDoanhThu.Size = new System.Drawing.Size(288, 30);
+            this.mnuThongKeDoanhThu.Text = "Thống Kê Doanh Thu";
+            this.mnuThongKeDoanhThu.Click += new System.EventHandler(this.mnuThongKeDoanhThu_Click);
             // 
             // frmManHinhChinh
             // 
@@ -328,8 +318,6 @@
 
         #endregion
         private System.Windows.Forms.ToolStripMenuItem mnuXe;
-        private System.Windows.Forms.ToolStripMenuItem mnuThongKe;
-        private System.Windows.Forms.ToolStripMenuItem mnuThongKeDoanhThu;
         private System.Windows.Forms.MenuStrip ManHinhChinh;
         private System.Windows.Forms.PictureBox hinhAnh;
         private System.Windows.Forms.ToolStripMenuItem mnuKH;
@@ -356,5 +344,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuTimNSX;
         private System.Windows.Forms.ToolStripMenuItem mnuTimHD;
         private System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
+        private System.Windows.Forms.ToolStripMenuItem mnuThongKeDoanhThu;
     }
 }

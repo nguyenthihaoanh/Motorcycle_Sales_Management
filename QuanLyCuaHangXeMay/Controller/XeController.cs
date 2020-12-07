@@ -67,7 +67,7 @@ namespace QuanLyCuaHangXeMay.Controller
                 lvit.SubItems.Add(xe.dungTich.ToString());
                 lvit.SubItems.Add(xe.tenNCC);
                 lvit.SubItems.Add(xe.giaNhap.ToString());
-                lvit.SubItems.Add(xe.ngayNhap.ToString());
+                lvit.SubItems.Add(xe.ngayNhap.ToShortDateString());
                 dsXe.Add(lvit);
             }
             return dsXe;

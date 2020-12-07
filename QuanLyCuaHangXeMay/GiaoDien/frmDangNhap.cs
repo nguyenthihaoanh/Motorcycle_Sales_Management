@@ -25,7 +25,7 @@ namespace QuanLyCuaHangXeMay
         private void btDangNhap_Click(object sender, EventArgs e)
         {
             taiKhoan = tbTaiKhoan.Text;
-            matKhau = tbMatKhau.Text;
+            matKhau = tbMatKhau.Text.GetHashCode().ToString();
             if (tbTaiKhoan.Text.Trim() == "" && tbMatKhau.Text.Trim() == "")
             {
                 MessageBox.Show("Mời Bạn Nhập Tên Tài Khoản Và Mật Khẩu", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

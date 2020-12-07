@@ -42,6 +42,7 @@
             this.mauXe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbTimKiemHD.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +99,8 @@
             this.xe,
             this.mauXe,
             this.sl,
-            this.tt});
+            this.tt,
+            this.columnHeader1});
             this.lvHD.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.lvHD.FullRowSelect = true;
             this.lvHD.GridLines = true;
@@ -113,28 +115,28 @@
             // 
             // maHD
             // 
-            this.maHD.Text = "Mã Hóa Đơn";
-            this.maHD.Width = 180;
+            this.maHD.Text = "Mã CT Hóa Đơn";
+            this.maHD.Width = 150;
             // 
             // tenNV
             // 
-            this.tenNV.Text = "Tên Nhân Viên";
-            this.tenNV.Width = 300;
+            this.tenNV.Text = "Mã Hóa Đơn";
+            this.tenNV.Width = 150;
             // 
             // tenKH
             // 
-            this.tenKH.Text = "Tên Khách Hàng";
-            this.tenKH.Width = 300;
+            this.tenKH.Text = "Tên Nhân Viên";
+            this.tenKH.Width = 200;
             // 
             // sdt
             // 
-            this.sdt.Text = "Số Điện Thoại";
-            this.sdt.Width = 300;
+            this.sdt.Text = "Tên Khách Hàng";
+            this.sdt.Width = 200;
             // 
             // ngay
             // 
-            this.ngay.Text = "Ngày Lập Hóa Đơn";
-            this.ngay.Width = 300;
+            this.ngay.Text = "SĐT";
+            this.ngay.Width = 220;
             // 
             // xe
             // 
@@ -155,6 +157,11 @@
             // 
             this.tt.Text = "Thành Tiền";
             this.tt.Width = 300;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Ngày Lập Hóa Đơn";
+            this.columnHeader1.Width = 150;
             // 
             // frmQuanLyHoaDon
             // 
@@ -192,5 +199,6 @@
         private System.Windows.Forms.ColumnHeader mauXe;
         private System.Windows.Forms.ColumnHeader sl;
         private System.Windows.Forms.ColumnHeader tt;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

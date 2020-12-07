@@ -30,6 +30,7 @@ namespace QuanLyCuaHangXeMay
         private dbQLMuaBanXeDataContext db = new dbQLMuaBanXeDataContext();
         private void frmQuanLyXe_Load(object sender, EventArgs e)
         {
+            dateNgayNhap.Value = DateTime.Today;
             capNhapXe();
             capNhapNCC();
             capNhapNSX();
@@ -84,10 +85,10 @@ namespace QuanLyCuaHangXeMay
                 txtMaXe.Text = lvi_Xe.SubItems[0].Text;
                 txtNhanHieu.Text = lvi_Xe.SubItems[1].Text;
                 cbMauXe.Text = lvi_Xe.SubItems[2].Text;
-                tbDungTich.Text = lvi_Xe.SubItems[3].Text;
-                cbNCC.Text = lvi_Xe.SubItems[4].Text;
-                cbNSX.Text = lvi_Xe.SubItems[5].Text;
-                tbSoLuong.Text = lvi_Xe.SubItems[6].Text;
+                tbDungTich.Text = lvi_Xe.SubItems[5].Text;
+                cbNCC.Text = lvi_Xe.SubItems[6].Text;
+                cbNSX.Text = lvi_Xe.SubItems[4].Text;
+                tbSoLuong.Text = lvi_Xe.SubItems[3].Text;
                 tbGiaNhap.Text = lvi_Xe.SubItems[7].Text;
                 dateNgayNhap.Text = lvi_Xe.SubItems[8].Text;
                 btThem.Enabled = false;

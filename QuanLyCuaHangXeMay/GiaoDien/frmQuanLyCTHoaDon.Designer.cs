@@ -54,6 +54,7 @@
             this.dungTich = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.donGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ngayNhap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.lbHoaDonBanHang = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblMax = new System.Windows.Forms.Label();
             this.btTroVe = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
@@ -268,7 +268,8 @@
             this.soLuong,
             this.dungTich,
             this.donGia,
-            this.ngayNhap});
+            this.ngayNhap,
+            this.columnHeader9});
             this.lvDSXe.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.lvDSXe.FullRowSelect = true;
             this.lvDSXe.GridLines = true;
@@ -298,13 +299,13 @@
             // 
             // nuocSX
             // 
-            this.nuocSX.Text = "Nước Sản Xuất";
-            this.nuocSX.Width = 200;
+            this.nuocSX.Text = "Số Lượng";
+            this.nuocSX.Width = 150;
             // 
             // soLuong
             // 
-            this.soLuong.Text = "Số Lượng";
-            this.soLuong.Width = 100;
+            this.soLuong.Text = "Nước Sản Xuất";
+            this.soLuong.Width = 200;
             // 
             // dungTich
             // 
@@ -313,18 +314,23 @@
             // 
             // donGia
             // 
-            this.donGia.Text = "Đơn Giá";
+            this.donGia.Text = "Nhà Cung Cấp";
             this.donGia.Width = 200;
             // 
             // ngayNhap
             // 
-            this.ngayNhap.Text = "Ngày Nhập";
+            this.ngayNhap.Text = "Đơn Giá";
             this.ngayNhap.Width = 200;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Ngày Nhập";
+            this.columnHeader9.Width = 200;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.label2.Location = new System.Drawing.Point(1476, 911);
+            this.label2.Location = new System.Drawing.Point(1492, 900);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 25);
             this.label2.TabIndex = 85;
@@ -334,7 +340,7 @@
             // 
             this.lblTongTien.BackColor = System.Drawing.Color.MintCream;
             this.lblTongTien.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.lblTongTien.Location = new System.Drawing.Point(1604, 911);
+            this.lblTongTien.Location = new System.Drawing.Point(1620, 900);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(270, 25);
             this.lblTongTien.TabIndex = 84;
@@ -436,53 +442,43 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Mã Xe";
-            this.columnHeader1.Width = 100;
+            this.columnHeader1.Text = "Mã CTHD";
+            this.columnHeader1.Width = 200;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Nhãn Hiệu";
-            this.columnHeader2.Width = 200;
+            this.columnHeader2.Text = "Mã HD";
+            this.columnHeader2.Width = 150;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Màu Xe";
-            this.columnHeader3.Width = 150;
+            this.columnHeader3.Text = "Nhãn Hiệu";
+            this.columnHeader3.Width = 200;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Nước Sản Xuất";
-            this.columnHeader4.Width = 200;
+            this.columnHeader4.Text = "Số Lượng";
+            this.columnHeader4.Width = 100;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Số Lượng";
-            this.columnHeader5.Width = 100;
+            this.columnHeader5.Text = "Đơn Giá";
+            this.columnHeader5.Width = 200;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Dung Tích";
+            this.columnHeader6.Text = "Thành Tiền";
             this.columnHeader6.Width = 200;
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Đơn Giá";
+            this.columnHeader7.Text = "Ngày Lập";
             this.columnHeader7.Width = 200;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "Ngày Nhập";
+            this.columnHeader8.Text = "Mã Xe";
             this.columnHeader8.Width = 200;
-            // 
-            // lblMax
-            // 
-            this.lblMax.BackColor = System.Drawing.Color.MintCream;
-            this.lblMax.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.lblMax.Location = new System.Drawing.Point(798, 337);
-            this.lblMax.Name = "lblMax";
-            this.lblMax.Size = new System.Drawing.Size(270, 25);
-            this.lblMax.TabIndex = 97;
-            this.lblMax.Visible = false;
             // 
             // btTroVe
             // 
@@ -504,7 +500,6 @@
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.btTroVe);
-            this.Controls.Add(this.lblMax);
             this.Controls.Add(this.lvXeDaChon);
             this.Controls.Add(this.btHuy);
             this.Controls.Add(this.btThem);
@@ -577,7 +572,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Label lblMax;
         private System.Windows.Forms.Button btTroVe;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }

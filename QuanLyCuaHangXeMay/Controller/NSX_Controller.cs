@@ -21,7 +21,7 @@ namespace QuanLyCuaHangXeMay.Controller
             lvit.SubItems.Add(nhaSanXuat.tenNSX);
             lvit.SubItems.Add(nhaSanXuat.nuocSX);
             lvit.SubItems.Add(nhaSanXuat.email);
-            lvit.SubItems.Add(nhaSanXuat.namSX.ToString());
+            lvit.SubItems.Add(nhaSanXuat.namSX.ToShortDateString());
             return lvit;
         }
         //Lay danh sach tat ca nhan vien
@@ -75,7 +75,7 @@ namespace QuanLyCuaHangXeMay.Controller
                     lvit.SubItems.Add(nhaSanXuat.tenNSX);
                     lvit.SubItems.Add(nhaSanXuat.nuocSX);
                     lvit.SubItems.Add(nhaSanXuat.email);
-                    lvit.SubItems.Add(nhaSanXuat.namSX.ToString());
+                    lvit.SubItems.Add(nhaSanXuat.namSX.ToShortDateString());
                     dsNSX.Add(lvit);
                 }
             }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangXeMay.Controller;
+using QuanLyCuaHangXeMay.GiaoDien;
 using QuanLyCuaHangXeMay.Model;
 
 namespace QuanLyCuaHangXeMay
@@ -18,10 +19,10 @@ namespace QuanLyCuaHangXeMay
         private CTHDController CTHDC = new CTHDController();
         private dbQLMuaBanXeDataContext db = new dbQLMuaBanXeDataContext();
         private TTNhanVienController TTNV = new TTNhanVienController();
-        private List<ListViewItem> dshd = new List<ListViewItem>();
         private XeController xe = new XeController();
-        private ListViewItem lvi = new ListViewItem();
+        public static ListViewItem lvi { get; private set; } = new ListViewItem();
         private XeController xe_Controller = new XeController();
+        private List<ListViewItem> dshd = new List<ListViewItem>();
         decimal tong = 0;
         public frmChiTietHD()
         {
@@ -43,12 +44,12 @@ namespace QuanLyCuaHangXeMay
         }
         private void tinh_tong_tien_listview()
         {
-            /*foreach(ListViewItem lvi in lvCTHD.Items)
+            tong = 0;
+            foreach (ListViewItem lvi in lvXeDaChon.Items)
             {
-                tong += Convert.ToDecimal(lvi.SubItems[4].Text);
+                tong += Convert.ToDecimal(lvi.SubItems[5].Text);
             }
-            lblTongTien.Text = tong.ToString();*/
-
+            lblTongTien.Text = tong.ToString();
         }
         private void capNhap()
         {
@@ -71,7 +72,7 @@ namespace QuanLyCuaHangXeMay
 
         public string MaPhatSinhTuDong()
         {
-            int count = CTHDC.lay_hd_theo_maKH().Count;
+            int count = CTHDC.ds_hd().Count;
             string chuoi = "";
             int stt = 0;
             if (count == 0)
@@ -94,7 +95,13 @@ namespace QuanLyCuaHangXeMay
             if (lvDSXe.SelectedItems.Count > 0)
             {
                 nudSoLuong.Enabled = true;
-                nudSoLuong.Maximum = Convert.ToInt32(lvDSXe.SelectedItems[0].SubItems[3].Text);
+                foreach (ListViewItem lvi_xe_chon in lvXeDaChon.Items)
+                {
+                        if (lvDSXe.SelectedItems[0].SubItems[0].Text == lvi_xe_chon.SubItems[7].Text)
+                        {
+                            nudSoLuong.Maximum = Convert.ToInt32(lvDSXe.SelectedItems[0].SubItems[3].Text) - Convert.ToInt32(lvi.SubItems[3].Text);
+                        }
+                }
             }
         }
 
@@ -113,60 +120,79 @@ namespace QuanLyCuaHangXeMay
         }
         private void btThem_Click(object sender, EventArgs e)
         {
-            decimal gia = Convert.ToDecimal(lvDSXe.SelectedItems[0].SubItems[7].Text);
-            int sl = Convert.ToInt32(nudSoLuong.Value.ToString());
-            decimal tong = gia * sl;
-            lvi = new ListViewItem();
-            lvi.Text = lbXuatMaHoaDon.Text + "-" + RandomInt();
-            lvi.SubItems.Add(lbXuatMaHoaDon.Text);
-            lvi.SubItems.Add(lvDSXe.SelectedItems[0].SubItems[1].Text);
-            lvi.SubItems.Add(sl.ToString());
-            lvi.SubItems.Add(gia.ToString());
-            lvi.SubItems.Add(tong.ToString());
-            lvi.SubItems.Add(dtmNgayHD.Value.ToString());
-            lvi.SubItems.Add(lvDSXe.SelectedItems[0].SubItems[0].Text);
-            CTHDController.cthd_moi = CTHDC.themCTHD(lvi);
-            lvXeDaChon.Items.Add(CTHDController.cthd_moi);
+            /*if (lvDSXe.Items.Count > 0)
+            {*/
+                decimal gia = Convert.ToDecimal(lvDSXe.SelectedItems[0].SubItems[7].Text);
+                int sl = Convert.ToInt32(nudSoLuong.Value.ToString());
+                decimal tong = gia * sl;
+                lvi = new ListViewItem();
+                lvi.Text = lbXuatMaHoaDon.Text + "-" + RandomInt();
+                lvi.SubItems.Add(lbXuatMaHoaDon.Text);
+                lvi.SubItems.Add(lvDSXe.SelectedItems[0].SubItems[1].Text);
+                lvi.SubItems.Add(sl.ToString());
+                lvi.SubItems.Add(gia.ToString());
+                lvi.SubItems.Add(tong.ToString());
+                lvi.SubItems.Add(dtmNgayHD.Value.ToShortDateString());
+                lvi.SubItems.Add(lvDSXe.SelectedItems[0].SubItems[0].Text);
+                CTHDController.cthd_moi = CTHDC.themCTHD(lvi);
+                lvXeDaChon.Items.Add(CTHDController.cthd_moi);
+                Xe x = new Xe();
+                x = db.Xes.Where(s => s.maXe == lvDSXe.SelectedItems[0].SubItems[0].Text).Single();
+                x.soLuong -= sl;
+                db.SubmitChanges();
+                capNhap();
+                nudSoLuong.Value = 0;
+                tinh_tong_tien_listview();
+            //}
 
-            Xe x = new Xe();
-            x = db.Xes.Where(s => s.maXe == lvDSXe.SelectedItems[0].SubItems[0].Text).Single();
-            x.soLuong -= sl;
-            db.SubmitChanges();
-            capNhap();
-            nudSoLuong.Value = 0;
         }
 
         private void btHuy_Click(object sender, EventArgs e)
         {
-            int sl = Convert.ToInt32(lvXeDaChon.SelectedItems[0].SubItems[3].Text);
-            Xe x = new Xe();
-            x = db.Xes.Where(s => s.maXe == lvXeDaChon.SelectedItems[0].SubItems[7].Text).Single();
-            x.soLuong += sl;
-            db.SubmitChanges();
-            lvi = lvXeDaChon.FindItemWithText(lvXeDaChon.SelectedItems[0].Text);
-            lvXeDaChon.Items.Remove(lvXeDaChon.SelectedItems[0]);
-            capNhap();
+            if (lvXeDaChon.Items.Count > 0)
+            {
+                int sl = Convert.ToInt32(lvXeDaChon.SelectedItems[0].SubItems[3].Text);
+                Xe x = new Xe();
+                x = db.Xes.Where(s => s.maXe == lvXeDaChon.SelectedItems[0].SubItems[7].Text).Single();
+                x.soLuong += sl;
+                db.SubmitChanges();
+                lvi = lvXeDaChon.FindItemWithText(lvXeDaChon.SelectedItems[0].Text);
+                lvXeDaChon.Items.Remove(lvXeDaChon.SelectedItems[0]);
+                capNhap();
+            }
         }
         
         private void btLapHoaDon_Click(object sender, EventArgs e)
         {
-            if (lvXeDaChon.Items.Count > 1)
+            if (lvXeDaChon.Items.Count > 0)
             {
                 CTHDC.Luu_HD(lvXeDaChon.Items, lbXuatMaHoaDon.Text, dtmNgayHD);
-                this.Close();
                 lbXuatMaHoaDon.Text = MaPhatSinhTuDong();
+                lvXeDaChon.Items.Clear();
+                frmXuatHD frmXuatHD = new frmXuatHD();
+                this.Hide();
+                frmXuatHD.ShowDialog();
+                this.Show();
             }
-
             else
-                MessageBox.Show("Hóa đơn chưa có sản phẩm nào");                
+                MessageBox.Show("Hóa đơn chưa có sản phẩm nào");           
         }
 
         private void btTroVe_Click(object sender, EventArgs e)
         {
-            if (lvXeDaChon.Items.Count == 0)
-                this.Close();
-             else    
-            MessageBox.Show("Moi Ban Huy Tat Ca Loai Xe Da Chon");
+            foreach (ListViewItem lvi_xe_chon in lvXeDaChon.Items)
+            {
+                foreach (ListViewItem lvi_dsXe in lvDSXe.Items)
+                    if (lvi_dsXe.SubItems[0].Text == lvi_xe_chon.SubItems[7].Text)
+                    {
+                        Xe x = new Xe();
+                        x = db.Xes.Where(s => s.maXe == lvi_dsXe.SubItems[0].Text).Single();
+                        x.soLuong += Convert.ToInt32(lvi.SubItems[3].Text);
+                        db.SubmitChanges();
+                    }
+            }
+            this.Close();
+            lvXeDaChon.Items.Clear();
         }
 
         private void tbTim_TextChanged(object sender, EventArgs e)
@@ -179,5 +205,6 @@ namespace QuanLyCuaHangXeMay
                 lvDSXe.Items.Add(xe);
             }
         }
+
     }
 }

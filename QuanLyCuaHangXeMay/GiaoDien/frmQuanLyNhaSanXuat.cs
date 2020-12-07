@@ -23,6 +23,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         }
         private void frmNhaSanXuat_Load(object sender, EventArgs e)
         {
+            dpNgaySX.Value = DateTime.Today;
             capNhap();
             lvNSX.Items.Clear();
             list_NSX = nsx_Controller.danhSachNSX();
@@ -148,6 +149,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             tbEmail.Text = "";
             tbMaNSX.Text = MaPhatSinhTuDong();
             tbTenNSX.Text = "";
+            dpNgaySX.Text = "";
         }
 
         private void btThoat_Click(object sender, EventArgs e)

@@ -49,28 +49,9 @@ namespace QuanLyCuaHangXeMay
             }    
         }
 
-        private void mnsThongKeDoanhThu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmThongKe.ShowDialog();
-            this.Show();
-        }
-
         private void frmManHinhChinh_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void tìmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmQuanLyHoaDon.ShowDialog();
-            this.Show();
         }
 
         private void mnuXemTTNV_Click(object sender, EventArgs e)
@@ -201,6 +182,13 @@ namespace QuanLyCuaHangXeMay
         private void mnuDangXuat_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void mnuThongKeDoanhThu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmThongKe.ShowDialog();
+            this.Show();
         }
     }
 }
