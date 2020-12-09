@@ -150,7 +150,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmThemMauXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmThemMauXe";
+            this.Text = "Thêm Màu Xe";
             this.Load += new System.EventHandler(this.frmThemMauXe_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

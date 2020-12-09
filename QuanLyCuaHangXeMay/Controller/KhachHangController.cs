@@ -14,8 +14,8 @@ namespace QuanLyCuaHangXeMay.Controller
         private List<ListViewItem> dsKH = new List<ListViewItem>();
         private ListViewItem lvit;
 
-        // Thêm thông tin 1 nv vào listviewitem
-        public ListViewItem them_nv_lv(KhachHang khachHang)
+        // Thêm thông tin 1 kh vào listviewitem
+        public ListViewItem them_kh_lv(KhachHang khachHang)
         {
             lvit = new ListViewItem();
             lvit.Text = khachHang.maKhachHang.ToString();
@@ -25,29 +25,29 @@ namespace QuanLyCuaHangXeMay.Controller
             lvit.SubItems.Add(khachHang.diaChiKhachHang);
             return lvit;
         }
-        //Lay danh sach tat ca nhan vien
-        public List<ListViewItem> danhSachNV()
+        //Lay danh sach tat ca kh
+        public List<ListViewItem> danhSachKH()
         {
             dsKH.Clear();
             var kh = from KH in db.KhachHangs
                      select KH;
             foreach (KhachHang k in kh)
-                dsKH.Add(them_nv_lv(k));
+                dsKH.Add(them_kh_lv(k));
             return dsKH;
         }
-        //them NhanVien trong database
-        public void themTTNV(ListViewItem lvi_nv)
+        //them kh trong database
+        public void themTTKH(ListViewItem lvi_kh)
         {
             KhachHang k = new KhachHang();
-            k.maKhachHang = lvi_nv.Text.ToString();
-            k.tenKhachHang = lvi_nv.SubItems[1].Text;
-            k.soDienThoai = lvi_nv.SubItems[2].Text;
-            k.CMND = lvi_nv.SubItems[3].Text;
-            k.diaChiKhachHang = lvi_nv.SubItems[4].Text;
+            k.maKhachHang = lvi_kh.Text.ToString();
+            k.tenKhachHang = lvi_kh.SubItems[1].Text;
+            k.soDienThoai = lvi_kh.SubItems[2].Text;
+            k.CMND = lvi_kh.SubItems[3].Text;
+            k.diaChiKhachHang = lvi_kh.SubItems[4].Text;
             db.KhachHangs.InsertOnSubmit(k);
             db.SubmitChanges();
         }
-        public void suaTTNV(ListViewItem lvi_nv)
+        public void suaTTKH(ListViewItem lvi_nv)
         {
             var kh = from KH in db.KhachHangs
                      where KH.maKhachHang == lvi_nv.Text

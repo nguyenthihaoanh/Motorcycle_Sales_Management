@@ -150,7 +150,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             this.Controls.Add(this.lbSDT);
             this.Name = "frmDoiMK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDoiMK";
+            this.Text = "Đổi Mật Khẩu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

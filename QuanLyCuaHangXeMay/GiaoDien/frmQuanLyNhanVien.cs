@@ -155,28 +155,32 @@ namespace QuanLyCuaHangXeMay
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            lvi_nv = new ListViewItem();
-            lvi_nv.Text = tbMaNV.Text;
-            lvi_nv.SubItems.Add(tbTenNV.Text);
-            lvi_nv.SubItems.Add(tbSDT.Text);
-            lvi_nv.SubItems.Add(cbGioiTinh.Text);
-            lvi_nv.SubItems.Add(tbCMND.Text);
-            lvi_nv.SubItems.Add(tbDiaChi.Text);
-            lvi_nv.SubItems.Add(cbTinhTrang.Text);
-            lvi_nv.SubItems.Add(cbChucVu.Text);
-            if (flag_nv == true)
+            if (tbTenNV.Text != "" && tbSDT.Text != "" && cbGioiTinh.Text != "" && tbCMND.Text != "" && tbDiaChi.Text != "" && cbTinhTrang.Text != "" && cbChucVu.Text != "")
             {
-                lvi_nv.Text = tbMaNV.Text = MaPhatSinhTuDong();
-                NVC.them(lvi_nv);
-                capNhap();
-                MessageBox.Show("Thêm Thành Công");
+                lvi_nv = new ListViewItem();
+                lvi_nv.Text = tbMaNV.Text;
+                lvi_nv.SubItems.Add(tbTenNV.Text);
+                lvi_nv.SubItems.Add(tbSDT.Text);
+                lvi_nv.SubItems.Add(cbGioiTinh.Text);
+                lvi_nv.SubItems.Add(tbCMND.Text);
+                lvi_nv.SubItems.Add(tbDiaChi.Text);
+                lvi_nv.SubItems.Add(cbTinhTrang.Text);
+                lvi_nv.SubItems.Add(cbChucVu.Text);
+                if (flag_nv == true)
+                {
+                    lvi_nv.Text = tbMaNV.Text = MaPhatSinhTuDong();
+                    NVC.them(lvi_nv);
+                    capNhap();
+                    MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    NVC.suaTTNV(lvi_nv);
+                    capNhap();
+                    MessageBox.Show("Sửa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else 
-            {
-                NVC.suaTTNV(lvi_nv); 
-                capNhap(); 
-                MessageBox.Show("Sửa Thành Công"); 
-            }
+            else MessageBox.Show("Nhập và Chọn Đầy Đủ Thông Tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btThemTK_Click(object sender, EventArgs e)

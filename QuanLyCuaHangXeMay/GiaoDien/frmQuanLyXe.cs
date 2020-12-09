@@ -39,15 +39,31 @@ namespace QuanLyCuaHangXeMay
             btSua.Enabled = false;
             enables_txt(false);
         }
-        private void capNhapMauXe()
+        private void capNhapMauXe(bool clear=true)
         {
-            dsmau.Clear();
-            cbMauXe.Items.Clear();
-            dsmau = xe_Controller.ds_mau();
-            foreach (var mau in dsmau)
+            if (clear)
             {
-                cbMauXe.Items.Add(mau);
+                cbMauXe.Items.Clear();
+                dsmau.Clear();
+                dsmau = xe_Controller.ds_mau();
+                foreach (var mau in dsmau)
+                {
+                    cbMauXe.Items.Add(mau);
+                }
             }
+            else
+            {
+                dsmau.Clear();
+                dsmau = xe_Controller.ds_mau();
+                foreach (var mau in dsmau)
+                {
+                    if (!cbMauXe.Items.Equals(mau))
+                    {
+                        cbMauXe.Items.Add(mau);
+                    }
+                }
+            }
+            
         }
         private void capNhapNSX()
         {
@@ -159,7 +175,6 @@ namespace QuanLyCuaHangXeMay
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            capNhapMauXe();
             flag_xe = false;
             if (!btSua.Text.Equals("Hủy Sửa"))
             {
@@ -167,9 +182,11 @@ namespace QuanLyCuaHangXeMay
                 btLuu.Enabled = true;
                 enables_txt(true);
                 btThem.Enabled = false;
+                
             }
             else
             {
+                //capNhapMauXe();
                 btSua.Text = "Sửa";
                 btLuu.Enabled = false;
                 btThem.Enabled = true;
@@ -179,7 +196,7 @@ namespace QuanLyCuaHangXeMay
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            if (lvXe.Items.Count > 0)
+            if (txtNhanHieu.Text != "" && tbSoLuong.Text != "" && tbGiaNhap.Text != "" && tbDungTich.Text != "" && lblMaNSX.Text != "" && cbNCC.SelectedItem.ToString() != null && cbMauXe.SelectedItem.ToString() != "") 
             {
                 lvi_Xe = new ListViewItem();
                 lvi_Xe.Text = txtMaXe.Text;
@@ -196,7 +213,7 @@ namespace QuanLyCuaHangXeMay
                     lvi_Xe.Text = txtMaXe.Text = MaPhatSinhTuDong();
                     xe_Controller.themTTXe(lvi_Xe, tbSoLuong.Text, tbDungTich.Text, tbGiaNhap.Text, dateNgayNhap, cbMauXe.SelectedItem.ToString(), cbNCC.SelectedItem.ToString(), lblMaNSX.Text);
                     capNhapXe();
-                    MessageBox.Show("Thêm Thành Công"); 
+                    MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information); 
                     btThem.Text = "Thêm";
                     nhaplai();
                     enables_txt(false);
@@ -205,19 +222,20 @@ namespace QuanLyCuaHangXeMay
                 {
                     xe_Controller.suaTTXe(lvi_Xe, tbSoLuong.Text, tbDungTich.Text, tbGiaNhap.Text, dateNgayNhap, cbMauXe.SelectedItem.ToString(), cbNCC.SelectedItem.ToString(), lblMaNSX.Text);
                     capNhapXe();
-                    MessageBox.Show("Sửa Thành Công");
+                    MessageBox.Show("Sửa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btSua.Text = "Sửa";
                     nhaplai();
                     enables_txt(false);
                 }
             }
-            else MessageBox.Show("Nhap du lieu");
+            else MessageBox.Show("Nhập và Chọn Đầy Đủ Thông Tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btMauXe_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmMau.ShowDialog();
+            capNhapMauXe(false);
             this.Show();
         }
 

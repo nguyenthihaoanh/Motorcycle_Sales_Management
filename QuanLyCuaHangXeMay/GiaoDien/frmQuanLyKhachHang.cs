@@ -28,7 +28,7 @@ namespace QuanLyCuaHangXeMay
         {
             capNhap();
             lvKH.Items.Clear();
-            list_KH = kh_Controller.danhSachNV();
+            list_KH = kh_Controller.danhSachKH();
             foreach (ListViewItem nsx in list_KH)
             {
                 lvKH.Items.Add(nsx);
@@ -83,7 +83,7 @@ namespace QuanLyCuaHangXeMay
         private void capNhap()
         {
             lvKH.Items.Clear();
-            list_KH = kh_Controller.danhSachNV();
+            list_KH = kh_Controller.danhSachKH();
             foreach (ListViewItem nv in list_KH)
             {
                 lvKH.Items.Add(nv);
@@ -156,25 +156,30 @@ namespace QuanLyCuaHangXeMay
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            lvi_KH = new ListViewItem();
-            lvi_KH.Text = tbMaKH.Text;
-            lvi_KH.SubItems.Add(tbTenKH.Text);
-            lvi_KH.SubItems.Add(tbSDT.Text);
-            lvi_KH.SubItems.Add(tbCMND.Text);
-            lvi_KH.SubItems.Add(tbDiaChi.Text);
-            if (flag_ncc == true)
+            if (tbTenKH.Text != "" && tbSDT.Text != "" && tbCMND.Text != "" && tbDiaChi.Text != "") 
             {
-                lvi_KH.Text = tbMaKH.Text = MaPhatSinhTuDong();
-                kh_Controller.themTTNV(lvi_KH);
-                capNhap();
-                MessageBox.Show("Thêm Thành Công", "Thông Báo");
+                lvi_KH = new ListViewItem();
+                lvi_KH.Text = tbMaKH.Text;
+                lvi_KH.SubItems.Add(tbTenKH.Text);
+                lvi_KH.SubItems.Add(tbSDT.Text);
+                lvi_KH.SubItems.Add(tbCMND.Text);
+                lvi_KH.SubItems.Add(tbDiaChi.Text);
+                if (flag_ncc == true)
+                {
+                    lvi_KH.Text = tbMaKH.Text = MaPhatSinhTuDong();
+                    kh_Controller.themTTKH(lvi_KH);
+                    capNhap();
+                    MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    kh_Controller.suaTTKH(lvi_KH);
+                    capNhap();
+                    MessageBox.Show("Sửa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
-            {
-                kh_Controller.suaTTNV(lvi_KH);
-                capNhap();
-                MessageBox.Show("Sửa Thành Công", "Thông Báo");
-            }
+                MessageBox.Show("Thông Tin Không Được Để Trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void tbTimTen_TextChanged(object sender, EventArgs e)

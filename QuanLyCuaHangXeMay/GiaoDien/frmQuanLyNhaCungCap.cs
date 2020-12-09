@@ -136,24 +136,29 @@ namespace QuanLyCuaHangXeMay
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            lvi_ncc = new ListViewItem();
-            lvi_ncc.Text = tbMaNCC.Text;
-            lvi_ncc.SubItems.Add(tbTenNCC.Text);
-            lvi_ncc.SubItems.Add(tbDiaChi.Text);
-            lvi_ncc.SubItems.Add(tbEmail.Text);
-            if (flag_ncc == true)
+            if (tbTenNCC.Text != "" && tbDiaChi.Text != "" && tbEmail.Text != "") 
             {
-                lvi_ncc.Text = tbMaNCC.Text = MaPhatSinhTuDong();
-                ncc_Controller.them(lvi_ncc);
-                capNhap();
-                MessageBox.Show("Thêm Thành Công");
+                lvi_ncc = new ListViewItem();
+                lvi_ncc.Text = tbMaNCC.Text;
+                lvi_ncc.SubItems.Add(tbTenNCC.Text);
+                lvi_ncc.SubItems.Add(tbDiaChi.Text);
+                lvi_ncc.SubItems.Add(tbEmail.Text);
+                if (flag_ncc == true)
+                {
+                    lvi_ncc.Text = tbMaNCC.Text = MaPhatSinhTuDong();
+                    ncc_Controller.them(lvi_ncc);
+                    capNhap();
+                    MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ncc_Controller.suaTTNCC(lvi_ncc);
+                    capNhap();
+                    MessageBox.Show("Sửa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
-            {
-                ncc_Controller.suaTTNCC(lvi_ncc);
-                capNhap();
-                MessageBox.Show("Sửa Thành Công");
-            }
+                MessageBox.Show("Thông Tin Không Được Để Trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void tbTimTen_TextChanged(object sender, EventArgs e)

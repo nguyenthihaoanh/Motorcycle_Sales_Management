@@ -22,26 +22,35 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         {
             if (dangNhapController.kiemTraMK(DangNhapController.maNV, tbMkCu.Text.GetHashCode().ToString()))
             {
-                if (tbNhapLaiMk.Text.GetHashCode().ToString() == tbMkMoi.Text.GetHashCode().ToString())
+                if (tbMkMoi.Text != "" && tbNhapLaiMk.Text != "")
                 {
-                    if (tbNhapLaiMk.Text.GetHashCode().ToString().Length > 0)
+                    if (tbMkMoi.Text.ToString().Length >= 3 || tbNhapLaiMk.Text.ToString().Length >= 3)
                     {
-                        dangNhapController.thayDoiMK(DangNhapController.maNV, tbMkMoi.Text.GetHashCode().ToString());
-                        MessageBox.Show("Thay Đổi Mật Khẩu Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                        tbMkCu.Clear();
-                        tbMkMoi.Clear();
-                        tbNhapLaiMk.Clear();
+                        if (tbNhapLaiMk.Text.GetHashCode().ToString() == tbMkMoi.Text.GetHashCode().ToString())
+                        {
+                            if (tbMkMoi.Text.GetHashCode().ToString() != tbMkCu.Text.GetHashCode().ToString())
+                            {
+                                dangNhapController.thayDoiMK(DangNhapController.maNV, tbMkMoi.Text.GetHashCode().ToString());
+                                MessageBox.Show("Thay Đổi Mật Khẩu Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                                tbMkCu.Clear();
+                                tbMkMoi.Clear();
+                                tbNhapLaiMk.Clear();
+                            }
+                            MessageBox.Show("Nhập Mật Khẩu Khác Với Mật Khẩu Cũ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Mật Mã Nhập Lại Không Trùng Khớp", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            tbMkMoi.Clear();
+                            tbNhapLaiMk.Clear();
+                        }
                     }
                     else
-                        MessageBox.Show("Mật Khẩu Không Được Để Trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Mật Khẩu Chứa Từ 3 Ký Tự Trở Lên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                {
-                    MessageBox.Show("Mật Mã Nhập Lại Không Trùng Khớp", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tbMkMoi.Clear();
-                    tbNhapLaiMk.Clear();
-                }
+                    MessageBox.Show("Mật Khẩu Không Được Để Trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

@@ -120,8 +120,8 @@ namespace QuanLyCuaHangXeMay
         }
         private void btThem_Click(object sender, EventArgs e)
         {
-            /*if (lvDSXe.Items.Count > 0)
-            {*/
+            if (nudSoLuong.Value > 0)
+            {
                 decimal gia = Convert.ToDecimal(lvDSXe.SelectedItems[0].SubItems[7].Text);
                 int sl = Convert.ToInt32(nudSoLuong.Value.ToString());
                 decimal tong = gia * sl;
@@ -143,8 +143,9 @@ namespace QuanLyCuaHangXeMay
                 capNhap();
                 nudSoLuong.Value = 0;
                 tinh_tong_tien_listview();
-            //}
-
+            }
+            else
+                MessageBox.Show("Nhập Số Lượng Lớn Hơn 0", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btHuy_Click(object sender, EventArgs e)

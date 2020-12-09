@@ -123,24 +123,29 @@ namespace QuanLyCuaHangXeMay.GiaoDien
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            lvi_nsx = new ListViewItem();
-            lvi_nsx.Text = tbMaNSX.Text;
-            lvi_nsx.SubItems.Add(tbTenNSX.Text);
-            lvi_nsx.SubItems.Add(tbDiaChi.Text);
-            lvi_nsx.SubItems.Add(tbEmail.Text);
-            if (flag_ncc == true)
+            if (tbTenNSX.Text != "" && tbDiaChi.Text != "" && tbEmail.Text != "")
             {
-                lvi_nsx.Text = tbMaNSX.Text = MaPhatSinhTuDong();
-                nsx_Controller.themTTNSX(lvi_nsx, dpNgaySX);
-                capNhap();
-                MessageBox.Show("Thêm Thành Công", "Thông Báo");
+                lvi_nsx = new ListViewItem();
+                lvi_nsx.Text = tbMaNSX.Text;
+                lvi_nsx.SubItems.Add(tbTenNSX.Text);
+                lvi_nsx.SubItems.Add(tbDiaChi.Text);
+                lvi_nsx.SubItems.Add(tbEmail.Text);
+                if (flag_ncc == true)
+                {
+                    lvi_nsx.Text = tbMaNSX.Text = MaPhatSinhTuDong();
+                    nsx_Controller.themTTNSX(lvi_nsx, dpNgaySX);
+                    capNhap();
+                    MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    nsx_Controller.suaTTNSX(lvi_nsx, dpNgaySX);
+                    capNhap();
+                    MessageBox.Show("Sửa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
-            {
-                nsx_Controller.suaTTNSX(lvi_nsx, dpNgaySX);
-                capNhap();
-                MessageBox.Show("Sửa Thành Công", "Thông Báo");
-            }
+                MessageBox.Show("Thông Tin Không Được Để Trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btNhapLai_Click(object sender, EventArgs e)
