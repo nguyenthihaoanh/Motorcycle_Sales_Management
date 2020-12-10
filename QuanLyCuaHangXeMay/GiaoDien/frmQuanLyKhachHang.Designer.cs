@@ -55,6 +55,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbKH.SuspendLayout();
             this.gbTimKiem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -276,6 +277,7 @@
             // 
             // gbTimKiem
             // 
+            this.gbTimKiem.Controls.Add(this.label1);
             this.gbTimKiem.Controls.Add(this.tbTimTen);
             this.gbTimKiem.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.gbTimKiem.Location = new System.Drawing.Point(543, 131);
@@ -353,6 +355,15 @@
             this.panel1.Size = new System.Drawing.Size(1902, 1033);
             this.panel1.TabIndex = 51;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 19);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "*tìm theo tên khách hàng";
+            // 
             // frmQuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -402,5 +413,6 @@
         private System.Windows.Forms.TextBox tbTenKH;
         private System.Windows.Forms.TextBox tbMaKH;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

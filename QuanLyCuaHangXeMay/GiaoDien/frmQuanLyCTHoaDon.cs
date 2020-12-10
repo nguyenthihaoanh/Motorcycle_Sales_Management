@@ -141,6 +141,8 @@ namespace QuanLyCuaHangXeMay
                 x.soLuong -= sl;
                 db.SubmitChanges();
                 capNhap();
+                lvDSXe.SelectedItems.Clear();
+                nudSoLuong.Enabled = false;
                 nudSoLuong.Value = 0;
                 tinh_tong_tien_listview();
             }
@@ -162,21 +164,25 @@ namespace QuanLyCuaHangXeMay
                 capNhap();
             }
         }
-        
+
         private void btLapHoaDon_Click(object sender, EventArgs e)
         {
-            if (lvXeDaChon.Items.Count > 0)
+            DialogResult result = MessageBox.Show("Đã Lập Hóa Đơn Thì Không Thể Hủy Hóa Đơn Nữa", "Thông Báo", MessageBoxButtons.YesNo);
+            if (result==DialogResult.Yes)
             {
-                CTHDC.Luu_HD(lvXeDaChon.Items, lbXuatMaHoaDon.Text, dtmNgayHD);
-                lbXuatMaHoaDon.Text = MaPhatSinhTuDong();
-                lvXeDaChon.Items.Clear();
-                frmXuatHD frmXuatHD = new frmXuatHD();
-                this.Hide();
-                frmXuatHD.ShowDialog();
-                this.Show();
+                if (lvXeDaChon.Items.Count > 0)
+                {
+                    CTHDC.Luu_HD(lvXeDaChon.Items, lbXuatMaHoaDon.Text, dtmNgayHD);
+                    lbXuatMaHoaDon.Text = MaPhatSinhTuDong();
+                    lvXeDaChon.Items.Clear();
+                    frmXuatHD frmXuatHD = new frmXuatHD();
+                    this.Hide();
+                    frmXuatHD.ShowDialog();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Hóa đơn chưa có sản phẩm nào");
             }
-            else
-                MessageBox.Show("Hóa đơn chưa có sản phẩm nào");           
         }
 
         private void btTroVe_Click(object sender, EventArgs e)
@@ -207,5 +213,21 @@ namespace QuanLyCuaHangXeMay
             }
         }
 
+        private void frmChiTietHD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            foreach (ListViewItem lvi_xe_chon in lvXeDaChon.Items)
+            {
+                foreach (ListViewItem lvi_dsXe in lvDSXe.Items)
+                    if (lvi_dsXe.SubItems[0].Text == lvi_xe_chon.SubItems[7].Text)
+                    {
+                        Xe x = new Xe();
+                        x = db.Xes.Where(s => s.maXe == lvi_dsXe.SubItems[0].Text).Single();
+                        x.soLuong += Convert.ToInt32(lvi.SubItems[3].Text);
+                        db.SubmitChanges();
+                    }
+            }
+            this.Close();
+            lvXeDaChon.Items.Clear();
+        }
     }
 }

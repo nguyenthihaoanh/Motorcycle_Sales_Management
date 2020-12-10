@@ -55,8 +55,8 @@
             this.mnuTimKH = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimHD = new System.Windows.Forms.ToolStripMenuItem();
-            this.hinhAnh = new System.Windows.Forms.PictureBox();
             this.mnuThongKeDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
+            this.hinhAnh = new System.Windows.Forms.PictureBox();
             this.ManHinhChinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhAnh)).BeginInit();
             this.SuspendLayout();
@@ -75,21 +75,21 @@
             // mnuThemXe
             // 
             this.mnuThemXe.Name = "mnuThemXe";
-            this.mnuThemXe.Size = new System.Drawing.Size(220, 30);
+            this.mnuThemXe.Size = new System.Drawing.Size(224, 30);
             this.mnuThemXe.Text = "Thêm Xe";
             this.mnuThemXe.Click += new System.EventHandler(this.mnuThemXe_Click);
             // 
             // mnuSuaTTXe
             // 
             this.mnuSuaTTXe.Name = "mnuSuaTTXe";
-            this.mnuSuaTTXe.Size = new System.Drawing.Size(220, 30);
+            this.mnuSuaTTXe.Size = new System.Drawing.Size(224, 30);
             this.mnuSuaTTXe.Text = "Chỉnh Sửa Xe";
             this.mnuSuaTTXe.Click += new System.EventHandler(this.mnuSuaTTXe_Click);
             // 
             // mnuTimXe
             // 
             this.mnuTimXe.Name = "mnuTimXe";
-            this.mnuTimXe.Size = new System.Drawing.Size(220, 30);
+            this.mnuTimXe.Size = new System.Drawing.Size(224, 30);
             this.mnuTimXe.Text = "Tìm Kiếm Xe";
             this.mnuTimXe.Click += new System.EventHandler(this.mnuTimXe_Click);
             // 
@@ -226,7 +226,7 @@
             // 
             this.mnuTimNSX.Name = "mnuTimNSX";
             this.mnuTimNSX.Size = new System.Drawing.Size(317, 30);
-            this.mnuTimNSX.Text = "Tìm KiếmNhà Sản Xuất";
+            this.mnuTimNSX.Text = "Tìm Kiếm Nhà Sản Xuất";
             this.mnuTimNSX.Click += new System.EventHandler(this.mnuTimNSX_Click);
             // 
             // mnuKH
@@ -276,6 +276,13 @@
             this.mnuTimHD.Text = "Tìm Kiếm Hóa Đơn";
             this.mnuTimHD.Click += new System.EventHandler(this.mnuTimHD_Click);
             // 
+            // mnuThongKeDoanhThu
+            // 
+            this.mnuThongKeDoanhThu.Name = "mnuThongKeDoanhThu";
+            this.mnuThongKeDoanhThu.Size = new System.Drawing.Size(288, 30);
+            this.mnuThongKeDoanhThu.Text = "Thống Kê Doanh Thu";
+            this.mnuThongKeDoanhThu.Click += new System.EventHandler(this.mnuThongKeDoanhThu_Click);
+            // 
             // hinhAnh
             // 
             this.hinhAnh.BackColor = System.Drawing.Color.MintCream;
@@ -287,13 +294,6 @@
             this.hinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.hinhAnh.TabIndex = 2;
             this.hinhAnh.TabStop = false;
-            // 
-            // mnuThongKeDoanhThu
-            // 
-            this.mnuThongKeDoanhThu.Name = "mnuThongKeDoanhThu";
-            this.mnuThongKeDoanhThu.Size = new System.Drawing.Size(288, 30);
-            this.mnuThongKeDoanhThu.Text = "Thống Kê Doanh Thu";
-            this.mnuThongKeDoanhThu.Click += new System.EventHandler(this.mnuThongKeDoanhThu_Click);
             // 
             // frmManHinhChinh
             // 

@@ -117,6 +117,7 @@ namespace QuanLyCuaHangXeMay
                 btSua.Enabled = false;
                 enables_txt_cb(false);
                 btThemTK.Enabled = false;
+                nhapLai();
             }
         }
 
@@ -137,11 +138,13 @@ namespace QuanLyCuaHangXeMay
                 btLuu.Enabled = false;
                 btThem.Enabled = true;
                 enables_txt_cb(false);
+                lvNV.SelectedItems.Clear();
                 btThemTK.Enabled = false;
+                btSua.Enabled = false;
+                nhapLai();
             }
         }
-
-        private void btNhapLai_Click(object sender, EventArgs e)
+        private void nhapLai()
         {
             tbCMND.Text = "";
             tbDiaChi.Text = "";
@@ -151,6 +154,10 @@ namespace QuanLyCuaHangXeMay
             cbTinhTrang.Text = "";
             cbGioiTinh.Text = "";
             cbChucVu.Text = "";
+        }
+        private void btNhapLai_Click(object sender, EventArgs e)
+        {
+            nhapLai();
         }
 
         private void btLuu_Click(object sender, EventArgs e)
@@ -172,12 +179,23 @@ namespace QuanLyCuaHangXeMay
                     NVC.them(lvi_nv);
                     capNhap();
                     MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btThem.Text = "Thêm";
+                    enables_txt_cb(false);
+                    nhapLai();
+                    btLuu.Enabled = false;
                 }
                 else
                 {
                     NVC.suaTTNV(lvi_nv);
                     capNhap();
                     MessageBox.Show("Sửa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btSua.Text = "Sửa";
+                    lvNV.SelectedItems.Clear();
+                    btLuu.Enabled = false;
+                    btSua.Enabled = false;
+                    btThem.Enabled = true;
+                    enables_txt_cb(false);
+                    nhapLai();
                 }
             }
             else MessageBox.Show("Nhập và Chọn Đầy Đủ Thông Tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

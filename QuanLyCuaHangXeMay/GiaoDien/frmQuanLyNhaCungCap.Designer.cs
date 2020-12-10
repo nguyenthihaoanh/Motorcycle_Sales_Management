@@ -50,6 +50,7 @@
             this.TenNCC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.diaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
             this.gbNCC.SuspendLayout();
             this.gbTimKiem.SuspendLayout();
             this.SuspendLayout();
@@ -234,11 +235,12 @@
             // 
             // gbTimKiem
             // 
+            this.gbTimKiem.Controls.Add(this.label2);
             this.gbTimKiem.Controls.Add(this.tbTimTen);
             this.gbTimKiem.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.gbTimKiem.Location = new System.Drawing.Point(586, 67);
             this.gbTimKiem.Name = "gbTimKiem";
-            this.gbTimKiem.Size = new System.Drawing.Size(278, 100);
+            this.gbTimKiem.Size = new System.Drawing.Size(278, 117);
             this.gbTimKiem.TabIndex = 48;
             this.gbTimKiem.TabStop = false;
             this.gbTimKiem.Text = "Tìm Kiếm";
@@ -292,6 +294,15 @@
             this.email.Text = "Email";
             this.email.Width = 200;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(45, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 19);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "*tìm theo tên nhà cung cấp";
+            // 
             // frmQuanLyNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -338,5 +349,6 @@
         private System.Windows.Forms.ColumnHeader TenNCC;
         private System.Windows.Forms.ColumnHeader diaChi;
         private System.Windows.Forms.ColumnHeader email;
+        private System.Windows.Forms.Label label2;
     }
 }

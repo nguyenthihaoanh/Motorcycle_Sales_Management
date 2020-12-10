@@ -28,7 +28,7 @@ namespace QuanLyCuaHangXeMay
 
         private void frmThongKe_Load(object sender, EventArgs e)
         {
-            rbThongKeTheoNV.Visible = false;
+            //rbThongKeTheoNV.Visible = false;
             chart_thang.Visible = false;
             chart_nv.Visible = false;
         }
@@ -79,9 +79,29 @@ namespace QuanLyCuaHangXeMay
 
         private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
         {
+            rbThongKeTheoNV.Checked = true;
             if (dateTimePickerFrom.Value < dateTimePickerTo.Value)
             {
-                rbThongKeTheoNV.Visible = true;
+                DateTime start = Convert.ToDateTime(dateTimePickerFrom.Value.ToString());
+                DateTime end = Convert.ToDateTime(dateTimePickerTo.Value.ToString());
+                if (rbThongKeTheoNV.Checked == true)
+                {
+                    chart_nv.Visible = true;
+                    chart_thang.Visible = false;
+                    var thongKe = (from cthd in db.CTHoaDonXes
+                                   where cthd.ngayLap >= start && cthd.ngayLap <= end
+                                   group cthd by cthd.HoaDonXe.NhanVien.tenNhanVien into g
+                                   select new
+                                   {
+                                       tenNhanVien = g.Key,
+                                       soLuong = g.Sum(x => x.soLuong)
+                                   }).ToList();
+                    chart_nv.DataSource = thongKe;
+                    chart_nv.Series["Số Lượng"].XValueMember = "tenNhanVien";
+                    chart_nv.Series["Số Lượng"].YValueMembers = "soLuong";
+                    chart_nv.DataBind();
+                    chart_nv.Show();
+                }
             }
             else
                 MessageBox.Show("Ngày không phù hợp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -89,9 +109,29 @@ namespace QuanLyCuaHangXeMay
 
         private void dateTimePickerTo_ValueChanged(object sender, EventArgs e)
         {
+            rbThongKeTheoNV.Checked = true;
             if (dateTimePickerFrom.Value < dateTimePickerTo.Value)
             {
-                rbThongKeTheoNV.Visible = true;
+                DateTime start = Convert.ToDateTime(dateTimePickerFrom.Value.ToString());
+                DateTime end = Convert.ToDateTime(dateTimePickerTo.Value.ToString());
+                if (rbThongKeTheoNV.Checked == true)
+                {
+                    chart_nv.Visible = true;
+                    chart_thang.Visible = false;
+                    var thongKe = (from cthd in db.CTHoaDonXes
+                                   where cthd.ngayLap >= start && cthd.ngayLap <= end
+                                   group cthd by cthd.HoaDonXe.NhanVien.tenNhanVien into g
+                                   select new
+                                   {
+                                       tenNhanVien = g.Key,
+                                       soLuong = g.Sum(x => x.soLuong)
+                                   }).ToList();
+                    chart_nv.DataSource = thongKe;
+                    chart_nv.Series["Số Lượng"].XValueMember = "tenNhanVien";
+                    chart_nv.Series["Số Lượng"].YValueMembers = "soLuong";
+                    chart_nv.DataBind();
+                    chart_nv.Show();
+                }
             }
             else
                 MessageBox.Show("Ngày không phù hợp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

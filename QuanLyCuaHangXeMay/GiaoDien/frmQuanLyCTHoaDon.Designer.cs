@@ -73,6 +73,7 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btTroVe = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -493,12 +494,22 @@
             this.btTroVe.UseVisualStyleBackColor = false;
             this.btTroVe.Click += new System.EventHandler(this.btTroVe_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(273, 341);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 17);
+            this.label5.TabIndex = 100;
+            this.label5.Text = "*tìm theo nhãn hiệu";
+            // 
             // frmChiTietHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btTroVe);
             this.Controls.Add(this.lvXeDaChon);
             this.Controls.Add(this.btHuy);
@@ -517,6 +528,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cửa Hàng Bán Xe Máy Anh Tuấn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmChiTietHD_FormClosed);
             this.Load += new System.EventHandler(this.frmChiTietHD_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -574,5 +586,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Button btTroVe;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.Label label5;
     }
 }

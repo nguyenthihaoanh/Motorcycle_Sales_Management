@@ -67,6 +67,7 @@
             this.diaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tinhTrang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chucVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
             this.gbThongTinNV.SuspendLayout();
             this.gbTimKiem.SuspendLayout();
             this.gbTaiKhoan.SuspendLayout();
@@ -344,6 +345,7 @@
             // 
             // gbTimKiem
             // 
+            this.gbTimKiem.Controls.Add(this.label2);
             this.gbTimKiem.Controls.Add(this.tbTimTen);
             this.gbTimKiem.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.gbTimKiem.Location = new System.Drawing.Point(423, 76);
@@ -482,6 +484,15 @@
             this.chucVu.Text = "Chức Vụ";
             this.chucVu.Width = 200;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(63, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(167, 19);
+            this.label2.TabIndex = 119;
+            this.label2.Text = "*tìm theo tên nhân viên";
+            // 
             // frmQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -549,5 +560,6 @@
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.Button btLuu;
+        private System.Windows.Forms.Label label2;
     }
 }

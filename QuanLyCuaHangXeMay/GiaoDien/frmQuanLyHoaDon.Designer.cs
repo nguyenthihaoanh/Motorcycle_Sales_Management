@@ -30,6 +30,7 @@
         {
             this.tbTim = new System.Windows.Forms.TextBox();
             this.gbTimKiemHD = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btThoat = new System.Windows.Forms.Button();
             this.lbQLHD = new System.Windows.Forms.Label();
             this.lvHD = new System.Windows.Forms.ListView();
@@ -57,6 +58,7 @@
             // 
             // gbTimKiemHD
             // 
+            this.gbTimKiemHD.Controls.Add(this.label1);
             this.gbTimKiemHD.Controls.Add(this.tbTim);
             this.gbTimKiemHD.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.gbTimKiemHD.Location = new System.Drawing.Point(786, 88);
@@ -65,6 +67,15 @@
             this.gbTimKiemHD.TabIndex = 12;
             this.gbTimKiemHD.TabStop = false;
             this.gbTimKiemHD.Text = "Tìm Kiếm Hóa Đơn";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 19);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "*tìm theo tên khách hàng";
             // 
             // btThoat
             // 
@@ -105,7 +116,7 @@
             this.lvHD.FullRowSelect = true;
             this.lvHD.GridLines = true;
             this.lvHD.HideSelection = false;
-            this.lvHD.Location = new System.Drawing.Point(147, 220);
+            this.lvHD.Location = new System.Drawing.Point(132, 211);
             this.lvHD.Name = "lvHD";
             this.lvHD.Size = new System.Drawing.Size(1743, 614);
             this.lvHD.TabIndex = 27;
@@ -200,5 +211,6 @@
         private System.Windows.Forms.ColumnHeader sl;
         private System.Windows.Forms.ColumnHeader tt;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -102,14 +102,17 @@ namespace QuanLyCuaHangXeMay
         {
             this.Close();
         }
-
-        private void btNhapLai_Click_1(object sender, EventArgs e)
+        private void nhapLai()
         {
             tbCMND.Text = "";
             tbDiaChi.Text = "";
             tbMaKH.Text = MaPhatSinhTuDong();
             tbSDT.Text = "";
             tbTenKH.Text = "";
+        }
+        private void btNhapLai_Click_1(object sender, EventArgs e)
+        {
+            nhapLai();
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -130,6 +133,7 @@ namespace QuanLyCuaHangXeMay
                 btSua.Enabled = false;
                 enables_txt(false);
                 btMuaXe.Enabled = false;
+                nhapLai();
             }
         }
 
@@ -151,6 +155,8 @@ namespace QuanLyCuaHangXeMay
                 btThem.Enabled = true;
                 enables_txt(false);
                 btMuaXe.Enabled = false;
+                lvKH.SelectedItems.Clear();
+                nhapLai();
             }
         }
 
@@ -170,12 +176,23 @@ namespace QuanLyCuaHangXeMay
                     kh_Controller.themTTKH(lvi_KH);
                     capNhap();
                     MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btThem.Text = "Thêm";
+                    enables_txt(false);
+                    nhapLai();
+                    btLuu.Enabled = false;
                 }
                 else
                 {
                     kh_Controller.suaTTKH(lvi_KH);
                     capNhap();
                     MessageBox.Show("Sửa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btSua.Text = "Sửa";
+                    lvKH.SelectedItems.Clear();
+                    btLuu.Enabled = false;
+                    btSua.Enabled = false;
+                    btThem.Enabled = true;
+                    enables_txt(false);
+                    nhapLai();
                 }
             }
             else

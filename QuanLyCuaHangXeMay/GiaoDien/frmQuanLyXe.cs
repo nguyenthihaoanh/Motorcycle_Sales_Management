@@ -154,7 +154,7 @@ namespace QuanLyCuaHangXeMay
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            capNhapMauXe();
+            //capNhapMauXe();
             capNhapNSX();
             flag_xe = true;
             if (!btThem.Text.Equals("Hủy Thêm"))
@@ -170,6 +170,7 @@ namespace QuanLyCuaHangXeMay
                 btLuu.Enabled = false;
                 btSua.Enabled = false;
                 enables_txt(false);
+                nhaplai();
             }
         }
 
@@ -182,21 +183,22 @@ namespace QuanLyCuaHangXeMay
                 btLuu.Enabled = true;
                 enables_txt(true);
                 btThem.Enabled = false;
-                
             }
             else
             {
-                //capNhapMauXe();
                 btSua.Text = "Sửa";
                 btLuu.Enabled = false;
                 btThem.Enabled = true;
                 enables_txt(false);
+                lvXe.SelectedItems.Clear();
+                btSua.Enabled = false;
+                nhaplai();
             }
         }
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            if (txtNhanHieu.Text != "" && tbSoLuong.Text != "" && tbGiaNhap.Text != "" && tbDungTich.Text != "" && lblMaNSX.Text != "" && cbNCC.SelectedItem.ToString() != null && cbMauXe.SelectedItem.ToString() != "") 
+            if (txtNhanHieu.Text != "" && tbSoLuong.Text != "" && tbGiaNhap.Text != "" && tbDungTich.Text != "" && lblMaNSX.Text != "" &&cbMauXe.SelectedItem!=null&&cbNCC.SelectedItem!=null) 
             {
                 lvi_Xe = new ListViewItem();
                 lvi_Xe.Text = txtMaXe.Text;
@@ -217,6 +219,7 @@ namespace QuanLyCuaHangXeMay
                     btThem.Text = "Thêm";
                     nhaplai();
                     enables_txt(false);
+                    btLuu.Enabled = false;
                 }
                 else
                 {
@@ -226,6 +229,10 @@ namespace QuanLyCuaHangXeMay
                     btSua.Text = "Sửa";
                     nhaplai();
                     enables_txt(false);
+                    btLuu.Enabled = false;
+                    btSua.Enabled = false;
+                    btThem.Enabled = true;
+                    lvXe.SelectedItems.Clear();
                 }
             }
             else MessageBox.Show("Nhập và Chọn Đầy Đủ Thông Tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

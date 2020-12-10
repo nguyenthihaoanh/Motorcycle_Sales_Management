@@ -99,6 +99,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
                 btLuu.Enabled = false;
                 btSua.Enabled = false;
                 enables_txt(false);
+                NhapLai();
             }
         }
 
@@ -118,6 +119,9 @@ namespace QuanLyCuaHangXeMay.GiaoDien
                 btLuu.Enabled = false;
                 btThem.Enabled = true;
                 enables_txt(false);
+                NhapLai();
+                lvNSX.SelectedItems.Clear();
+                btSua.Enabled = false;
             }
         }
 
@@ -136,25 +140,39 @@ namespace QuanLyCuaHangXeMay.GiaoDien
                     nsx_Controller.themTTNSX(lvi_nsx, dpNgaySX);
                     capNhap();
                     MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btThem.Text = "Thêm";
+                    enables_txt(false);
+                    NhapLai();
+                    btLuu.Enabled = false;
                 }
                 else
                 {
                     nsx_Controller.suaTTNSX(lvi_nsx, dpNgaySX);
                     capNhap();
                     MessageBox.Show("Sửa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btSua.Text = "Sửa";
+                    btLuu.Enabled = false;
+                    btSua.Enabled = false;
+                    btThem.Enabled = true;
+                    NhapLai();
+                    lvNSX.SelectedItems.Clear();
+                    enables_txt(false);
                 }
             }
             else
                 MessageBox.Show("Thông Tin Không Được Để Trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        private void btNhapLai_Click(object sender, EventArgs e)
+        private void NhapLai()
         {
             tbDiaChi.Text = "";
             tbEmail.Text = "";
             tbMaNSX.Text = MaPhatSinhTuDong();
             tbTenNSX.Text = "";
             dpNgaySX.Text = "";
+        }
+        private void btNhapLai_Click(object sender, EventArgs e)
+        {
+            NhapLai();
         }
 
         private void btThoat_Click(object sender, EventArgs e)

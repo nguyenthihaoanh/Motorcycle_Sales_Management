@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.btThoat = new System.Windows.Forms.Button();
             this.gbThongKe = new System.Windows.Forms.GroupBox();
             this.rbThongkeTheoThang = new System.Windows.Forms.RadioButton();
@@ -114,6 +114,7 @@
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(145, 34);
             this.dateTimePickerTo.TabIndex = 0;
+            this.dateTimePickerTo.Value = new System.DateTime(2020, 12, 10, 0, 0, 0, 0);
             this.dateTimePickerTo.ValueChanged += new System.EventHandler(this.dateTimePickerTo_ValueChanged);
             // 
             // dateTimePickerFrom
@@ -126,6 +127,7 @@
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(145, 34);
             this.dateTimePickerFrom.TabIndex = 0;
+            this.dateTimePickerFrom.Value = new System.DateTime(2020, 12, 1, 0, 0, 0, 0);
             this.dateTimePickerFrom.ValueChanged += new System.EventHandler(this.dateTimePickerFrom_ValueChanged);
             // 
             // lbQLThongKe
@@ -141,49 +143,49 @@
             // chart_thang
             // 
             this.chart_thang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea5.Name = "ChartArea1";
-            this.chart_thang.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            legend5.Title = "Ghi Chú";
-            this.chart_thang.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.chart_thang.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            legend1.Title = "Ghi Chú";
+            this.chart_thang.Legends.Add(legend1);
             this.chart_thang.Location = new System.Drawing.Point(159, 258);
             this.chart_thang.Name = "chart_thang";
             this.chart_thang.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series5.ChartArea = "ChartArea1";
-            series5.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.Name = "Tổng Tiền";
-            this.chart_thang.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Tổng Tiền";
+            this.chart_thang.Series.Add(series1);
             this.chart_thang.Size = new System.Drawing.Size(729, 644);
             this.chart_thang.TabIndex = 56;
-            title5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title5.Name = "Title1";
-            title5.Text = "Thống Kê Doanh Thu Theo Tháng";
-            this.chart_thang.Titles.Add(title5);
+            title1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Thống Kê Doanh Thu Theo Tháng";
+            this.chart_thang.Titles.Add(title1);
             // 
             // chart_nv
             // 
             this.chart_nv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea6.Name = "ChartArea1";
-            this.chart_nv.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            legend6.Title = "Ghi Chú";
-            this.chart_nv.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.chart_nv.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            legend2.Title = "Ghi Chú";
+            this.chart_nv.Legends.Add(legend2);
             this.chart_nv.Location = new System.Drawing.Point(1009, 258);
             this.chart_nv.Name = "chart_nv";
             this.chart_nv.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series6.ChartArea = "ChartArea1";
-            series6.IsValueShownAsLabel = true;
-            series6.Legend = "Legend1";
-            series6.Name = "Số Lượng";
-            this.chart_nv.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Số Lượng";
+            this.chart_nv.Series.Add(series2);
             this.chart_nv.Size = new System.Drawing.Size(729, 644);
             this.chart_nv.TabIndex = 57;
             this.chart_nv.Text = "chart2";
-            title6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title6.Name = "Title1";
-            title6.Text = "Thống Kê Số Lượng Xe Đã Bán Của Nhân Viên";
-            this.chart_nv.Titles.Add(title6);
+            title2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "Thống Kê Số Lượng Xe Đã Bán Của Nhân Viên";
+            this.chart_nv.Titles.Add(title2);
             // 
             // frmThongKe
             // 

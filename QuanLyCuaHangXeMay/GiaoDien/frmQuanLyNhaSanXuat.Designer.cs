@@ -54,6 +54,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             this.btLuu = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lbDiaChi = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbTimKiem.SuspendLayout();
             this.gbNCC.SuspendLayout();
             this.SuspendLayout();
@@ -115,11 +116,12 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // gbTimKiem
             // 
+            this.gbTimKiem.Controls.Add(this.label3);
             this.gbTimKiem.Controls.Add(this.tbTimTen);
             this.gbTimKiem.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.gbTimKiem.Location = new System.Drawing.Point(565, 119);
             this.gbTimKiem.Name = "gbTimKiem";
-            this.gbTimKiem.Size = new System.Drawing.Size(278, 100);
+            this.gbTimKiem.Size = new System.Drawing.Size(278, 116);
             this.gbTimKiem.TabIndex = 85;
             this.gbTimKiem.TabStop = false;
             this.gbTimKiem.Text = "Tìm Kiếm";
@@ -326,6 +328,15 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             this.lbDiaChi.TabIndex = 10;
             this.lbDiaChi.Text = "Nước Sản Xuất:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(42, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(185, 19);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "*tìm theo tên nhà sản xuất";
+            // 
             // frmQuanLyNhaSanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -376,5 +387,6 @@ namespace QuanLyCuaHangXeMay.GiaoDien
         private System.Windows.Forms.Button btLuu;
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.DateTimePicker dpNgaySX;
+        private System.Windows.Forms.Label label3;
     }
 }

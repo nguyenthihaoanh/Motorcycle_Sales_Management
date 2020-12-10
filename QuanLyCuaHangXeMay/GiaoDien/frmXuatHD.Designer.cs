@@ -65,6 +65,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbTenNV
             // 
+            this.lbTenNV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbTenNV.AutoSize = true;
             this.lbTenNV.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbTenNV.Location = new System.Drawing.Point(488, 146);
@@ -75,6 +76,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbXuatTenNV
             // 
+            this.lbXuatTenNV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbXuatTenNV.BackColor = System.Drawing.Color.MintCream;
             this.lbXuatTenNV.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbXuatTenNV.Location = new System.Drawing.Point(718, 146);
@@ -84,6 +86,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // dtmNgayHD
             // 
+            this.dtmNgayHD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtmNgayHD.CalendarForeColor = System.Drawing.Color.MintCream;
             this.dtmNgayHD.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dtmNgayHD.CustomFormat = "dd/MM/yyyy";
@@ -99,6 +102,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbXuatMaHoaDon
             // 
+            this.lbXuatMaHoaDon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbXuatMaHoaDon.BackColor = System.Drawing.Color.MintCream;
             this.lbXuatMaHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbXuatMaHoaDon.Location = new System.Drawing.Point(718, 181);
@@ -108,6 +112,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbNgayLap
             // 
+            this.lbNgayLap.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbNgayLap.AutoSize = true;
             this.lbNgayLap.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbNgayLap.Location = new System.Drawing.Point(543, 221);
@@ -118,6 +123,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbMaHD
             // 
+            this.lbMaHD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbMaHD.AutoSize = true;
             this.lbMaHD.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbMaHD.Location = new System.Drawing.Point(588, 181);
@@ -128,6 +134,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbHoaDonBanHang
             // 
+            this.lbHoaDonBanHang.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbHoaDonBanHang.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold);
             this.lbHoaDonBanHang.Location = new System.Drawing.Point(3, 248);
             this.lbHoaDonBanHang.Name = "lbHoaDonBanHang";
@@ -138,6 +145,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbTenKH
             // 
+            this.lbTenKH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbTenKH.AutoSize = true;
             this.lbTenKH.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbTenKH.Location = new System.Drawing.Point(214, 317);
@@ -148,6 +156,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbDiaChi
             // 
+            this.lbDiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbDiaChi.AutoSize = true;
             this.lbDiaChi.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbDiaChi.Location = new System.Drawing.Point(214, 367);
@@ -158,6 +167,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbSDT
             // 
+            this.lbSDT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbSDT.AutoSize = true;
             this.lbSDT.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbSDT.Location = new System.Drawing.Point(214, 417);
@@ -168,6 +178,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbCMND
             // 
+            this.lbCMND.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCMND.AutoSize = true;
             this.lbCMND.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbCMND.Location = new System.Drawing.Point(214, 467);
@@ -178,6 +189,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbXuatTenKH
             // 
+            this.lbXuatTenKH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbXuatTenKH.BackColor = System.Drawing.Color.MintCream;
             this.lbXuatTenKH.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbXuatTenKH.Location = new System.Drawing.Point(393, 317);
@@ -187,6 +199,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbXuatDiaChiKH
             // 
+            this.lbXuatDiaChiKH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbXuatDiaChiKH.BackColor = System.Drawing.Color.MintCream;
             this.lbXuatDiaChiKH.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbXuatDiaChiKH.Location = new System.Drawing.Point(393, 367);
@@ -196,6 +209,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbXuatSDT
             // 
+            this.lbXuatSDT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbXuatSDT.BackColor = System.Drawing.Color.MintCream;
             this.lbXuatSDT.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbXuatSDT.Location = new System.Drawing.Point(393, 417);
@@ -205,6 +219,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lbXuatCMND
             // 
+            this.lbXuatCMND.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbXuatCMND.BackColor = System.Drawing.Color.MintCream;
             this.lbXuatCMND.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbXuatCMND.Location = new System.Drawing.Point(393, 467);
@@ -214,6 +229,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(-1, 9);
             this.label2.Name = "label2";
@@ -224,6 +240,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.BackColor = System.Drawing.Color.MintCream;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11F);
             this.label3.Location = new System.Drawing.Point(-1, 64);
@@ -235,6 +252,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.BackColor = System.Drawing.Color.MintCream;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11F);
             this.label4.Location = new System.Drawing.Point(1, 90);
@@ -246,6 +264,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lvXeDaChon
             // 
+            this.lvXeDaChon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lvXeDaChon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -302,6 +321,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.label1.Location = new System.Drawing.Point(500, 809);
             this.label1.Name = "label1";
@@ -311,6 +331,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // lblTongTien
             // 
+            this.lblTongTien.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTongTien.BackColor = System.Drawing.Color.MintCream;
             this.lblTongTien.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.lblTongTien.Location = new System.Drawing.Point(628, 809);
@@ -320,6 +341,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             // 
             // btInHD
             // 
+            this.btInHD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btInHD.BackColor = System.Drawing.Color.MintCream;
             this.btInHD.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.btInHD.Location = new System.Drawing.Point(416, 872);
@@ -374,6 +396,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             this.Controls.Add(this.lbNgayLap);
             this.Name = "frmXuatHD";
             this.Text = "frmXuatHD";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmXuatHD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

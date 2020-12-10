@@ -99,6 +99,7 @@ namespace QuanLyCuaHangXeMay
                 btLuu.Enabled = false;
                 btSua.Enabled = false;
                 enables_txt(false);
+                nhapLai();
             }
         }
 
@@ -118,15 +119,21 @@ namespace QuanLyCuaHangXeMay
                 btLuu.Enabled = false;
                 btThem.Enabled = true;
                 enables_txt(false);
+                nhapLai();
+                lvNCC.SelectedItems.Clear();
+                btSua.Enabled = false;
             }
         }
-
-        private void btNhapLai_Click(object sender, EventArgs e)
+        private void nhapLai()
         {
             tbDiaChi.Text = "";
             tbEmail.Text = "";
             tbTenNCC.Text = "";
             tbMaNCC.Text = MaPhatSinhTuDong();
+        }
+        private void btNhapLai_Click(object sender, EventArgs e)
+        {
+            nhapLai();
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -149,12 +156,23 @@ namespace QuanLyCuaHangXeMay
                     ncc_Controller.them(lvi_ncc);
                     capNhap();
                     MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btThem.Text = "Thêm";
+                    enables_txt(false);
+                    nhapLai();
+                    btLuu.Enabled = false;
                 }
                 else
                 {
                     ncc_Controller.suaTTNCC(lvi_ncc);
                     capNhap();
                     MessageBox.Show("Sửa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btSua.Text = "Sửa";
+                    btLuu.Enabled = false;
+                    btSua.Enabled = false;
+                    btThem.Enabled = true;
+                    nhapLai();
+                    lvNCC.SelectedItems.Clear();
+                    enables_txt(false);
                 }
             }
             else

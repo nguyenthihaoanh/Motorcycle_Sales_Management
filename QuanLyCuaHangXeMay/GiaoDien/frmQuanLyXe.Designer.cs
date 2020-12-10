@@ -64,12 +64,13 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label5 = new System.Windows.Forms.Label();
             this.gbThongTinXe.SuspendLayout();
             this.gbTImKiem.SuspendLayout();
             this.SuspendLayout();
@@ -435,6 +436,7 @@
             // 
             // gbTImKiem
             // 
+            this.gbTImKiem.Controls.Add(this.label5);
             this.gbTImKiem.Controls.Add(this.tbTim);
             this.gbTImKiem.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.gbTImKiem.Location = new System.Drawing.Point(542, 103);
@@ -493,6 +495,16 @@
             this.columnHeader3.Text = "Màu Xe";
             this.columnHeader3.Width = 150;
             // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Số Lượng";
+            this.columnHeader8.Width = 150;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "NSX";
+            this.columnHeader7.Width = 150;
+            // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Dung Tích";
@@ -503,16 +515,6 @@
             this.columnHeader6.Text = "NCC";
             this.columnHeader6.Width = 150;
             // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "NSX";
-            this.columnHeader7.Width = 150;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Số Lượng";
-            this.columnHeader8.Width = 150;
-            // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "Giá Nhập";
@@ -522,6 +524,15 @@
             // 
             this.columnHeader10.Text = "Ngày Nhập";
             this.columnHeader10.Width = 150;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(74, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(143, 19);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "*tìm theo nhãn hiệu";
             // 
             // frmQuanLyXe
             // 
@@ -589,5 +600,6 @@
         private System.Windows.Forms.ComboBox cbNuocSX;
         private System.Windows.Forms.Label lblMaNSX;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

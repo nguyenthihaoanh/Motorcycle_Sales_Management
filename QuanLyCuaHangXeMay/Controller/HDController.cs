@@ -77,15 +77,16 @@ namespace QuanLyCuaHangXeMay.Controller
                 if (t.Contains(tenKH.ToLower()))
                 {
                     lvit = new ListViewItem();
-                    lvit.Text = n.maHD;
+                    lvit.Text = n.cthd;
+                    lvit.SubItems.Add(n.maHD);
                     lvit.SubItems.Add(n.nv);
                     lvit.SubItems.Add(n.kh);
                     lvit.SubItems.Add(n.sdtKH);
-                    lvit.SubItems.Add(n.ngay.ToString());
                     lvit.SubItems.Add(n.xe);
                     lvit.SubItems.Add(n.mauXe);
                     lvit.SubItems.Add(n.soLuong.ToString());
                     lvit.SubItems.Add(n.thanhTien.ToString());
+                    lvit.SubItems.Add(n.ngay.ToString());
                     dsHD.Add(lvit);
                 }
             }
