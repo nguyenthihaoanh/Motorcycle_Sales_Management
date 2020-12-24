@@ -23,8 +23,8 @@ namespace QuanLyCuaHangXeMay.Controller
                      join nv in db.NhanViens on HD.maNhanVien equals nv.maNhanVien
                      select new
                      {
-                         cthd=cthd.maCTHoaDon,
                          maHD = HD.maHoaDon,
+                         maXe = cthd.maXe,
                          nv = nv.tenNhanVien,
                          kh = kh.tenKhachHang,
                          sdtKH = kh.soDienThoai,
@@ -37,8 +37,8 @@ namespace QuanLyCuaHangXeMay.Controller
             foreach (var n in hd)
             {
                 lvit = new ListViewItem();
-                lvit.Text = n.cthd;
-                lvit.SubItems.Add(n.maHD);
+                lvit.Text = n.maHD;
+                lvit.SubItems.Add(n.maXe);
                 lvit.SubItems.Add(n.nv);
                 lvit.SubItems.Add(n.kh);
                 lvit.SubItems.Add(n.sdtKH);
@@ -60,8 +60,8 @@ namespace QuanLyCuaHangXeMay.Controller
                      join nv in db.NhanViens on HD.maNhanVien equals nv.maNhanVien
                      select new
                      {
-                         cthd = cthd.maCTHoaDon,
                          maHD = HD.maHoaDon,
+                         maXe = cthd.maXe,
                          nv = nv.tenNhanVien,
                          kh = kh.tenKhachHang,
                          sdtKH = kh.soDienThoai,
@@ -77,8 +77,8 @@ namespace QuanLyCuaHangXeMay.Controller
                 if (t.Contains(tenKH.ToLower()))
                 {
                     lvit = new ListViewItem();
-                    lvit.Text = n.cthd;
-                    lvit.SubItems.Add(n.maHD);
+                    lvit.Text = n.maHD;
+                    lvit.SubItems.Add(n.maXe);
                     lvit.SubItems.Add(n.nv);
                     lvit.SubItems.Add(n.kh);
                     lvit.SubItems.Add(n.sdtKH);
@@ -91,6 +91,47 @@ namespace QuanLyCuaHangXeMay.Controller
                 }
             }
                 return dsHD;
+        }
+        public List<ListViewItem> TimKiemTheoHD(string mahd)
+        {
+            dsHD.Clear(); dsHD.Clear();
+            var hd = from HD in db.HoaDonXes
+                     join cthd in db.CTHoaDonXes on HD.maHoaDon equals cthd.maHoaDon
+                     join kh in db.KhachHangs on HD.maKhachHang equals kh.maKhachHang
+                     join nv in db.NhanViens on HD.maNhanVien equals nv.maNhanVien
+                     select new
+                     {
+                         maHD = HD.maHoaDon,
+                         maXe = cthd.maXe,
+                         nv = nv.tenNhanVien,
+                         kh = kh.tenKhachHang,
+                         sdtKH = kh.soDienThoai,
+                         xe = cthd.Xe.nhanHieu,
+                         mauXe = cthd.Xe.MauXe.tenMau,
+                         soLuong = cthd.soLuong,
+                         thanhTien = cthd.thanhTien,
+                         ngay = cthd.ngayLap
+                     };
+            foreach (var n in hd)
+            {
+                string t = n.maHD.ToLower();
+                if (t.Contains(mahd.ToLower()))
+                {
+                    lvit = new ListViewItem();
+                    lvit.Text = n.maHD;
+                    lvit.SubItems.Add(n.maXe);
+                    lvit.SubItems.Add(n.nv);
+                    lvit.SubItems.Add(n.kh);
+                    lvit.SubItems.Add(n.sdtKH);
+                    lvit.SubItems.Add(n.xe);
+                    lvit.SubItems.Add(n.mauXe);
+                    lvit.SubItems.Add(n.soLuong.ToString());
+                    lvit.SubItems.Add(n.thanhTien.ToString());
+                    lvit.SubItems.Add(n.ngay.ToString());
+                    dsHD.Add(lvit);
+                }
             }
+            return dsHD;
+        }
     }
 }

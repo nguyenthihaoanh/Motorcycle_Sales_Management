@@ -443,12 +443,12 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Mã CTHD";
+            this.columnHeader1.Text = "Mã HD";
             this.columnHeader1.Width = 200;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Mã HD";
+            this.columnHeader2.Text = "Mã Xe";
             this.columnHeader2.Width = 150;
             // 
             // columnHeader3

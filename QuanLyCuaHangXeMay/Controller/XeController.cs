@@ -121,7 +121,7 @@ namespace QuanLyCuaHangXeMay.Controller
                          nhanHieu = xe.nhanHieu,
                          mau = mau.tenMau,
                          soLuong = xe.soLuong,
-                         tenNSX = nsx.tenNSX,
+                         tenNSX = nsx.nuocSX,
                          dungTich = xe.dungTich,
                          tenNCC = ncc.tenNCC,
                          giaNhap = xe.giaNhap,

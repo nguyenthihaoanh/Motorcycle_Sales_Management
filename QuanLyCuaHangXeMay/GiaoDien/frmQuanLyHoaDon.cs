@@ -16,6 +16,7 @@ namespace QuanLyCuaHangXeMay
         private HDController HDC = new HDController();
         private List<ListViewItem> dshd = new List<ListViewItem>();
         public static ListViewItem lvi { get; private set; } = new ListViewItem();
+        decimal tong = 0;
         public frmQuanLyHoaDon()
         {
             InitializeComponent();
@@ -35,8 +36,17 @@ namespace QuanLyCuaHangXeMay
             {
                 lvHD.Items.Add(hd);
             }
+            tinh_tong_tien_listview();
         }
-
+        private void tinh_tong_tien_listview()
+        {
+            tong = 0;
+            foreach (ListViewItem lvi in lvHD.Items)
+            {
+                tong += Convert.ToDecimal(lvi.SubItems[8].Text);
+            }
+            lblTongTien.Text = tong.ToString();
+        }
         private void tbTim_TextChanged(object sender, EventArgs e)
         {
             dshd.Clear();
@@ -46,6 +56,12 @@ namespace QuanLyCuaHangXeMay
             {
                 lvHD.Items.Add(hd);
             }
+            dshd = HDC.TimKiemTheoHD(tbTim.Text);
+            foreach (ListViewItem hd in dshd)
+            {
+                lvHD.Items.Add(hd);
+            }
+            tinh_tong_tien_listview();
         }
 
         private void lvHD_SelectedIndexChanged(object sender, EventArgs e)

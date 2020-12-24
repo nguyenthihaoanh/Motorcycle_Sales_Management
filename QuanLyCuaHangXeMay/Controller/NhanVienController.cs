@@ -58,7 +58,7 @@ namespace QuanLyCuaHangXeMay
         public void thayDoiMK(string ma, string mk)
         {
             var tk = from taiKhoan in db.TaiKhoans
-                     where taiKhoan.maNhanVien == ma
+                     where taiKhoan.taiKhoan1 == ma
                      select taiKhoan;
             foreach (TaiKhoan taiKhoan in tk)
             {

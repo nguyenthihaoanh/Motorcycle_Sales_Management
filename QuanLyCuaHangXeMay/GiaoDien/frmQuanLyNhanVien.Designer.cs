@@ -52,6 +52,7 @@
             this.tbSDT = new System.Windows.Forms.TextBox();
             this.tbTenNV = new System.Windows.Forms.TextBox();
             this.gbTimKiem = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbTimTen = new System.Windows.Forms.TextBox();
             this.gbTaiKhoan = new System.Windows.Forms.GroupBox();
             this.lbTaiKhoan = new System.Windows.Forms.Label();
@@ -67,7 +68,7 @@
             this.diaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tinhTrang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chucVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnResetPass = new System.Windows.Forms.Button();
             this.gbThongTinNV.SuspendLayout();
             this.gbTimKiem.SuspendLayout();
             this.gbTaiKhoan.SuspendLayout();
@@ -350,15 +351,24 @@
             this.gbTimKiem.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.gbTimKiem.Location = new System.Drawing.Point(423, 76);
             this.gbTimKiem.Name = "gbTimKiem";
-            this.gbTimKiem.Size = new System.Drawing.Size(334, 132);
+            this.gbTimKiem.Size = new System.Drawing.Size(334, 161);
             this.gbTimKiem.TabIndex = 31;
             this.gbTimKiem.TabStop = false;
             this.gbTimKiem.Text = "Tìm Kiếm";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(62, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(167, 19);
+            this.label2.TabIndex = 119;
+            this.label2.Text = "*tìm theo tên nhân viên";
+            // 
             // tbTimTen
             // 
             this.tbTimTen.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbTimTen.Location = new System.Drawing.Point(30, 50);
+            this.tbTimTen.Location = new System.Drawing.Point(29, 70);
             this.tbTimTen.Name = "tbTimTen";
             this.tbTimTen.Size = new System.Drawing.Size(269, 34);
             this.tbTimTen.TabIndex = 118;
@@ -366,13 +376,14 @@
             // 
             // gbTaiKhoan
             // 
+            this.gbTaiKhoan.Controls.Add(this.btnResetPass);
             this.gbTaiKhoan.Controls.Add(this.lbTaiKhoan);
             this.gbTaiKhoan.Controls.Add(this.btThemTK);
             this.gbTaiKhoan.Controls.Add(this.tbTaiKhoan);
             this.gbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.gbTaiKhoan.Location = new System.Drawing.Point(763, 76);
             this.gbTaiKhoan.Name = "gbTaiKhoan";
-            this.gbTaiKhoan.Size = new System.Drawing.Size(360, 112);
+            this.gbTaiKhoan.Size = new System.Drawing.Size(378, 161);
             this.gbTaiKhoan.TabIndex = 32;
             this.gbTaiKhoan.TabStop = false;
             this.gbTaiKhoan.Text = "Tài Khoản";
@@ -382,7 +393,7 @@
             this.lbTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTaiKhoan.AutoSize = true;
             this.lbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTaiKhoan.Location = new System.Drawing.Point(6, 21);
+            this.lbTaiKhoan.Location = new System.Drawing.Point(18, 24);
             this.lbTaiKhoan.Name = "lbTaiKhoan";
             this.lbTaiKhoan.Size = new System.Drawing.Size(119, 27);
             this.lbTaiKhoan.TabIndex = 65;
@@ -392,9 +403,9 @@
             // 
             this.btThemTK.BackColor = System.Drawing.Color.White;
             this.btThemTK.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.btThemTK.Location = new System.Drawing.Point(59, 66);
+            this.btThemTK.Location = new System.Drawing.Point(78, 68);
             this.btThemTK.Name = "btThemTK";
-            this.btThemTK.Size = new System.Drawing.Size(243, 34);
+            this.btThemTK.Size = new System.Drawing.Size(241, 34);
             this.btThemTK.TabIndex = 117;
             this.btThemTK.Text = "Thêm Tài Khoản";
             this.btThemTK.UseVisualStyleBackColor = false;
@@ -434,9 +445,9 @@
             this.lvNV.FullRowSelect = true;
             this.lvNV.GridLines = true;
             this.lvNV.HideSelection = false;
-            this.lvNV.Location = new System.Drawing.Point(133, 214);
+            this.lvNV.Location = new System.Drawing.Point(133, 243);
             this.lvNV.Name = "lvNV";
-            this.lvNV.Size = new System.Drawing.Size(1237, 661);
+            this.lvNV.Size = new System.Drawing.Size(1237, 632);
             this.lvNV.TabIndex = 52;
             this.lvNV.UseCompatibleStateImageBehavior = false;
             this.lvNV.View = System.Windows.Forms.View.Details;
@@ -484,14 +495,17 @@
             this.chucVu.Text = "Chức Vụ";
             this.chucVu.Width = 200;
             // 
-            // label2
+            // btnResetPass
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 19);
-            this.label2.TabIndex = 119;
-            this.label2.Text = "*tìm theo tên nhân viên";
+            this.btnResetPass.BackColor = System.Drawing.Color.White;
+            this.btnResetPass.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.btnResetPass.Location = new System.Drawing.Point(78, 113);
+            this.btnResetPass.Name = "btnResetPass";
+            this.btnResetPass.Size = new System.Drawing.Size(241, 34);
+            this.btnResetPass.TabIndex = 133;
+            this.btnResetPass.Text = "Reset Password";
+            this.btnResetPass.UseVisualStyleBackColor = false;
+            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
             // 
             // frmQuanLyNhanVien
             // 
@@ -561,5 +575,6 @@
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.Button btLuu;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnResetPass;
     }
 }

@@ -37,7 +37,8 @@ namespace QuanLyCuaHangXeMay.GiaoDien
                                 tbMkMoi.Clear();
                                 tbNhapLaiMk.Clear();
                             }
-                            MessageBox.Show("Nhập Mật Khẩu Khác Với Mật Khẩu Cũ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            else
+                                MessageBox.Show("Nhập Mật Khẩu Khác Với Mật Khẩu Cũ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {

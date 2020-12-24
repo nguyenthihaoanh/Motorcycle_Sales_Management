@@ -29,7 +29,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             List<ListViewItem> ds = TTNV.NhanTT();
             lbXuatTenNV.Text = ds[0].SubItems[1].Text;
             dtmNgayHD.Value = DateTime.Today;
-            lbXuatMaHoaDon.Text = frmChiTietHD.lvi.SubItems[1].Text;
+            lbXuatMaHoaDon.Text = frmChiTietHD.lvi.SubItems[0].Text;
             thongTinKH();
             capNhap();
             tinh_tong_tien_listview();
@@ -105,6 +105,11 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             offset = offset + 20;
             graphics.DrawString("Tổng Tiền Thanh Toán: " + lblTongTien.Text.PadLeft(5), font, new SolidBrush(Color.Black), startx, starty + offset);
             offset = offset + 20;
+        }
+
+        private void lvXeDaChon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

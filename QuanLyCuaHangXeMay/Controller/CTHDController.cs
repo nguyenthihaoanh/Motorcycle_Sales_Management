@@ -88,7 +88,6 @@ namespace QuanLyCuaHangXeMay.Controller
             foreach (ListViewItem lvi in list_cthd)
             {
                 CTHoaDonXe cthd = new CTHoaDonXe();
-                cthd.maCTHoaDon = Convert.ToString(lvi.SubItems[0].Text);
                 cthd.maHoaDon = hd.maHoaDon;
                 cthd.maXe = lvi.SubItems[7].Text;
                 cthd.soLuong = Convert.ToInt32(lvi.SubItems[3].Text);

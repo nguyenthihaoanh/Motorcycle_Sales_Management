@@ -2,32 +2,22 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-IKMCULL\SQLEXPRESS;Initial Catalog=QLMuaBanXe;Integrated Security=True" SettingsObjectName="QuanLyCuaHangXeMay.Properties.Settings" SettingsPropertyName="QLMuaBanXeConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CTHoaDonXe" Member="CTHoaDonXes">
     <Type Name="CTHoaDonXe">
-      <Column Name="maCTHoaDon" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="maHoaDon" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="maXe" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="maHoaDon" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maXe" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="donGia" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="thanhTien" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="ngayLap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="Xe_CTHoaDonXe" Member="Xe" ThisKey="maXe" OtherKey="maXe" Type="Xe" IsForeignKey="true" />
       <Association Name="HoaDonXe_CTHoaDonXe" Member="HoaDonXe" ThisKey="maHoaDon" OtherKey="maHoaDon" Type="HoaDonXe" IsForeignKey="true" />
+      <Association Name="Xe_CTHoaDonXe" Member="Xe" ThisKey="maXe" OtherKey="maXe" Type="Xe" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Xe" Member="Xes">
-    <Type Name="Xe">
-      <Column Name="maXe" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="nhanHieu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="maMau" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="dungTich" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="maNCC" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="maNSX" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="giaNhap" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="ngayNhap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="Xe_CTHoaDonXe" Member="CTHoaDonXes" ThisKey="maXe" OtherKey="maXe" Type="CTHoaDonXe" />
-      <Association Name="MauXe_Xe" Member="MauXe" ThisKey="maMau" OtherKey="maMau" Type="MauXe" IsForeignKey="true" />
-      <Association Name="NhaCungCap_Xe" Member="NhaCungCap" ThisKey="maNCC" OtherKey="maNCC" Type="NhaCungCap" IsForeignKey="true" />
-      <Association Name="NhaSanXuat_Xe" Member="NhaSanXuat" ThisKey="maNSX" OtherKey="maNSX" Type="NhaSanXuat" IsForeignKey="true" />
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="maNhanVien" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taiKhoan" Member="taiKhoan1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="matKhau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HoaDonXe" Member="HoaDonXes">
@@ -76,8 +66,8 @@
       <Column Name="diaChiNV" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="chucVu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="NhanVien_HoaDonXe" Member="HoaDonXes" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="HoaDonXe" />
       <Association Name="NhanVien_TaiKhoan" Member="TaiKhoan" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="TaiKhoan" Cardinality="One" />
+      <Association Name="NhanVien_HoaDonXe" Member="HoaDonXes" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="HoaDonXe" />
     </Type>
   </Table>
   <Table Name="dbo.NhaSanXuat" Member="NhaSanXuats">
@@ -90,12 +80,21 @@
       <Association Name="NhaSanXuat_Xe" Member="Xes" ThisKey="maNSX" OtherKey="maNSX" Type="Xe" />
     </Type>
   </Table>
-  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
-    <Type Name="TaiKhoan">
-      <Column Name="maNhanVien" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="taiKhoan" Member="taiKhoan1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="matKhau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" />
+  <Table Name="dbo.Xe" Member="Xes">
+    <Type Name="Xe">
+      <Column Name="maXe" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nhanHieu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="maMau" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="dungTich" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="maNSX" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="giaNhap" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ngayNhap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Xe_CTHoaDonXe" Member="CTHoaDonXes" ThisKey="maXe" OtherKey="maXe" Type="CTHoaDonXe" />
+      <Association Name="MauXe_Xe" Member="MauXe" ThisKey="maMau" OtherKey="maMau" Type="MauXe" IsForeignKey="true" />
+      <Association Name="NhaCungCap_Xe" Member="NhaCungCap" ThisKey="maNCC" OtherKey="maNCC" Type="NhaCungCap" IsForeignKey="true" />
+      <Association Name="NhaSanXuat_Xe" Member="NhaSanXuat" ThisKey="maNSX" OtherKey="maNSX" Type="NhaSanXuat" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

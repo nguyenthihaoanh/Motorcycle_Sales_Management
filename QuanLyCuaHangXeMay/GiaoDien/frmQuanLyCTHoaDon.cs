@@ -126,8 +126,8 @@ namespace QuanLyCuaHangXeMay
                 int sl = Convert.ToInt32(nudSoLuong.Value.ToString());
                 decimal tong = gia * sl;
                 lvi = new ListViewItem();
-                lvi.Text = lbXuatMaHoaDon.Text + "-" + RandomInt();
-                lvi.SubItems.Add(lbXuatMaHoaDon.Text);
+                lvi.Text = lbXuatMaHoaDon.Text;
+                lvi.SubItems.Add(lvDSXe.SelectedItems[0].SubItems[0].Text);
                 lvi.SubItems.Add(lvDSXe.SelectedItems[0].SubItems[1].Text);
                 lvi.SubItems.Add(sl.ToString());
                 lvi.SubItems.Add(gia.ToString());
@@ -167,7 +167,7 @@ namespace QuanLyCuaHangXeMay
 
         private void btLapHoaDon_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Đã Lập Hóa Đơn Thì Không Thể Hủy Hóa Đơn Nữa", "Thông Báo", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Đã Lập Hóa Đơn Thì Không Thể Hủy Hóa Đơn!!!", "Thông Báo", MessageBoxButtons.YesNo);
             if (result==DialogResult.Yes)
             {
                 if (lvXeDaChon.Items.Count > 0)

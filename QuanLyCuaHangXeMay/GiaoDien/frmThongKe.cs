@@ -31,6 +31,7 @@ namespace QuanLyCuaHangXeMay
             //rbThongKeTheoNV.Visible = false;
             chart_thang.Visible = false;
             chart_nv.Visible = false;
+            dateTimePickerTo.Value = DateTime.Today;
         }
         private void rbThongKeTheoNV_CheckedChanged(object sender, EventArgs e)
         {

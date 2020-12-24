@@ -44,13 +44,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.gbTimKiem = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbQLNCC = new System.Windows.Forms.Label();
             this.lvNCC = new System.Windows.Forms.ListView();
             this.MaNCC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TenNCC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.diaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label2 = new System.Windows.Forms.Label();
             this.gbNCC.SuspendLayout();
             this.gbTimKiem.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +98,7 @@
             this.lbTen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbTen.AutoSize = true;
             this.lbTen.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.lbTen.Location = new System.Drawing.Point(17, 197);
+            this.lbTen.Location = new System.Drawing.Point(6, 197);
             this.lbTen.Name = "lbTen";
             this.lbTen.Size = new System.Drawing.Size(209, 27);
             this.lbTen.TabIndex = 8;
@@ -245,6 +245,15 @@
             this.gbTimKiem.TabStop = false;
             this.gbTimKiem.Text = "Tìm Kiếm";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(45, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 19);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "*tìm theo tên nhà cung cấp";
+            // 
             // lbQLNCC
             // 
             this.lbQLNCC.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold);
@@ -293,15 +302,6 @@
             // 
             this.email.Text = "Email";
             this.email.Width = 200;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 19);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "*tìm theo tên nhà cung cấp";
             // 
             // frmQuanLyNhaCungCap
             // 

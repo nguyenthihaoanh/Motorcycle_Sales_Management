@@ -44,6 +44,8 @@
             this.sl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTongTien = new System.Windows.Forms.Label();
             this.gbTimKiemHD.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,12 +176,32 @@
             this.columnHeader1.Text = "Ngày Lập Hóa Đơn";
             this.columnHeader1.Width = 150;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.label2.Location = new System.Drawing.Point(1470, 841);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 25);
+            this.label2.TabIndex = 87;
+            this.label2.Text = "Tổng Tiền:";
+            // 
+            // lblTongTien
+            // 
+            this.lblTongTien.BackColor = System.Drawing.Color.MintCream;
+            this.lblTongTien.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.lblTongTien.Location = new System.Drawing.Point(1598, 841);
+            this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.Size = new System.Drawing.Size(270, 25);
+            this.lblTongTien.TabIndex = 86;
+            // 
             // frmQuanLyHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTongTien);
             this.Controls.Add(this.lvHD);
             this.Controls.Add(this.lbQLHD);
             this.Controls.Add(this.btThoat);
@@ -212,5 +234,7 @@
         private System.Windows.Forms.ColumnHeader tt;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTongTien;
     }
 }

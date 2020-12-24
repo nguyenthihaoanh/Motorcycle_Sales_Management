@@ -36,6 +36,7 @@ namespace QuanLyCuaHangXeMay
             {
                 lvNV.Items.Add(nv);
             }
+            btnResetPass.Visible = false;
             btLuu.Enabled = false;
             btSua.Enabled = false;
             btThemTK.Enabled = false;
@@ -62,6 +63,7 @@ namespace QuanLyCuaHangXeMay
                 cbChucVu.Text=lvNV.SelectedItems[0].SubItems[7].Text;
                 tbTaiKhoan.Text = lvi_nv.SubItems[8].Text;
                 btThem.Enabled = false;
+                btnResetPass.Visible = true;
                 btSua.Enabled = true;
                 btThemTK.Enabled = true;
             }
@@ -86,6 +88,9 @@ namespace QuanLyCuaHangXeMay
         }
         private void capNhap()
         {
+            cbChucVu.Items.Clear();
+            cbGioiTinh.Items.Clear();
+            cbTinhTrang.Items.Clear();
             lvNV.Items.Clear();
             list_NV = NVC.danhSachNV();
             foreach (ListViewItem nv in list_NV)
@@ -109,6 +114,7 @@ namespace QuanLyCuaHangXeMay
                 enables_txt_cb(true);
                 btSua.Enabled = false;
                 btThemTK.Enabled = false;
+                btnResetPass.Visible = false;
             }
             else
             {
@@ -117,6 +123,7 @@ namespace QuanLyCuaHangXeMay
                 btSua.Enabled = false;
                 enables_txt_cb(false);
                 btThemTK.Enabled = false;
+                btnResetPass.Visible = false;
                 nhapLai();
             }
         }
@@ -131,6 +138,7 @@ namespace QuanLyCuaHangXeMay
                 enables_txt_cb(true);
                 btThem.Enabled = false;
                 btThemTK.Enabled = false;
+                btnResetPass.Visible = false;
             }
             else
             {
@@ -141,6 +149,7 @@ namespace QuanLyCuaHangXeMay
                 lvNV.SelectedItems.Clear();
                 btThemTK.Enabled = false;
                 btSua.Enabled = false;
+                btnResetPass.Visible = false;
                 nhapLai();
             }
         }
@@ -183,6 +192,7 @@ namespace QuanLyCuaHangXeMay
                     enables_txt_cb(false);
                     nhapLai();
                     btLuu.Enabled = false;
+                    btnResetPass.Visible = false;
                 }
                 else
                 {
@@ -196,6 +206,7 @@ namespace QuanLyCuaHangXeMay
                     btThem.Enabled = true;
                     enables_txt_cb(false);
                     nhapLai();
+                    btnResetPass.Visible = false;
                 }
             }
             else MessageBox.Show("Nhập và Chọn Đầy Đủ Thông Tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -206,15 +217,16 @@ namespace QuanLyCuaHangXeMay
             ListViewItem lvi_tk = new ListViewItem();
             if (tbTaiKhoan.Text != "") 
             {
-                MessageBox.Show("Tài Khoản Đã Tồn Tại");                
+                MessageBox.Show("Tài Khoản Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);                
             }
             else
             {
                 lvi_tk.Text = tbMaNV.Text;
                 lvi_tk.SubItems.Add(tbTaiKhoan.Text);
                 NVC.themTK(lvi_tk, "123".GetHashCode().ToString());
-                MessageBox.Show("Thêm Thành Công");
+                MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 capNhap();
+                btnResetPass.Visible = false;
             }
         }
 
@@ -226,6 +238,12 @@ namespace QuanLyCuaHangXeMay
             {
                 lvNV.Items.Add(nv);
             }
+        }
+
+        private void btnResetPass_Click(object sender, EventArgs e)
+        {
+            DNC.thayDoiMK(Convert.ToString(tbTaiKhoan.Text), "123".GetHashCode().ToString());
+            MessageBox.Show("Reset mật khẩu thành công, mật khẩu mặc định là: 123", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

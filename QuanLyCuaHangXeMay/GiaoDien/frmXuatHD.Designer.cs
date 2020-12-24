@@ -283,6 +283,7 @@ namespace QuanLyCuaHangXeMay.GiaoDien
             this.lvXeDaChon.TabIndex = 95;
             this.lvXeDaChon.UseCompatibleStateImageBehavior = false;
             this.lvXeDaChon.View = System.Windows.Forms.View.Details;
+            this.lvXeDaChon.SelectedIndexChanged += new System.EventHandler(this.lvXeDaChon_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

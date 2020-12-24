@@ -41,9 +41,9 @@ namespace QuanLyCuaHangXeMay
         }
         private void capNhapMauXe(bool clear=true)
         {
+                cbMauXe.Items.Clear();
             if (clear)
             {
-                cbMauXe.Items.Clear();
                 dsmau.Clear();
                 dsmau = xe_Controller.ds_mau();
                 foreach (var mau in dsmau)
